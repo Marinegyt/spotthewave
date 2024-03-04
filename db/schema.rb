@@ -10,9 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_04_144336) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_04_151715) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "spot_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_bookmarks_on_spot_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.bigint "follower_id", null: false
+    t.bigint "followed_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_follows_on_followed_id"
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.bigint "spot_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_photos_on_spot_id"
+    t.index ["user_id"], name: "index_photos_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.float "rate"
+    t.bigint "spot_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_reviews_on_spot_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "spots", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +68,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_144336) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "spots"
+  add_foreign_key "bookmarks", "users"
+  add_foreign_key "photos", "spots"
+  add_foreign_key "photos", "users"
+  add_foreign_key "reviews", "spots"
+  add_foreign_key "reviews", "users"
 end
