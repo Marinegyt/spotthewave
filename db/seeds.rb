@@ -8,12 +8,12 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 puts "Effacement de toutes les données..."
-Spot.destroy_all
-Review.destroy_all
-User.destroy_all
-Bookmark.destroy_all
-Photo.destroy_all
 Follow.destroy_all
+Photo.destroy_all
+Bookmark.destroy_all
+Review.destroy_all
+Spot.destroy_all
+User.destroy_all
 puts "Données effacées!"
 
 puts "Création de nouveaux utilisateurs..."
