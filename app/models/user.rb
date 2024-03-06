@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :bookmarks
+  has_many :favorites, through: :bookmarks, source: :spot
   has_many :photos
 
   validates :nickname, presence: true, length: { maximum: 50 }
