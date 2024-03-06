@@ -24,4 +24,11 @@ class Review < ApplicationRecord
       "Indéterminé"
     end
   end
+
+  def self.average_rating(spot)
+    count = spot.reviews.count
+    return 0 if count.zero?
+
+    ((spot.reviews.sum(:rate).to_f / count) * 2).round / 2.0
+  end
 end
