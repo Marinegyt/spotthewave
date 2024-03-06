@@ -2,7 +2,6 @@
   <h1>Brouillon</h1>
   <%= cl_image_tag Spot.first.photo.key, height: 300, width: 400, crop: :fill %>
 
-
   <!-- Bottom navbar -->
   <nav class="navbar navbar-light bg-light fixed-bottom">
     <div class="container-fluid">
@@ -38,5 +37,77 @@
     <h2 class="card-spot-summary-pricing"></h2>
   </div>
 </div>
+
+  <h2>Feed card simple</h2>
+  <div class="feed-card">
+    <img src="https://picsum.photos/200/300" alt="Photo de l'utilisateur" class="avatar">
+    <div class="feed-content">
+      <span class="text-small">Il y a 5 jours</span>
+      <p><span class="bold">Thierry</span> a surfé à <span class="bold">Plage de Trebeurden</span></p>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <h2>Feed card simple avec image</h2>
+  <div class="feed-card">
+      <img src="https://picsum.photos/200/300" alt="Photo de l'utilisateur" class="avatar">
+    <div class="feed-content">
+      <span class="text-small">Il y a 5 jours</span>
+      <p><span class="bold">Thierry</span> a posté une nouvelle photo de <span class="bold">Plage de Trébeurden</span></p>
+      <br>
+      <img src="https://picsum.photos/200/300" alt="nouvelle photo de la plage de Trebeurden" class= "new-photo">
+    </div>
+
+  </div>
+
+<br>
+<br>
+
+ <h2>Notif spot the wave</h2>
+  <div class="feed-card">
+    <div class="avatar shaka-avatar">
+      <%= image_tag('icons/shaka-white')%>
+      </div>
+    <div class="feed-content">
+      <span class="text-small">Aujourdh'hui</span>
+      <p><span class="bold">Conditions optimales</span> à <span class="bold">Plage de Trebeurden</span></p>
+    </div>
+  </div>
+
+<br>
+<br>
+
+<h2>Feed card avec vote</h2>
+  <div class="feed-card">
+      <img src="https://picsum.photos/200/300" alt="Photo de l'utilisateur" class="avatar">
+    <div class="feed-content">
+      <span class="text-small">Il y a 5 jours</span>
+      <p><span class="bold">Thierry</span> a ajouté un commentaire sur <span class="bold">Plage de Trébeurden</span></p>
+      <div class= "feed-rating">
+      <div class="rating">
+        <p><span class="bold">Avis sur le spot :</span></p>
+        <%= image_tag('icons/star-fill.svg') %>
+        <%= image_tag('icons/star-fill.svg') %>
+        <%= image_tag('icons/star-fill.svg') %>
+        <%= image_tag('icons/star-fill.svg') %>
+        <%= image_tag('icons/star-fill.svg') %>
+        <p>Niveau de Difficulté : <span class="bold">Expert</span></p>
+        <br>
+        <p>Une superbe session sur ce spot</p>
+    </div>
+    </div>
+</div>
+</div>
+
+ <h2>Follow</h2>
+  <div class="feed-card">
+      <img src="https://picsum.photos/200/300" alt="Photo de l'utilisateur" class="avatar">
+    <div class="feed-content">
+      <span class="text-small">Il y a 5 jours</span>
+      <p><span class="bold">Thierry</span> vous suit !</p>
+    </div>
+
 
 </div>

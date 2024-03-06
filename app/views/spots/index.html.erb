@@ -1,0 +1,30 @@
+<h1>Top 5 des mieux notés</h1>
+
+  <% @top_spots.each do |spot| %>
+<div class="card-product mb-3">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= spot.name %>
+             <p><%= spot.description %>
+                <% Review.average_rating(spot).to_i.times do %>
+              <span class="glyphicon glyphicon-star"></span>
+            <% end %>
+          <%= link_to "Voir plus d'infos", spot_path(spot) %>
+      </div>
+  </div>
+<% end %>
+
+<h1>Tous les Spots</h1>
+<%= link_to "Back to Home Page", root_path %>
+<ul>
+  <% @spots.each do |spot| %>
+    <div class="card-product mb-3">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= spot.name %></h2>
+          <p><%= spot.description %></p>
+        <%= link_to "Voir plus d'infos", spot_path(spot) %>
+      </div>
+    </div>
+  <% end %>
+</ul>
