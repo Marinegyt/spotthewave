@@ -1,0 +1,12 @@
+<h1>Index_Spots</h1>
+<%= link_to "Back to Home Page", root_path %>
+
+<% @spots.each do |spot| %>
+  <%= spot.name %>
+  Description:<%= spot.description %>
+  <%= spot.address %>
+  e:<%= spot.city %>
+  Difficulté: <%= spot.difficulty %>
+  Latitude: <%= spot.latitude %>
+  Longitude: <%= spot.longitude %>
+<% end %>
