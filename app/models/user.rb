@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reviews
   has_many :bookmarks
+  has_many :favorites, through: :bookmarks, source: :spot
   has_many :photos
   has_many :follows_as_followers, foreign_key: :follower_id, class_name: "Follow"
   has_many :follows_as_followeds, foreign_key: :followed_id, class_name: "Follow"

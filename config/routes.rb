@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'favorites/index'
   devise_for :users
   root to: "pages#home"
   get 'draft', to: 'pages#draft'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
     resources :bookmarks, only: %i[new create destroy]
     resources :photos, only: %i[new create destroy]
   end
+  resources :favorites, only: %i[index]
   resources :follows, only: %i[create destroy]
   resource :profile, only: %i[show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

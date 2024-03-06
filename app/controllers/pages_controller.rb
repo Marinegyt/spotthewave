@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def draft
+    @spots = Spot.all
   end
-
 end
