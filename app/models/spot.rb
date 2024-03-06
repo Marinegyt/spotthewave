@@ -9,7 +9,4 @@ class Spot < ApplicationRecord
 
   validates :description, presence: true
   validates :city, presence: true
-
-  DIFFICULTY = ['Facile', 'Modéré', 'Difficile']
-  validates :difficulty, inclusion: { in: DIFFICULTY }
 end
