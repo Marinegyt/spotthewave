@@ -1,2 +1,26 @@
 <h1>Brouillon</h1>
 <%= cl_image_tag Spot.first.photo.key, height: 300, width: 400, crop: :fill %>
+
+<h2>Feed card simple</h2>
+<div class="feed-card">
+  <img src="https://picsum.photos/200/300" alt="Photo de l'utilisateur" class="avatar">
+  <div class="feed-content">
+    <span class="text-small">Il y a 5 jours</span>
+    <p><span class="bold">Thierry</span> a surfé à <span class="bold">Plage de Trebeurden</span></p>
+  </div>
+</div>
+
+<br>
+<br>
+
+<h2>Feed card simple avec image</h2>
+<div class="feed-card">
+    <img src="https://picsum.photos/200/300" alt="Photo de l'utilisateur" class="avatar">
+  <div class="feed-content">
+    <span class="text-small">Il y a 5 jours</span>
+    <p><span class="bold">Thierry</span> a posté une nouvelle photo de <span class="bold">Plage de Trébeurden</span></p>
+    <br>
+    <img src="https://picsum.photos/200/300" alt="nouvelle photo de la plage de Trebeurden"
+  </div>
+
+</div>
