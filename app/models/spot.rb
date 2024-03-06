@@ -9,4 +9,5 @@ class Spot < ApplicationRecord
 
   validates :description, presence: true
   validates :city, presence: true
+
 end
