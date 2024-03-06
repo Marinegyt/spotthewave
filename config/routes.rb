@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get 'draft', to: 'pages#draft'
   resources :spots, only: %i[index show] do
     resources :reviews, only: %i[new create update destroy]
     resources :bookmarks, only: %i[new create destroy]
