@@ -1,5 +1,14 @@
 .feed-card {
   display:flex;
   gap: 12px;
+}
 
+.new-photo {
+ border-radius: $border-radius-lg;
+}
+
+.feed-rating {
+  border-color: $blue-500;
+  border-radius: 20%;
+  padding: 20px;
 }
