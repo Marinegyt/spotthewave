@@ -4,6 +4,12 @@ class Spot < ApplicationRecord
   has_many :photos
   has_one_attached :photo
 
+  # geocoded_by :address
+  # after_validation :geocode, if: :address_changed?
+
+  validates :description, presence: true
+  validates :city, presence: true
+
   DIFFICULTY = ['Facile', 'Modéré', 'Difficile']
   validates :difficulty, inclusion: { in: DIFFICULTY }
 end
