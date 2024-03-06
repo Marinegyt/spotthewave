@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'favorites/index'
   devise_for :users
   root to: "pages#home"
   get 'draft', to: 'pages#draft'
