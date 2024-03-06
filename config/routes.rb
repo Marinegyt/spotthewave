@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get 'draft', to: 'pages#draft'
   resources :spots, only: %i[index show] do
+    collection do
+      get :top
+    end
     resources :reviews, only: %i[new create update destroy]
     resources :bookmarks, only: %i[new create destroy]
     resources :photos, only: %i[new create destroy]
