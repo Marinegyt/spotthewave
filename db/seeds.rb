@@ -33,7 +33,7 @@ puts 'Création de nouveaux spots...'
   city: 'Saint-Lunaire',
   difficulty: Spot::DIFFICULTY[1]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647205/assets/seed/Longchamps.jpg')
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Longchamps'))
 @spot1.photo.attach(io: file, filename: 'longchamps.jpg', content_type: 'image/jpg')
 @spot1.save!
 
@@ -44,7 +44,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647205/a
   city: 'Saint-Malo',
   difficulty: Spot::DIFFICULTY[0]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647213/assets/seed/Le%20Sillon.jpg')
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Le%20Sillon'))
 @spot2.photo.attach(io: file, filename: 'le_sillon.jpg', content_type: 'image/jpg')
 @spot2.save!
 
@@ -55,7 +55,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647213/a
   city: 'Landunvez',
   difficulty: Spot::DIFFICULTY[0]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647226/assets/seed/Penfoul.jpg')
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Penfoul'))
 @spot3.photo.attach(io: file, filename: 'penfoul.jpg', content_type: 'image/jpg')
 @spot3.save!
 
@@ -66,7 +66,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647226/a
   city: 'Crozon',
   difficulty: Spot::DIFFICULTY[1]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647233/assets/seed/Lostmarc%E2%80%99h.jpg')
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Lostmarc%E2%80%99h'))
 @spot4.photo.attach(io: file, filename: 'lostmarch.jpg', content_type: 'image/jpg')
 @spot4.save!
 
@@ -77,7 +77,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647233/a
   city: 'Plomeur',
   difficulty: Spot::DIFFICULTY[0]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647245/assets/seed/La%20Torche.jpg')
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/La%20Torche'))
 @spot5.photo.attach(io: file, filename: 'la_torche.jpg', content_type: 'image/jpg')
 @spot5.save!
 
@@ -88,7 +88,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647245/a
   city: 'Plogoff',
   difficulty: Spot::DIFFICULTY[1]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647252/assets/seed/Baie%20des%20Tr%C3%A9pass%C3%A9s.jpg')
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Baie%20des%20Tr%C3%A9pass%C3%A9s'))
 @spot6.photo.attach(io: file, filename: 'baie_des_trepasses.jpg', content_type: 'image/jpg')
 @spot6.save!
 
@@ -99,7 +99,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647252/a
   city: 'Plouharnel',
   difficulty: Spot::DIFFICULTY[0]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647256/assets/seed/Sainte-Barbe.jpg')
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Sainte-Barbe'))
 @spot7.photo.attach(io: file, filename: 'sainte_barbe.jpg', content_type: 'image/jpg')
 @spot7.save!
 
@@ -110,7 +110,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647256/a
   city: 'Saint-Pierre-Quiberon',
   difficulty: Spot::DIFFICULTY[2]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647263/assets/seed/Port%20Rhu.jpg')
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Port%20Rhu'))
 @spot8.photo.attach(io: file, filename: 'port_rhu.jpg', content_type: 'image/jpg')
 @spot8.save!
 
@@ -121,7 +121,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647263/a
   city: 'Belle-île-en-Mer',
   difficulty: Spot::DIFFICULTY[1]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647272/assets/seed/Donnant.jpg')
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Donnant'))
 @spot9.photo.attach(io: file, filename: 'donnant.jpg', content_type: 'image/jpg')
 @spot9.save!
 
@@ -132,9 +132,32 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647272/a
   city: 'Perros-Guirec',
   difficulty: Spot::DIFFICULTY[1]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647283/assets/seed/Trestaou.jpg')
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Trestaou'))
 @spot10.photo.attach(io: file, filename: 'trestaou.jpg', content_type: 'image/jpg')
 @spot10.save!
+
+@spot11 = Spot.new(
+  name: "Los Lances",
+  description: "La Costa de la Luz (Andalousie) abrite des spots parmi les meilleurs d’Europe. La plage de Los Lances, à Tarifa en fait partie. Les vagues, moyennes, sont idéales pour s’initier ou pour se perfectionner. Allez-y à n’importe quel moment de l’année : la plage est aussi vaste que magnifique.",
+  address: "Avenida de los Lances, 11380 Tarifa, Cadix, Espagne",
+  city: 'Tarifa',
+  difficulty: Spot::DIFFICULTY[0]
+  )
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Los_Lances'))
+@spot11.photo.attach(io: file, filename: 'los_lances.jpg', content_type: 'image/jpg')
+@spot11.save!
+
+@spot12 = Spot.new(
+  name: "Rarawa Beach",
+  description: "Au sud de Great Exhibition Bay dans le nord du Northland, Rarawa Beach est une belle plage de sable blanc sur le Pacifique. Il y a plusieurs endroits où il est possible de surfer, avec de belles vagues que ce soit à marée basse ou haute. C’est une plage sympathique accessible à tous les niveaux de surfers.",
+  address: "Northland 0484, Nouvelle-Zélande",
+  city: 'Great Exhibition Bay (Nouvelle-Zélande)',
+  difficulty: Spot::DIFFICULTY[0]
+  )
+file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Rarawa_Beach'))
+@spot11.photo.attach(io: file, filename: 'rarawa_beach.jpg', content_type: 'image/jpg')
+@spot11.save!
+
 puts "Spots créés!"
 
 puts "Création de nouvelles évaluations..."
