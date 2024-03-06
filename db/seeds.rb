@@ -33,7 +33,7 @@ puts 'Création de nouveaux spots...'
   city: 'Saint-Lunaire',
   difficulty: Spot::DIFFICULTY[1]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647205/Longchamps.jpg')
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647205/assets/seed/Longchamps.jpg')
 @spot1.photo.attach(io: file, filename: 'longchamps.jpg', content_type: 'image/jpg')
 @spot1.save!
 
@@ -44,7 +44,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647205/L
   city: 'Saint-Malo',
   difficulty: Spot::DIFFICULTY[0]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647213/Le%20Sillon.jpg')
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647213/assets/seed/Le%20Sillon.jpg')
 @spot2.photo.attach(io: file, filename: 'le_sillon.jpg', content_type: 'image/jpg')
 @spot2.save!
 
@@ -55,7 +55,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647213/L
   city: 'Landunvez',
   difficulty: Spot::DIFFICULTY[0]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647226/Penfoul.jpg')
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647226/assets/seed/Penfoul.jpg')
 @spot3.photo.attach(io: file, filename: 'penfoul.jpg', content_type: 'image/jpg')
 @spot3.save!
 
@@ -66,7 +66,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647226/P
   city: 'Crozon',
   difficulty: Spot::DIFFICULTY[1]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647233/Lostmarc%E2%80%99h.jpg')
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647233/assets/seed/Lostmarc%E2%80%99h.jpg')
 @spot4.photo.attach(io: file, filename: 'lostmarch.jpg', content_type: 'image/jpg')
 @spot4.save!
 
@@ -77,7 +77,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647233/L
   city: 'Plomeur',
   difficulty: Spot::DIFFICULTY[0]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647245/La%20Torche.jpg')
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647245/assets/seed/La%20Torche.jpg')
 @spot5.photo.attach(io: file, filename: 'la_torche.jpg', content_type: 'image/jpg')
 @spot5.save!
 
@@ -88,7 +88,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647245/L
   city: 'Plogoff',
   difficulty: Spot::DIFFICULTY[1]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647252/Baie%20des%20Tr%C3%A9pass%C3%A9s.jpg')
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647252/assets/seed/Baie%20des%20Tr%C3%A9pass%C3%A9s.jpg')
 @spot6.photo.attach(io: file, filename: 'baie_des_trepasses.jpg', content_type: 'image/jpg')
 @spot6.save!
 
@@ -99,7 +99,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647252/B
   city: 'Plouharnel',
   difficulty: Spot::DIFFICULTY[0]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647256/Sainte-Barbe.jpg')
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647256/assets/seed/Sainte-Barbe.jpg')
 @spot7.photo.attach(io: file, filename: 'sainte_barbe.jpg', content_type: 'image/jpg')
 @spot7.save!
 
@@ -110,7 +110,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647256/S
   city: 'Saint-Pierre-Quiberon',
   difficulty: Spot::DIFFICULTY[2]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647263/Port%20Rhu.jpg')
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647263/assets/seed/Port%20Rhu.jpg')
 @spot8.photo.attach(io: file, filename: 'port_rhu.jpg', content_type: 'image/jpg')
 @spot8.save!
 
@@ -121,7 +121,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647263/P
   city: 'Belle-île-en-Mer',
   difficulty: Spot::DIFFICULTY[1]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647272/Donnant.jpg')
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647272/assets/seed/Donnant.jpg')
 @spot9.photo.attach(io: file, filename: 'donnant.jpg', content_type: 'image/jpg')
 @spot9.save!
 
@@ -132,7 +132,7 @@ file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647272/D
   city: 'Perros-Guirec',
   difficulty: Spot::DIFFICULTY[1]
   )
-file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647283/Trestaou.jpg')
+file = URI.open('https://res.cloudinary.com/djolwxrtw/image/upload/v1709647283/assets/seed/Trestaou.jpg')
 @spot10.photo.attach(io: file, filename: 'trestaou.jpg', content_type: 'image/jpg')
 @spot10.save!
 puts "Spots créés!"
