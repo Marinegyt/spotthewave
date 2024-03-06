@@ -150,6 +150,7 @@ puts "Spots créés!"
 
 puts "Création de nouvelles évaluations..."
 Review.create!(content:"Mon spot préféré, un pur bonheur de glisse", spot:@spot6, user:@user_marine, rate:5, difficulty: 2)
+Review.create!(content:"Mon spot détesté, un pur malheur de glisse", spot:@spot6, user:@user_mathieu, rate:1, difficulty: 3)
 Review.create!(content:"Je me suis pété le nez sur ma planche en attaquant une vague trop grosse. J'y retournerai pour me venger.", spot:@spot8, user:@user_mathieu, rate:3, difficulty: 3)
 Review.create!(content:"J'y suis allé avec mon fils, très bonne entrée en matière. La plage est un peu salle.", spot:@spot7, user:@user_cedric, rate:4, difficulty: 1)
 Review.create!(content:"Difficile de surfer parmi les baigneurs, mais un plaisir en basse saison", spot:@spot1, user:@user_kelly, rate:4, difficulty: 2)
