@@ -10,16 +10,18 @@
   object-fit: cover;
 }
 
-.card-spot-summary h2 {
+.card-spot-summary h3 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: $blue-800
 }
 
 .card-spot-summary p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  color: $blue-600;
 }
 
 
@@ -36,4 +38,14 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.weather-over {
+  position: absolute;
+  top: 212px;
+  right: 8px;
+  background-color: $blue-100;
+  padding: 10px;
+  border-radius: 5px;
+  color: $blue-500;
 }
