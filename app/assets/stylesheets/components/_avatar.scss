@@ -1,6 +1,7 @@
 .avatar {
   width: 40px;
   height: 40px;
+  min-width: 40px;
   border-radius: 50%;
   display:flex;
   align-items: center;
@@ -28,4 +29,18 @@
   display:flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    animation: rotateShake 1s infinite alternate-reverse;
+    animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550)  ;
+  }
+}
+
+@keyframes rotateShake {
+  0% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
 }
