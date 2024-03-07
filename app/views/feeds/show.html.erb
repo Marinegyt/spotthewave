@@ -1,0 +1,14 @@
+<h1>Feeds#index</h1>
+<p>Find me in app/views/feeds/index.html.erb</p>
+<% render "shared/navbar" %>
+<ul>
+  <% @feed.first(10).each do |feed_element| %>
+    <% content = feed_element.feed_content %>
+    <% if content[:description].present? %>
+      <li><%= content[:description] %></li>
+    <% end %>
+    <% if content[:image_tag].present? %>
+      <li><%= cl_image_tag content[:image_tag] %></li>
+    <% end %>
+  <% end %>
+</ul>
