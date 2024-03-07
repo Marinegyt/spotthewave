@@ -5,23 +5,38 @@
 </div>
 
 <h1>Top 5 des mieux notés</h1>
-
-  <% @top_spots.each do |spot| %>
-<div class="card-product mb-3">
-      <%= link_to "", spot_path(spot) %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <h2><%= spot.name %>
-             <p><%= spot.description %></p>
-                <% Review.average_rating(spot).to_i.times do %>
-              <span class="glyphicon glyphicon-star"></span>
-            <% end %>
+<% @top_spots.each do |spot| %>
+ <%= link_to "", spot_path(spot) %>
+  <div class="card mb-3 position-relative">
+    <%= cl_image_tag spot.photo.key %>
+      <div class="weather-over">
+        <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
+          </div>
+             <div class="card-body d-flex flex-column">
+               <div class="d-flex justify-content-between">
+                 <h3><%= spot.name %></h3>
+                  <div class="d-flex align-items-center">
+                    <p class="mx-1"></p>
+                       <%= image_tag('icons/star-fill.svg') %>
+                            </div>
+                              </div>
+                          <p class="mb-2"><%= spot.address %></p>
+                        <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-column">
+                    <p class="overtitre" >DISTANCE</p>
+                  <p>5 km</p>
+              </div>
+            <div>
+          <p class="overtitre">DÉBUTANT</p>
+        </div>
       </div>
+    </div>
   </div>
-<% end %>
+  <% end %>
+
+
 
 <h1>Tous les Spots</h1>
-<%= link_to "Back to Home Page", root_path %>
 <ul>
   <% @spots.each do |spot| %>
     <div class="card-product mb-3">
