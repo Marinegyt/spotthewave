@@ -17,7 +17,7 @@ User.destroy_all
 puts "Données effacées!"
 
 puts "Création de nouveaux utilisateurs..."
-@user_marine = User.create!(nickname: "MarineG", email: "marineG@wave.com", password: "123456")
+@user_marine = User.create!(nickname: "MarineG", email: "marineG@wave.com", password: "123456", latitude:47.48333, longitude: -3.11667)
 @user_perrine = User.create!(nickname: "PerrineG", email: "perrineG@wave.com", password: "123456")
 @user_cedric = User.create!(nickname: "CédricM", email: "cedricM@wave.com", password: "123456")
 @user_mathieu = User.create!(nickname: "MathieuR", email: "mathieuP@wave.com", password: "123456")
