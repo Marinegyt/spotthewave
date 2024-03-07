@@ -31,4 +31,8 @@ class Review < ApplicationRecord
 
     ((spot.reviews.sum(:rate).to_f / count) * 2).round / 2.0
   end
+
+  def feed_content
+    return { type: :review, instance: self }
+  end
 end
