@@ -52,6 +52,7 @@ gem 'psych', '~>4.0.3'
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "pundit"
+gem "rails-i18n"
 
 # MY GEMS
 gem "cloudinary"

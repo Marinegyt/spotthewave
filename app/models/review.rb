@@ -4,7 +4,7 @@ class Review < ApplicationRecord
   belongs_to :user
 
   validates :content, presence: true
-  validates :rate, numericality: { only_integer: true }, inclusion: 1..5
+  validates :rate, numericality: true, inclusion: 1..5
 
   def self.average_difficulty(spot)
     count = spot.reviews.count
