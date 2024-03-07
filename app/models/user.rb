@@ -18,15 +18,20 @@ class User < ApplicationRecord
   has_many :followeds, through: :follows_as_followers
 
   def feed
-    followers
-    reviews = []
-    favorites.first(10).each do |spot|
-      reviews << spot.reviews
+    feed = reviews_for_feed + follows_for_feed
+
+    feed.sort do |first_element, second_element|
+      second_element.created_at <=> first_element.created_at
     end
-    return reviews.flatten + followers.first(10)
   end
 
-  def feed_content
-    return { description: "#{nickname} vous suit !" }
+  private
+
+  def reviews_for_feed
+    favorites.order(created_at: :desc).first(10).flat_map(&:reviews)
+  end
+
+  def follows_for_feed
+    follows_as_followeds.order(created_at: :desc).first(10)
   end
 end

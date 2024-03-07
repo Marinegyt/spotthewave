@@ -33,6 +33,6 @@ class Review < ApplicationRecord
   end
 
   def feed_content
-    return { description: content }
+    return { type: :review, instance: self }
   end
 end
