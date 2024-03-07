@@ -1,6 +1,7 @@
 class SpotsController < ApplicationController
   def index
     @spots = Spot.all
+    @spots = Spot.geocoded
     @users = User.all
     @reviews = Review.all
     @top_spots = Spot
