@@ -1,0 +1,8 @@
+<div class="feed-card">
+  <%#= cl_image_tag instance.user.avatar.key %>
+      <img src="https://picsum.photos/200/300" alt="Photo de l'utilisateur" class="avatar">
+    <div class="feed-content">
+      <span class="text-small"><%= instance.created_at %></span>
+      <p><span class="bold"><%= instance.follower.nickname %></span> vous suit !</p>
+    </div>
+</div>
