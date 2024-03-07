@@ -1,15 +1,65 @@
+<div class="card mb-3 position-relative">
+    <%= link_to "Retour en arrière", :back %>
+  <%= cl_image_tag @spot.photo.key %>
+  <div class="card-body d-flex flex-column">
+    <%= link_to spot_path(@spot) do %>
+      <div class="favorite-button">
+        <%= image_tag('icons/heart.svg') %>
+      </div>
+    <% end %>
+
+    <div class="d-flex justify-content-between">
+      <h3><%=@spot.name%></h3>
+      <div class="d-flex align-items-center">
+        <p class="mx-1"><strong><%=@average_rating%> <i class="fa-solid fa-star" style="color: #FFD43B;"></i></strong></p>
+      </div>
+    </div>
+      <p class="mb-2"><%=@spot.address%></p>
+      <p class="mb-3"><%=@spot.description%></p>
+    <div class="d-flex justify-content-between">
+    <div class="d-flex flex-column">
+      <p class="overtitre mb-2" >DISTANCE</p>
+      <p>5 km</p>
+    </div>
+    <div>
+      <p class="overtitre"><%=@average_difficulty%></p>
+    </div>
+    </div>
+  </div>
+</div>
 <div class="container">
-  <div class="card">
-  <%= cl_image_tag @spot.photo.key, class:"card-img-top", alt:"Card image cap"%>
-  <div class="card-body d-flex justify-content-between">
-    <h5 class="card-title"><%=@spot.name%></h5>
-    <p class="card-text"><strong><%=@average_rating%> <i class="fa-solid fa-star" style="color: #FFD43B;"></i></strong></p>
+  <div class="d-flex justify-content-between py-3">
+  <h3>Conditions</h3>
+  <p>Tout voir</p>
   </div>
-   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%=@spot.address%></li>
-    <li class="list-group-item"><%=@spot.description%></li>
-    <li class="list-group-item">Distance</li>
-    <li class="list-group-item">Difficulté : <%=@average_difficulty%></li>
-  </ul>
+ <div class="cards">
+    <div class="card-category">
+  <%= image_tag('icons/sun.svg') %>
+  <h4>18°</h4>
+    </div>
+    <div class="card-category">
+   <%= image_tag('icons/direction.svg') %>
+   <h4>25km/h</h4>
+   <p>N-NW</p>
+    </div>
+
+    <div class="card-category">
+     <%= image_tag('icons/wave.svg') %>
+     <h4>1,5m</h4>
+    </div>
   </div>
+  <ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#" class="tab-underlined active">Avis</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Photos</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Communauté</a>
+  </li>
+</ul>
+ <% @spot.reviews.each do |review| %>
+<%= render "reviews/review_card", review: review %>
+<%end%>
 </div>
