@@ -1,5 +1,4 @@
 class SpotsController < ApplicationController
-
   def index
     @spots = Spot.all
     @users = User.all
@@ -10,12 +9,14 @@ class SpotsController < ApplicationController
                  .group("spots.id")
                  .order("average_ratings DESC")
                  .first(5)
-    # @markers = @users.geocoded.map do |user|
-    #   {
-    #     lat: user.latitude,
-    #     lng: user.longitude
-    #   }
-    # end
+    @markers = @spots.geocoded.map do |spot|
+      {
+        lat: spot.latitude,
+        lng: spot.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {spot: spot}),
+        marker_html: render_to_string(partial: "marker", locals: {spot: spot}),
+      }
+    end
   end
 
   def show
@@ -23,6 +24,4 @@ class SpotsController < ApplicationController
     @average_difficulty = Review.average_difficulty(@spot)
     @average_rating = Review.average_rating(@spot)
   end
-
-
 end
