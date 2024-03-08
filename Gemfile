@@ -58,6 +58,7 @@ gem "rails-i18n"
 gem "cloudinary"
 gem "geocoder"
 gem "faraday"
+gem "pg_search"
 
 group :development, :test do
   gem "dotenv-rails"
