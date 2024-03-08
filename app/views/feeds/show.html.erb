@@ -14,5 +14,23 @@
           instance: feed_element.feed_content[:instance]
         } %>
     <% end %>
+<div class="bg-sand">
+  <div class="container my-3">
+    <% render "shared/navbar" %>
 
+    <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+    <div class="feed">
+      <h1>Votre communauté</h1>
+      <div class="feed-cards">
+        <% @feed.first(10).each do |feed_element| %>
+            <%= render partial: "shared/feed_card_#{feed_element.feed_content[:type]}", locals: {
+              instance: feed_element.feed_content[:instance]
+            } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

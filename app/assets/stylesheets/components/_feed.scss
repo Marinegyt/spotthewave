@@ -1,6 +1,32 @@
+.feed {
+  padding:32px 0;
+}
+
+.feed-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position:relative;
+  z-index: 1;
+}
+
+.feed-cards:before {
+  content: '';
+  width:1px;
+  background:$blue-500;
+  height:100%;
+  position:absolute;
+  left:20px;
+  z-index: -1;
+}
+
 .feed-card {
   display:flex;
   gap: 12px;
+
+  .avatar {
+    border:4px solid $light-beige;
+  }
 }
 
 .new-photo {
