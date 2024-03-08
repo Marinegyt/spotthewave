@@ -127,16 +127,6 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Trestaou'))
 @spot10.save!
 
 @spot11 = Spot.new(
-  name: "Los Lances",
-  description: "La Costa de la Luz (Andalousie) abrite des spots parmi les meilleurs d’Europe. La plage de Los Lances, à Tarifa en fait partie. Les vagues, moyennes, sont idéales pour s’initier ou pour se perfectionner. Allez-y à n’importe quel moment de l’année : la plage est aussi vaste que magnifique.",
-  address: "Avenida de los Lances, 11380 Tarifa, Cadix, Espagne",
-  city: 'Tarifa'
-  )
-file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Los_Lances'))
-@spot11.photo.attach(io: file, filename: 'los_lances.jpg', content_type: 'image/jpg')
-@spot11.save!
-
-@spot12 = Spot.new(
   name: "Rarawa Beach",
   description: "Au sud de Great Exhibition Bay dans le nord du Northland, Rarawa Beach est une belle plage de sable blanc sur le Pacifique. Il y a plusieurs endroits où il est possible de surfer, avec de belles vagues que ce soit à marée basse ou haute. C’est une plage sympathique accessible à tous les niveaux de surfers.",
   address: "Northland 0484, Nouvelle-Zélande",
