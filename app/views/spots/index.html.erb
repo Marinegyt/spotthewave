@@ -1,5 +1,5 @@
 <div class="nav-controls">
-  <!-- Search à faire apparaitre -->
+  <%= render 'shared/searchbar' %>
 
   <div class="nav-buttons">
     <div class="nav-button-active card-shadow"></div>
@@ -27,19 +27,6 @@
       <% @top_spots.each do |spot| %>
       <%= link_to spot_path(spot), class:'card card-shadow' do %>
         <%= cl_image_tag spot.photo.key, class:'card-spot-photo-large' %>
-
-
-<%= render 'shared/searchbar' %>
-
-
-
-<h1>Top 5 des mieux notés</h1>
-  <div class="container fluid ">
- <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-    <% @top_spots.each do |spot| %>
-    <%= link_to spot_path(spot) do %>
-      <div class="card mb-3 position-relative">
-        <%= cl_image_tag spot.photo.key %>
         <div class="weather-over">
           <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
         </div>
@@ -83,6 +70,7 @@
             <div class="card-product-infos">
 
               <h3><%= spot.name %></h3>
+
               <p class="mb-2 text-blue-600"><%= spot.city %></p>
 
               <div class="weather-over">
@@ -94,4 +82,7 @@
       <% end %>
     </div>
   </div>
+</div>
+</div>
+</div>
 </div>
