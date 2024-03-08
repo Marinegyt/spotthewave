@@ -1,0 +1,11 @@
+<%= simple_form_for [@spot, @review], html: {data:{controller:"rating"}} do |f| %>
+  <%= f.input :content, label: "Laissez un message..." %>
+  <%= f.input :rate, as: :hidden, input_html: {data:{rating_target: "rateField"}}%>
+    <div class="my-3">
+      <% Review::AUTHORIZED_RATINGS.each do%>
+        <i data-rating-target="star" data-action="click->rating#rate" class="review-rating far fa-star"></i>
+      <% end %>
+    </div>
+    <%= f.input :difficulty, label: "Difficulté", collection: Review::DIFFICULTIES.keys %>
+    <%= f.submit class: "btn btn-primary", value: "Valider" %>
+  <% end %>

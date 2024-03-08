@@ -4,6 +4,23 @@ class ReviewsController < ApplicationController
     authorize @review
   end
 
+  def create
+    @spot = Spot.find(params[:spot_id])
+    @review = Review.new(review_params)
+    @review.spot = @spot
+    @review.user = current_user
+    if @review.save
+      redirect_to spot_path(@spot)
+    else
+      render "spots/show", status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:content, :rate, :difficulty)
+  end
   # def new
   #   @review = Review.new
   #   authorize @review
