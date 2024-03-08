@@ -1,3 +1,13 @@
+.card {
+  overflow:hidden;
+  padding:0;
+  transition:0.3s;
+}
+
+.card:active {
+  transform: scale(0.95);
+}
+
 .card-spot-summary {
   overflow: hidden;
   background: white;
@@ -42,7 +52,7 @@
 
 .weather-over {
   position: absolute;
-  top: 212px;
+  top: -60px;
   right: 8px;
   background-color: $blue-100;
   padding: 10px;
@@ -52,36 +62,37 @@
 
 .card-product {
   overflow: hidden;
-  height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height:120px;
   display: flex;
   align-items: center;
+  flex-direction: row;
+  gap:12px;
+
+  .card-spot-photo-small {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-weight: bold;
+    margin: 0;
+  }
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  .weather-over {
+    position:initial;
+  }
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
-}
 
 .card-category {
   height: 100px;
@@ -110,4 +121,29 @@ margin-bottom: 4px;
   justify-content: space-evenly;
   grid-gap: 16px;
   margin-bottom: 16px;
+}
+
+.card-spot-photo-large {
+  height: 250px;
+  object-fit: cover;
+}
+
+.scrolling-wrapper{
+	overflow-x: auto;
+  gap: 12px;
+  margin-left: 0px;
+  padding-right:12px;
+
+  .card {
+    width: 90%;
+  }
+  .card-body {
+
+  }
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap:12px;
 }

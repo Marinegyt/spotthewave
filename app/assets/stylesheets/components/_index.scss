@@ -10,10 +10,3 @@
 @import "favorites";
 @import "gallery_wrapper";
 @import "map";
-
-.scrolling-wrapper{
-	overflow-x: auto;
-  .card {
-    margin-right: 1rem;
-  }
-}

@@ -8,18 +8,22 @@ $headers-font: "Kumbh Sans", sans-serif;
 
 
 h1 {
-  font-size: 35px;
-  line-height: 100%;
+  font-size: 35px !important;
+  line-height: 100% !important;
+  font-weight: 700 !important;
 }
 
 h2 {
-  font-size: 18px;
-  line-height: 110%;
+  font-size: 30px !important;
+  line-height: 110% !important;
+  font-weight: 700 !important;
 }
 
 h3 {
-  font-size: 16px;
-  line-height: 130%;
+  font-size: 22px !important;
+  line-height: 130% !important;
+  margin-bottom:0 !important;
+  font-weight: 700 !important;
 }
 
 .bold {
@@ -45,11 +49,15 @@ p {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .text-blue-500 {
   color: $blue-500;
+}
+
+.text-blue-600 {
+  color: $blue-600;
 }
 
 // To use a font file (.woff) uncomment following lines
