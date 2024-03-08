@@ -12,3 +12,11 @@ $sable: #F3D6AC;
 $orange: #F76631;
 $star-yellow: #FFC463;
 $green: #22C55D;
+
+.bg-sand {
+  background-color: $light-beige;
+}
+
+.card-shadow {
+  box-shadow: 0px 5px 8px rgba(0,0,0,0.07), 0px 1px 3px rgba(0,0,0,0.08) ;
+}
