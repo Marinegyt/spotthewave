@@ -17,12 +17,12 @@ User.destroy_all
 puts "Données effacées!"
 
 puts "Création de nouveaux utilisateurs..."
-@user_marine = User.create!(nickname: "MarineG", email: "marineG@wave.com", password: "123456", latitude:47.48333, longitude: -3.11667)
-@user_perrine = User.create!(nickname: "PerrineG", email: "perrineG@wave.com", password: "123456")
-@user_cedric = User.create!(nickname: "CédricM", email: "cedricM@wave.com", password: "123456")
-@user_mathieu = User.create!(nickname: "MathieuR", email: "mathieuP@wave.com", password: "123456")
-@user_kelly = User.create!(nickname: "SlaterKelly", email: "SlaterKelly@surfing.com", password: "123456")
-@user_melanie = User.create!(nickname: "Melanie", email: "Melanie@test.com", password: "123456")
+@user_marine = User.create!(nickname: "MarineG", email: "marine@mail.com", password: "123456", latitude:47.48333, longitude:-3.11667)
+@user_perrine = User.create!(nickname: "PerrineG", email: "perrine@mail.com", password: "123456", latitude:36.1333, longitude:-5.4505)
+@user_cedric = User.create!(nickname: "CédricM", email: "cedric@mail.com", password: "123456", latitude:48.7833, longitude:-3.45)
+@user_mathieu = User.create!(nickname: "MathieuR", email: "mathieu@mail.com", password: "123456", latitude:48.870908, longitude:2.3992345)
+@user_kelly = User.create!(nickname: "SlaterKelly", email: "SlaterKelly@surfing.com", password: "123456", latitude:-34.7957228, longitude:173.1030232)
+@user_melanie = User.create!(nickname: "Melanie", email: "Melanie@test.com", password: "123456", latitude:48.870908, longitude: 2.3992345)
 puts 'Utilisateurs créés !'
 
 puts 'Création de nouveaux spots...'
@@ -156,8 +156,15 @@ Review.create!(content:"J'y suis allé avec mon fils, très bonne entrée en mat
 Review.create!(content:"Difficile de surfer parmi les baigneurs, mais un plaisir en basse saison", spot:@spot1, user:@user_kelly, rate:4, difficulty: 2)
 puts "Évaluations créées!"
 
+puts "Création de bookmarks"
+Bookmark.create!(user:@user_marine, spot: @spot1)
+Bookmark.create!(user:@user_marine, spot: @spot6)
+Bookmark.create!(user:@user_marine, spot: @spot8)
+puts "Bookmarks créés!"
+
 puts "Création d'amis"
 Follow.create!(follower:@user_mathieu, followed: @user_cedric)
+Follow.create!(follower:@user_mathieu, followed: @user_marine)
 Follow.create!(follower:@user_cedric, followed: @user_mathieu)
 Follow.create!(follower:@user_marine, followed: @user_perrine)
 Follow.create!(follower:@user_perrine, followed: @user_kelly)

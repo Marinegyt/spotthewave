@@ -22,7 +22,8 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @review = @spot.reviews
+    @reviews = @spot.reviews
+    @review = Review.new
     @average_difficulty = Review.average_difficulty(@spot)
     @average_rating = Review.average_rating(@spot)
   end
