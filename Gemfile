@@ -57,6 +57,7 @@ gem "rails-i18n"
 # MY GEMS
 gem "cloudinary"
 gem "geocoder"
+gem "faraday"
 
 group :development, :test do
   gem "dotenv-rails"
