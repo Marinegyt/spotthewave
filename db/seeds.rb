@@ -126,16 +126,6 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Trestaou'))
 @spot10.photo.attach(io: file, filename: 'trestaou.jpg', content_type: 'image/jpg')
 @spot10.save!
 
-@spot11 = Spot.new(
-  name: "Rarawa Beach",
-  description: "Au sud de Great Exhibition Bay dans le nord du Northland, Rarawa Beach est une belle plage de sable blanc sur le Pacifique. Il y a plusieurs endroits où il est possible de surfer, avec de belles vagues que ce soit à marée basse ou haute. C’est une plage sympathique accessible à tous les niveaux de surfers.",
-  address: "Northland 0484, Nouvelle-Zélande",
-  city: 'Great Exhibition Bay (Nouvelle-Zélande)'
-  )
-file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Rarawa_Beach'))
-@spot11.photo.attach(io: file, filename: 'rarawa_beach.jpg', content_type: 'image/jpg')
-@spot11.save!
-
 puts "Spots créés!"
 
 puts "Création de nouvelles évaluations..."
