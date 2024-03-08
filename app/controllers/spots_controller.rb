@@ -1,13 +1,13 @@
 class SpotsController < ApplicationController
   def index
+    @spots = Spot.geocoded
+    @users = User.all
+    @reviews = Review.all
     if params[:search].present?
       @spots = Spot.search_by_name_and_city(params[:search])
     else
       @spots = Spot.all
     end
-    @spots = Spot.geocoded
-    @users = User.all
-    @reviews = Review.all
     @top_spots = Spot
                  .joins(:reviews)
                  .select("spots.*, AVG(reviews.rate) AS average_ratings")
