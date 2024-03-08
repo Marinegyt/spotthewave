@@ -29,5 +29,6 @@ class SpotsController < ApplicationController
     @review = @spot.reviews
     @average_difficulty = Review.average_difficulty(@spot)
     @average_rating = Review.average_rating(@spot)
+    # @weather_info = WeatherService.call(@spot.latitude, @spot.longitude)
   end
 end
