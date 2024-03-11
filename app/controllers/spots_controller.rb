@@ -26,6 +26,8 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @distance_from_spot = Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [@spot.latitude, @spot.longitude]).round
+    @user_review = current_user.reviews.find_by(spot: @spot)
     @reviews = @spot.reviews
     @review = Review.new
     @average_difficulty = Review.average_difficulty(@spot)

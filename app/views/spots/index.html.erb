@@ -44,7 +44,7 @@
           <div class="d-flex justify-content-between mt-4">
             <div class="d-flex flex-column gap-2">
               <p class="overtitre text-blue-600" >DISTANCE</p>
-              <p>5 km</p>
+              <p><%= Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [spot.latitude, spot.longitude]).round%>km</p>
             </div>
             <div class="d-flex flex-column gap-2">
               <p class="overtitre text-blue-600" >DIFFICULTE</p>

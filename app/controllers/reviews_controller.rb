@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to spot_path(@spot)
     else
+      flash.now[:alert] = @review.errors.full_messages.join(', ')
       render "spots/show", status: :unprocessable_entity
     end
   end
