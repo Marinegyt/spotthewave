@@ -1,5 +1,9 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = current_user.favorites
+    @spots = current_user.bookmarks.map(&:spot)
+    # current_user.bookmarks.map { |bookmark| bookmark.spot }
+    # current_user.bookmarks.map do
+    #   bookmark.spot
+    # end
   end
 end
