@@ -2,3 +2,15 @@
   background-color: $blue-800;
   color: $white
 }
+
+.back-button {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $light-beige;
+  font-weight: bold;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  }

@@ -7,6 +7,7 @@ class Review < ApplicationRecord
   belongs_to :user
   validates :content, presence: true
   validates :rate, numericality: true, inclusion: { in: AUTHORIZED_RATINGS }
+  validate :unique_review_per_spot
 
   def self.average_difficulty(spot)
     count = spot.reviews.count
@@ -36,5 +37,13 @@ class Review < ApplicationRecord
 
   def feed_content
     return { type: :review, instance: self }
+  end
+
+  private
+
+  def unique_review_per_spot
+    if Review.exists?(user_id: user_id, spot_id: spot_id)
+      errors.add(:base, "Vous ne pouvez pas créer plusieurs évaluations pour le même spot.")
+    end
   end
 end

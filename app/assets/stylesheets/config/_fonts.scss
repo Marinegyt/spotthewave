@@ -5,7 +5,9 @@
 $body-font: "Kumbh Sans", sans-serif;
 $headers-font: "Kumbh Sans", sans-serif;
 
-
+body {
+  color: $blue-800 !important;
+}
 
 h1 {
   font-size: 35px !important;
