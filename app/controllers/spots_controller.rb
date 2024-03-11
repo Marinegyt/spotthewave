@@ -33,6 +33,8 @@ class SpotsController < ApplicationController
     @average_difficulty = Review.average_difficulty(@spot)
     @average_rating = Review.average_rating(@spot)
 
+    @bookmark = current_user.bookmarks.find_by(spot: @spot)
+    # @weather_info = WeatherService.call(@spot.latitude, @spot.longitude)
     # @water_infos = WeatherService.call_water_weather(@spot.latitude, @spot.longitude)
     @days = call_weather(@spot.latitude, @spot.longitude)
   end
@@ -59,4 +61,12 @@ class SpotsController < ApplicationController
   def days
     call_weather(latitude,longitude)
   end
+
+  # private
+
+  # def spot_params
+  #   params.require(:spot).permit(
+  #     bookmark_attributes: %i[spot_id user_id]
+  #   )
+  # end
 end
