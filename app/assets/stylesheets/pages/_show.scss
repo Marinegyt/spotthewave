@@ -41,3 +41,15 @@
   color: $blue-800;
   font-weight: bold;
 }
+
+.spot-review-form {
+  border-radius:$border-radius-lg;
+  background: $blue-100;
+  border:1px solid $blue-200;
+  padding:24px;
+  text-align: center;
+  textarea {
+    min-height: 160px;
+    padding: 20px;
+  }
+}
