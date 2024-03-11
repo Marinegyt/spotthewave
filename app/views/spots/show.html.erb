@@ -1,7 +1,10 @@
-<div class="card mb-3 position-relative">
-    <%= link_to "Retour en arrière", :back %>
-  <%= cl_image_tag @spot.photo.key %>
-  <div class="card-body d-flex flex-column">
+<div class="spot mb-3 position-relative">
+  <%= link_to :back, class:'back-button' do %>
+    <%= image_tag('icons/back.svg')%>
+    <span>Retour</span>
+  <% end %>
+  <%= cl_image_tag @spot.photo.key, class:'spot-photo' %>
+  <div class="spot-body d-flex flex-column">
     <%= link_to spot_path(@spot) do %>
       <div class="favorite-button">
         <%= image_tag('icons/heart.svg') %>
@@ -14,8 +17,8 @@
         <p class="mx-1"><strong><%=@average_rating%> <i class="fa-solid fa-star" style="color: #FFD43B;"></i></strong></p>
       </div>
     </div>
-      <p class="mb-2"><%=@spot.address%></p>
-      <p class="mb-3"><%=@spot.description%></p>
+      <p class="mb-3 text-blue-600"><%=@spot.address%></p>
+      <p class="mb-4"><%=@spot.description%></p>
     <div class="d-flex justify-content-between">
     <div class="d-flex flex-column gap-2">
       <p class="overtitre text-blue-600" >DISTANCE</p>
