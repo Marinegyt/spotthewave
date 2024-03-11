@@ -1,6 +1,12 @@
 .nav-controls {
   padding:16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
+  input {
+    padding-left: 20px;
+  }
 }
 
 .nav-buttons {
