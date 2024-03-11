@@ -10,17 +10,13 @@ export default class extends Controller {
     const text = event.currentTarget.children[0].innerText
     if (text === "Liste") {
       this.mapTarget.classList.add("d-none");
+      this.tabTarget.classList.remove("map-active");
       this.listTarget.classList.remove("d-none");
-      let position = 4
-      const interval = setInterval(() => {
-        position += 4
-        this.tabTarget.style.left = `${position}px`
-      }, 10);
-        clearInterval (interval)
-        position = 20
+
     } else {
       this.mapTarget.classList.remove("d-none");
       this.listTarget.classList.add("d-none");
+      this.tabTarget.classList.add("map-active");
     }
 
 
