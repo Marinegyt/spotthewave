@@ -1,13 +1,49 @@
-<div>
-  <h3>Météo</h3>
-  <% @days.each do |day| %>
-    <div class="d-flex">
-      <p><%= "#{I18n.l(DateTime.parse(day.first["time"]), format: '%a')} #{DateTime.parse(day.first["time"]).day}" %></p>
-      <% day.each do |key, value| %>
-        <div><%= key["time"].split.last %></div>
-        <div><%= image_tag key["condition"]["icon"] %></div>
-        <div><%= "#{key["temp_c"]} C°" %></div>
+<div class="spot-weather-details">
+  <div class="spot-weather-details-meteo">
+    <h3>Météo</h3>
+    <div class="spot-show-meteo-days">
+      <% @days.each do |day| %>
+      <div>
+        <p><%= "#{I18n.l(DateTime.parse(day.first["time"]), format: '%a')} #{DateTime.parse(day.first["time"]).day}" %></p>
+        <div class="spot-weather-details-grid">
+          <% day.each do |key, value| %>
+            <div class="d-flex  flex-column gap-2 align-items-center mt-2 text-center">
+              <div><%= key["time"].split.last %></div>
+              <div><%= image_tag key["condition"]["icon"] %></div>
+              <div class="bold"><%= "#{key["temp_c"]} C°" %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
       <% end %>
     </div>
-  <% end %>
+  </div>
+
+  <div class="spot-weather-details-wind">
+    <h3>Vent</h3>
+
+    <div class="spot-show-meteo-days">
+      <% 7.times.each do |i| %>
+        <div>
+          <p><%= "#{I18n.l(DateTime.new(2024, 3, 11) + i, format: '%a')} #{11 + i}" %></p>
+          <div class="spot-weather-details-grid">
+            <% 24.times.each do |j| %>
+              <% fake_data = {
+                "time" => "2024-03-11 #{j}:00",
+                "direction" => { "icon" => "icons/direction.svg" },
+                "speed" => rand(15..25)
+              } %>
+              <div class="d-flex flex-column gap-2 align-items-center mt-2 text-center">
+                <div><%= fake_data["time"].split.last %></div>
+                <div>
+                  <div style="transform:rotate(<%= rand(0..360)%>deg)" class="weather-wind-icon"><%= image_tag "icons/direction.svg"%></div>
+                </div>
+                <div class="bold"><%= rand(15..25) %>Km/h</div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

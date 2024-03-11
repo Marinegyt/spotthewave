@@ -32,3 +32,63 @@
   color: $blue-800;
   font-weight: bold;
 }
+
+.spot-show-meteo-days {
+  display: flex;
+  gap: 8px;
+  overflow-x: scroll;
+  margin: 16px 0;
+}
+
+
+.spot-details {
+  background: $blue-100;
+  padding:16px;
+  height:217px;
+  overflow: hidden;
+  transition:1s;
+}
+
+.spot-details-open {
+  height:760px;
+}
+
+.spot-details-weather-cards {
+  display:flex;
+  gap:12px;
+  .card-category {
+    flex: 1;
+  }
+}
+
+.spot-weather-details {
+  padding:16px 0;
+  flex-direction: column;
+  gap:16px;
+  display: flex;
+
+
+  .spot-weather-details-meteo, .spot-weather-details-wind {
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    padding:16px;
+    background:$white;
+    border:1px solid $blue-200;
+    border-radius:$border-radius;
+  }
+}
+
+.spot-weather-details-grid {
+  display:flex;
+  gap:12px;
+  div {
+    width: 72px;
+  }
+}
+
+.weather-wind-icon {
+  width: fit-content !important;
+  transform-origin: center center;
+  margin: 0 auto;
+}
