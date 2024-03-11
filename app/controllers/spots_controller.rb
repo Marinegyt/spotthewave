@@ -53,4 +53,8 @@ class SpotsController < ApplicationController
     end
     my_days
   end
+
+  def days
+    call_weather(latitude,longitude)
+  end
 end

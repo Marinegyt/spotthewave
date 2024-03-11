@@ -2,7 +2,12 @@
   <p>Météo</p>
   <% @days.each do |day| %>
     <div>
-      <p><%= day.first["time"] %></p>
+      <p><%= "#{I18n.l(DateTime.parse(day.first["time"]), format: '%a')} #{DateTime.parse(day.first["time"]).day}" %></p>
+      <% day.each do |key, value| %>
+        <div><%= key["time"].split.last %></div>
+        <div><%= key["condition"]["text"] %></div>
+        <div><%= key["temp_c"] %></div>
+      <% end %>
     </div>
   <% end %>
 </div>
