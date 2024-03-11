@@ -17,52 +17,71 @@
       <p class="mb-2"><%=@spot.address%></p>
       <p class="mb-3"><%=@spot.description%></p>
     <div class="d-flex justify-content-between">
-    <div class="d-flex flex-column">
-      <p class="overtitre mb-2" >DISTANCE</p>
-      <p>5 km</p>
+    <div class="d-flex flex-column gap-2">
+      <p class="overtitre text-blue-600" >DISTANCE</p>
+      <p><%=@distance_from_spot%>km</p>
+
     </div>
     <div>
+       <div class="d-flex flex-column gap-2">
+      <p class="overtitre text-blue-600" >DIFFICULTÉ</p>
       <p class="overtitre"><%=@average_difficulty%></p>
+      </div>
     </div>
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="d-flex justify-content-between py-3">
-  <h3>Conditions</h3>
-  <p>Tout voir</p>
-  </div>
- <div class="cards">
-    <div class="card-category">
-  <%= image_tag('icons/sun.svg') %>
-  <h4>18°</h4>
+<div class="container" data-controller="tabs">
+    <div class="d-flex justify-content-between py-3">
+    <h3>Conditions</h3>
+    <p>Tout voir</p>
     </div>
-    <div class="card-category">
-   <%= image_tag('icons/direction.svg') %>
-   <h4>25km/h</h4>
-   <p>N-NW</p>
-    </div>
+  <div class="cards">
+      <div class="card-category">
+    <%= image_tag('icons/sun.svg') %>
+    <h4>18°</h4>
+      </div>
+      <div class="card-category">
+    <%= image_tag('icons/direction.svg') %>
+    <h4>25km/h</h4>
+    <p>N-NW</p>
+      </div>
 
-    <div class="card-category">
-     <%= image_tag('icons/wave.svg') %>
-     <h4>1,5m</h4>
+      <div class="card-category">
+      <%= image_tag('icons/wave.svg') %>
+      <h4>1,5m</h4>
+      </div>
     </div>
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <a class="tab-underlined active" data-tabs-target="tab" data-action="click->tabs#switchTab" data-tab="avis">Avis</a>
+      </li>
+      <li>
+        <a class="tab-underlined" data-tabs-target="tab" data-action="click->tabs#switchTab" data-tab="photos">Photos</a>
+      </li>
+      <li>
+        <a class="tab-underlined" data-tabs-target="tab" data-action="click->tabs#switchTab" data-tab="communaute">Communauté</a>
+      </li>
+    </ul>
+  <div id="avis" class="tab-content active" data-tabs-target="content" data-content="avis">
+  <% @spot.reviews.each do |review| %>
+  <%= render "reviews/review_card", review: review %>
+  <%end%>
+  <% if @user_review %>
+  <p>Vous avez déjà laissé une évaluation pour ce spot.</p>
+<% else %>
+<h3>Nouvelle Évaluation :</h3>
+    <%= render "reviews/review_form", review: @review,  spot: @spot%>
+<% end %>
   </div>
-  <ul class="list-inline tabs-underlined">
-  <li>
-    <a href="#" class="tab-underlined active">Avis</a>
-  </li>
-  <li>
-    <a href="#" class="tab-underlined">Photos</a>
-  </li>
-  <li>
-    <a href="#" class="tab-underlined">Communauté</a>
-  </li>
-</ul>
- <% @spot.reviews.each do |review| %>
-<%= render "reviews/review_card", review: review %>
-<%end%>
-  <h3>Nouvelle Évaluation :</h3>
-  <%= render "reviews/review_form", review: @review,  spot: @spot%>
+  <div id="photos" class="tab-content d-none" data-tabs-target="content" data-content="photos">
+    <h2>Ici il y aura des photos</h2>
+  <!-- Contenu de l'onglet "Photos" -->
+  <!-- Mettez le contenu de l'onglet "Photos" ici -->
+</div>
+<div id="communaute" class="tab-content d-none" data-tabs-target="content" data-content="communaute">
+  <h2>Ici il y aura un feed</h2>
+  <!-- Contenu de l'onglet "Communauté" -->
+  <!-- Mettez le contenu de l'onglet "Communauté" ici -->
 </div>
 </div>

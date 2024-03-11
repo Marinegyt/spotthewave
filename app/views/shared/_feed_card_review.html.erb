@@ -7,11 +7,9 @@
     <div class= "feed-rating">
     <div class="rating">
       <p><span class="bold">Avis sur le spot :</span></p>
-        <%= image_tag('icons/star-fill.svg') %>
-        <%= image_tag('icons/star-fill.svg') %>
-        <%= image_tag('icons/star-fill.svg') %>
-        <%= image_tag('icons/star-fill.svg') %>
-        <%= image_tag('icons/star-fill.svg') %>
+       <% Review::AUTHORIZED_RATINGS.each do |number| %>
+        <i class="fa<%= (number > instance.rate) ? 'r' : 's' %> fa-star"></i>
+      <% end %>
         <p>Niveau de Difficulté : <span class="bold"><%= instance.difficulty %></span></p>
         <br>
         <p><%= instance.content %></p>

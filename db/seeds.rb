@@ -120,7 +120,7 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Longchamps'))
 @spot2 = Spot.new(
   name: "Plage du Sillon",
   description: "Un bon spot de surf pour tous près du centre de Saint-Malo, facilement accessible, trop, diront certains, car la plage est vite saturée. A surfer de préférence en automne, à marée montante.",
-  address: "Chau du Sillon 35400 Saint-Malo, France",
+  address: "Grande Plage du Sillon, 100 Bd Hébert, 35400 Saint-Malo",
   city: 'Saint-Malo'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Le%20Sillon'))
@@ -160,7 +160,7 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/La%20Torche'))
 @spot6 = Spot.new(
   name: "Plage de la Baie des Trépassés",
   description: "Ce beach-break de repli est situé dans un coin sauvage de Bretagne et constitue l’un des sites préférés des surfeurs de la région. De grande vagues qui déroulent sans s’arrêter grâce à un vent Nord-Nord-Ouest puissant, des conditions idéales à marée basse de l’automne au printemps, à marée basse comme à marée haute. Les courants peuvent vous déporter vers les falaises.",
-  address: "18 Plage du Loch, 29770 Plogoff, France",
+  address: "Rte de la Baie, 29770 Plogoff",
   city: 'Plogoff'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Baie%20des%20Tr%C3%A9pass%C3%A9s'))
@@ -180,7 +180,7 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Sainte-Barbe'))
 @spot8 = Spot.new(
   name: "Plage de Port Rhu",
   description: "Le spot le plus délicat à maîtriser de toute la presqu’île de Quiberon. Une mise à l’eau difficile et des vagues puissantes qui peuvent porter vers la falaise. A ne pas mettre entre toutes les planches !",
-  address: "Plage de Port Blanc 56510 Saint-Pierre-Quiberon, France",
+  address: "Rue de Port Rhu, 56510 Saint-Pierre-Quiberon",
   city: 'Saint-Pierre-Quiberon'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Port%20Rhu'))
@@ -190,7 +190,7 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Port%20Rhu'))
 @spot9 = Spot.new(
   name: "Plage du Donnant",
   description: "Un spot qui vaut l’aller-retour en bateau depuis Quiberon ! Un beach-break exposé à la houle avec des vagues de belle taille. Côté positif : des ascenseurs qui vous portent entre deux vagues. Côté négatif : un courant dangereux et la proximité des rochers. Privilégier la marée haute si l’on est débutant. Sinon, se contenter d’admirer depuis la plage : c’est déjà très bien.",
-  address: "Plage du Donnant, Sauzon, France",
+  address: "Plage de Donnant 56360 Sauzon ",
   city: 'Belle-île-en-Mer'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Donnant'))
@@ -210,8 +210,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Trestaou'))
 @spot11 = Spot.new(
   name: "Plage de la Grève Blanche",
   description: "Une plage sauvage et préservée, parfaite pour les surfeurs en quête de tranquillité. Les vagues sont souvent puissantes et régulières, offrant d'excellentes sessions de surf. À marée basse, des bancs de sable se forment, créant des vagues idéales pour les débutants.",
-  address: "Route de la Grève Blanche, 29840 Landunvez, France",
-  city: 'Landunvez'
+  address: "Plage de la Grève Blanche 29880 Plouguerneau",
+  city: 'Plouguerneau'
 )
 file = URI.open("https://picsum.photos/id/12/600/400")
 @spot11.photo.attach(io: file, filename: 'greve_blanche.jpg', content_type: 'image/jpg')
@@ -281,9 +281,9 @@ file = URI.open("https://picsum.photos/id/74/600/400")
 
 @spot18 = Spot.new(
   name: "Plage de la Barre",
-  description: "Une plage familiale à Capbreton, offrant des vagues adaptées à tous les niveaux de surf. Les débutants apprécient les vagues douces et progressives, tandis que les surfeurs confirmés trouvent des sections plus creuses. À marée basse, des bancs de sable se forment, créant des conditions propices au longboard.",
-  address: "Avenue de la Plage, 40130 Capbreton, France",
-  city: 'Capbreton'
+  description: "Une plage familiale à Anglet, offrant des vagues adaptées à tous les niveaux de surf. Les débutants apprécient les vagues douces et progressives, tandis que les surfeurs confirmés trouvent des sections plus creuses. À marée basse, des bancs de sable se forment, créant des conditions propices au longboard.",
+  address: "299 Av. de l'Adour, 64600 Anglet",
+  city: 'Anglet'
 )
 
 file = URI.open("https://picsum.photos/id/77/600/400")
@@ -314,9 +314,9 @@ file = URI.open("https://picsum.photos/id/124/600/400")
 
 @spot21 = Spot.new(
   name: "Plage de la Madrague",
-  description: "Une plage paisible à Saint-Cyr-sur-Mer, offrant des vagues douces et régulières, idéales pour les surfeurs débutants et intermédiaires. Les vagues sont généralement propices à l'apprentissage du surf. À marée basse, des bancs de sable se forment, créant des conditions idéales pour le longboard.",
-  address: "Avenue de la Madrague, 83270 Saint-Cyr-sur-Mer, France",
-  city: 'Saint-Cyr-sur-Mer'
+  description: "Cette vaste plage surveillée située à la périphérie d'Anglet est idéale pour la baignade, le bronzage et le surf.",
+  address: "Plage de la Madrague, Bd des Plages, 64600 Anglet",
+  city: '64600 Anglet'
 )
 
 file = URI.open("https://picsum.photos/id/131/600/400")
@@ -336,9 +336,9 @@ file = URI.open("https://picsum.photos/id/135/600/400")
 
 @spot23 = Spot.new(
   name: "Plage de la Govelle",
-  description: "Une plage isolée à Penestin, offrant des vagues puissantes et régulières. Les surfeurs en quête de tranquillité apprécient cet endroit préservé. À marée basse, des bancs de sable se forment, créant des sections propices aux manoeuvres radicales.",
-  address: "Plage de la Govelle, 56760 Pénestin, France",
-  city: 'Pénestin'
+  description: "Longue étendue de sable fin avec des affleurements rocheux, prisée pour le surf ainsi que la pêche et la baignade à marée basse.",
+  address: "20 Rte de la Govelle, 44740 Batz-sur-Mer",
+  city: 'Batz-sur-Mer'
 )
 
 file = URI.open("https://picsum.photos/id/144/600/400")
@@ -379,10 +379,10 @@ file = URI.open("https://picsum.photos/id/176/600/400")
 @spot26.save!
 
 @spot27 = Spot.new(
-  name: "Plage de la Baie de Tresmeur",
-  description: "Une plage pittoresque à Trégastel, offrant des vagues idéales pour les surfeurs de tous niveaux. Les vagues sont généralement douces et progressives, créant un environnement propice à l'apprentissage du surf. À marée basse, des bancs de sable se forment, offrant des conditions optimales pour le longboard.",
-  address: "Chemin de la Grande Plage, 22730 Trégastel, France",
-  city: "Trégastel"
+  name: "Plage de Tresmeur",
+  description: "Une plage pittoresque à Trébeurden, offrant des vagues idéales pour les surfeurs de tous niveaux. Les vagues sont généralement douces et progressives, créant un environnement propice à l'apprentissage du surf. À marée basse, des bancs de sable se forment, offrant des conditions optimales pour le longboard.",
+  address: "C8 Rue de Traou Meur, 22343 Trébeurden",
+  city: "Trébeurden"
 )
 
 file = URI.open("https://picsum.photos/id/179/600/400")
@@ -485,7 +485,7 @@ followed_users = {}
     content = reviews.sample
     rate = rand(3..5)
     difficulty = rand(1..3)
-    created_at = Faker::Time.between(from: DateTime.now - 1.year, to: DateTime.now)
+    created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
     Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
 end
 
@@ -495,7 +495,7 @@ puts "Création de bookmarks"
 300.times do
   user = users.sample
   spot = spots.sample
-  created_at = Faker::Time.between(from: DateTime.now - 1.year, to: DateTime.now)
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
   Bookmark.create!(user: user, spot: spot, created_at: created_at)
 end
 puts "Bookmarks créés!"
@@ -507,7 +507,7 @@ puts "Création d'amis"
   followed = users.sample
 
   next if follower == followed || followed_users[follower]&.include?(followed)
-  created_at = Faker::Time.between(from: DateTime.now - 1.year, to: DateTime.now)
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
   Follow.create!(follower: follower, followed: followed, created_at: created_at)
 
   followed_users[follower] ||= []
