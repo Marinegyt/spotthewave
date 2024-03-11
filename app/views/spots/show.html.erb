@@ -109,6 +109,7 @@
     <a href="#" class="tab-underlined">Communauté</a>
   </li>
 </ul>
+
  <div id="avis" class="tab-content active" data-tabs-target="content" data-content="avis">
   <% @spot.reviews.each do |review| %>
   <%= render "reviews/review_card", review: review %>

@@ -1,13 +1,17 @@
 
 <div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: spots_path, method: :get, class: "d-flex" do %>
+  <%# <div class="col-sm-8 my-3"> %>
+    <%= form_with url: spots_path, method: :get, class: "simple_form search ", novalidate: "novalidate"  do %>
+      <div class="search-form-control form-group">
       <%= text_field_tag :search,
             params[:search],
-            class: "form-control",
+            class: "form-control string required rounded-pill",
             placeholder: "Rechercher un spot ou une ville"
         %>
-      <%= submit_tag "Recherche", name: "", class: "btn btn-primary" %>
+        <button type="submit" class="btn btn-flat rounded-circle">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     <% end %>
-  </div>
+  <%# </div> %>
 </div>
