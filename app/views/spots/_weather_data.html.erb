@@ -1,12 +1,12 @@
 <div>
-  <p>Météo</p>
+  <h3>Météo</h3>
   <% @days.each do |day| %>
-    <div>
+    <div class="d-flex">
       <p><%= "#{I18n.l(DateTime.parse(day.first["time"]), format: '%a')} #{DateTime.parse(day.first["time"]).day}" %></p>
       <% day.each do |key, value| %>
         <div><%= key["time"].split.last %></div>
-        <div><%= key["condition"]["text"] %></div>
-        <div><%= key["temp_c"] %></div>
+        <div><%= image_tag key["condition"]["icon"] %></div>
+        <div><%= "#{key["temp_c"]} C°" %></div>
       <% end %>
     </div>
   <% end %>
