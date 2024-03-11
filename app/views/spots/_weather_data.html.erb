@@ -1,0 +1,8 @@
+<div>
+  <p>Météo</p>
+  <% @days.each do |day| %>
+    <div>
+      <p><%= day.first["time"] %></p>
+    </div>
+  <% end %>
+</div>
