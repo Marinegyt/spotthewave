@@ -26,13 +26,40 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @distance_from_spot = Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [@spot.latitude, @spot.longitude]).round
+    @user_review = current_user.reviews.find_by(spot: @spot)
     @reviews = @spot.reviews
     @review = Review.new
     @average_difficulty = Review.average_difficulty(@spot)
     @average_rating = Review.average_rating(@spot)
+
     @bookmark = current_user.bookmarks.find_by(spot: @spot)
     # @weather_info = WeatherService.call(@spot.latitude, @spot.longitude)
+    # @water_infos = WeatherService.call_water_weather(@spot.latitude, @spot.longitude)
+    @days = call_weather(@spot.latitude, @spot.longitude)
+  end
 
+  private
+
+  def call_weather(latitude,longitude)
+    url = "http://api.weatherapi.com/v1/forecast.json"
+    params = {
+      q: "#{latitude},#{longitude}",
+      days: 7
+    }
+    key = { key: ENV["WEATHER_API_KEY"] }
+    response = Faraday.get(url, params, key)
+    parsed_response = JSON.parse(response.body)
+
+    my_days = []
+    parsed_response["forecast"]["forecastday"].each do |day|
+      my_days << day["hour"]
+    end
+    my_days
+  end
+
+  def days
+    call_weather(latitude,longitude)
   end
 
   # private

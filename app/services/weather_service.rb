@@ -5,6 +5,7 @@ class WeatherService
     #   lat: latitude,
     #   lng: longitude,
     #   params: "waterTemperature,waveHeight,windDirection,windSpeed"
+    #   end_time: Time.zone.today.to_time + 8.days
     # }
     # headers = {"Authorization" => ENV["STORMYGLASS_API_KEY"]}
     # response = Faraday.get(url, params, headers)
@@ -21,6 +22,7 @@ class WeatherService
       my_data = {}
       hour.each do |key, value|
         next if key == "time"
+
         my_data[key] = value["noaa"]
       end
       my_hours << my_data
@@ -28,8 +30,21 @@ class WeatherService
     my_hours
   end
 
-  def call_weather(latitude,longitude)
+  # def call_weather(latitude,longitude)
+  def call_weather(latitude, longitude)
+    url = "http://api.weatherapi.com/v1/forecast.json"
+    params = {
+      q: "#{latitude},#{longitude}",
+      days: 7
+    }
+    key = { key: ENV["WEATHER_API_KEY"] }
+    response = Faraday.get(url, params, key)
+    parsed_response = JSON.parse(response.body)
 
+    my_days = []
+    parsed_response["forecast"]["forecastday"].each do |day|
+      my_days << day["hour"]
+    end
+    p my_days
   end
-
 end
