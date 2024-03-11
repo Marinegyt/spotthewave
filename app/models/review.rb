@@ -1,10 +1,13 @@
 class Review < ApplicationRecord
-  enum difficulty: { débutant: 1, confirmé: 2, expert: 3 }
+  AUTHORIZED_RATINGS = (1..5)
+  DIFFICULTIES = { débutant: 1, confirmé: 2, expert: 3 }
+  enum difficulty: DIFFICULTIES
+
   belongs_to :spot
   belongs_to :user
-
   validates :content, presence: true
-  validates :rate, numericality: true, inclusion: 1..5
+  validates :rate, numericality: true, inclusion: { in: AUTHORIZED_RATINGS }
+  validate :unique_review_per_spot
 
   def self.average_difficulty(spot)
     count = spot.reviews.count
@@ -34,5 +37,13 @@ class Review < ApplicationRecord
 
   def feed_content
     return { type: :review, instance: self }
+  end
+
+  private
+
+  def unique_review_per_spot
+    if Review.exists?(user_id: user_id, spot_id: spot_id)
+      errors.add(:base, "Vous ne pouvez pas créer plusieurs évaluations pour le même spot.")
+    end
   end
 end

@@ -6,9 +6,9 @@
   <div class="d-flex align-items-end bd-highlight">
       <span class="text-small p-1 bd-highlight"><%= review.user.nickname%></span>
       <div class="rating p-1 bd-highlight">
-        <%  review.rate.to_i.times do  %>
-        <%= image_tag('icons/star-fill.svg') %>
-        <% end %>
+        <% Review::AUTHORIZED_RATINGS.each do |number| %>
+        <i class="fa<%= (number > review.rate) ? 'r' : 's' %> fa-star"></i>
+      <% end %>
       </div>
      <span class="text-small ms-auto p-1 bd-highlight">Il y a <%= time_ago_in_words(review.created_at) %></span>
     </div>
