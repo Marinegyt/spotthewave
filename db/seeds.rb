@@ -117,7 +117,7 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Donnant'))
 @spot9.save!
 
 @spot10 = Spot.new(
-  name: "Trestaou",
+  name: "Trestraou",
   description: "Un bon shore-break assez accessible avec, parfois, de grosses conditions qui satisfont les confirmés et surprennent les débutants. Attention à bien jauger son niveau. Un spot à surfer à marée montante pendant de l’automne au printemps. Parking et douches à proximité. Attention aux galets lors de la mise à l’eau...",
   address: "BD Joseph le Bihan, 22700, Perros-Guirec, France",
   city: 'Perros-Guirec'
