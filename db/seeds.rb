@@ -120,7 +120,7 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Longchamps'))
 @spot2 = Spot.new(
   name: "Plage du Sillon",
   description: "Un bon spot de surf pour tous près du centre de Saint-Malo, facilement accessible, trop, diront certains, car la plage est vite saturée. A surfer de préférence en automne, à marée montante.",
-  address: "Grande Plage du Sillon, 100 Bd Hébert, 35400 Saint-Malo",
+  address: "1B Quai Duguay-Trouin, 35400 Saint-Malo",
   city: 'Saint-Malo'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Le%20Sillon'))
@@ -180,7 +180,7 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Sainte-Barbe'))
 @spot8 = Spot.new(
   name: "Plage de Port Rhu",
   description: "Le spot le plus délicat à maîtriser de toute la presqu’île de Quiberon. Une mise à l’eau difficile et des vagues puissantes qui peuvent porter vers la falaise. A ne pas mettre entre toutes les planches !",
-  address: "Rue de Port Rhu, 56510 Saint-Pierre-Quiberon",
+  address: "Point de vue Surf, Sentier Côtier, 56510 Saint-Pierre-Quiberon, France",
   city: 'Saint-Pierre-Quiberon'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Port%20Rhu'))
@@ -210,7 +210,7 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Trestaou'))
 @spot11 = Spot.new(
   name: "Plage de la Grève Blanche",
   description: "Une plage sauvage et préservée, parfaite pour les surfeurs en quête de tranquillité. Les vagues sont souvent puissantes et régulières, offrant d'excellentes sessions de surf. À marée basse, des bancs de sable se forment, créant des vagues idéales pour les débutants.",
-  address: "Plage de la Grève Blanche 29880 Plouguerneau",
+  address: "172 Penn Ar Strejou, 29880 Plouguerneau",
   city: 'Plouguerneau'
 )
 file = URI.open("https://picsum.photos/id/12/600/400")
@@ -314,9 +314,9 @@ file = URI.open("https://picsum.photos/id/124/600/400")
 
 @spot21 = Spot.new(
   name: "Plage de la Madrague",
-  description: "Cette vaste plage surveillée située à la périphérie d'Anglet est idéale pour la baignade, le bronzage et le surf.",
-  address: "Plage de la Madrague, Bd des Plages, 64600 Anglet",
-  city: '64600 Anglet'
+  description: "Cette vaste plage surveillée située à la périphérie de Saint-Cyr-sur-Mer est idéale pour la baignade, le bronzage et le surf.",
+  address: "561 Rte de la Madrague, 83270 Saint-Cyr-sur-Mer",
+  city: 'Saint-Cyr-sur-Mer'
 )
 
 file = URI.open("https://picsum.photos/id/131/600/400")
