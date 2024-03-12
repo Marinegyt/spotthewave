@@ -26,6 +26,10 @@
   top:0;
   left:0;
 }
+
+.mapboxgl-popup {
+  bottom:0;
+}
 .mapboxgl-popup-tip {
 display: none !important;
 }
