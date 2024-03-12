@@ -6,18 +6,18 @@
   <%= cl_image_tag @spot.photo.key, class:'spot-photo' %>
   <div class="spot-body d-flex flex-column">
 
-    <%# if current_user.bookmarks.find_by(spot: @spot) %>
-      <%#= form_with(model: @bookmark, data: {turbo_method: :delete}) do |f| %>
-        <%# <button type= "submit" class="favorite-button">
+    <% if current_user.bookmarks.find_by(spot: @spot) %>
+      <%= form_with(model: @bookmark, data: {turbo_method: :delete}) do |f| %>
+        <% <button type= "submit" class="favorite-button">
         </button> %>
-      <%# end %>
-    <%# else %>
+      <% end %>
+    <% else %>
       <%= form_with(url: spot_bookmarks_path(@spot), method: :post) do |f| %>
         <button type= "submit" class="favorite-button">
           <%= image_tag('icons/heart.svg') %>
         </button>
       <% end %>
-    <%# end %>
+    <% end %>
 
     <div class="d-flex justify-content-between">
       <h3><%=@spot.name%></h3>
@@ -62,7 +62,7 @@
       <h4>1,5m</h4>
     </div>
   </div>
-  <%# <%= render "weather_data" %> %>
+  <%= render "weather_data" %>
 </div>
 
 <div class="container" data-controller="tabs">
