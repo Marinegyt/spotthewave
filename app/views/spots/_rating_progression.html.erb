@@ -1,0 +1,22 @@
+<div class="d-flex container mb-3">
+  <div class="flex-grow-1">
+    <% (1..5).to_a.reverse_each do |rating| %>
+      <div class="row align-items-center">
+        <div class="d-flex col-2 justify-content-end gap-2">
+          <%= rating %> <i class="fas fa-star"></i>
+        </div>
+        <div class="col-8">
+          <% rating_percentage = ((@spot.reviews.where(rate: rating).count.to_f) / (@spot.reviews.count.to_f) * 100).round %>
+          <div class="progress" style="height: 10px;">
+            <div class="progress-bar" role="progressbar" style="width: <%= rating_percentage %>%;" aria-valuenow="<%= rating_percentage %>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="text-center p-3">
+    <span class="display-4 font-weight-bolder"><%= @average_rating %></span><br>
+    <span class="text-black-50">sur 5</span>
+    <p><%= @spot.reviews.count %> avis</p>
+  </div>
+</div>
