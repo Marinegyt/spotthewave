@@ -10,10 +10,11 @@
           <p>Liste</p>
         </div>
       </div>
+      <%= render partial: "shared/searchbar" %>
     </div>
   <%# position fixed NE PAS TOUCHER %>
-  <%= render partial: "shared/searchbar" %>
-  <div class="map" data-toggle-index-target="map"><%= render partial: "shared/map" %></div>
+
+  <div class="map-spots" data-toggle-index-target="map"><%= render partial: "shared/map" %></div>
 
 
   <div data-toggle-index-target="list" class="d-none spot-list-wrapper bg-sand">

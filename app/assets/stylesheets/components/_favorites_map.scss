@@ -1,0 +1,35 @@
+.favorites-map-container{
+  z-index: -1;
+  width: 100%;
+  height: 400px;
+
+  #map {
+    position: relative !important;
+    height: 100%;
+  }
+}
+
+
+.mapboxgl-marker {
+  position: absolute;
+  top:0;
+  left:0;
+}
+.mapboxgl-popup-tip {
+display: none !important;
+}
+
+.mapboxgl-ctrl-logo, .mapboxgl-compact {
+  display: none !important;
+}
+
+.hide-element {
+  height: 0px !important;
+  overflow: hidden;
+}
+
+
+.favorites-spots {
+  margin:24px 0;
+  text-align: center;
+}
