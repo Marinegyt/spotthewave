@@ -1,13 +1,23 @@
-<div class="my_profile mt-3 mr-3">
+<div class="container">
+  <br>
+  <h1>Bienvenue <%= @user.nickname %> !</h1>
+  <br>
+  <h3>Mes infos personnelles :</h3>
+  <p><%= @user.email %></p>
+  <br>
 
-<h1>Bienvenue <%= @user.nickname %> !</h1>
-Mettre photo avatar user
-<br>
-<%# <p>Ma bio : <%= @user.description %></p>
-<h3>Mes infos personnelles :</h3>
-<p><%= @user.email %></p>
-<br>
+  <h3>Mes followers :</h3>
+  <ul>
+    <% @user.followers.each do |follower| %>
+    <li><%= follower.nickname %></li>
+    <% end %>
+  </ul>
 
-<h3>Mes followers:</h3>
-<%# <%= @user.followers %>
+
+  <h3>Suvis</h3>
+  <ul>
+    <% @user.followeds.each do |followed| %>
+    <li><%= followed.nickname %></li>
+    <% end %>
+  </ul>
 </div>
