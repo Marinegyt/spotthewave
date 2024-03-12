@@ -5,5 +5,13 @@ class FavoritesController < ApplicationController
     # current_user.bookmarks.map do
     #   bookmark.spot
     # end
+    @markers = @spots.map do |spot|
+      {
+        lat: spot.latitude,
+        lng: spot.longitude,
+        info_window_html: render_to_string(partial: "spots/info_window", locals: {spot: spot}),
+        marker_html: render_to_string(partial: "spots/marker", locals: {spot: spot}),
+      }
+    end
   end
 end

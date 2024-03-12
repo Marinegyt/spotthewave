@@ -7,7 +7,7 @@
   <div class="spot-body d-flex flex-column">
 
     <% if @bookmark %>
-      <%= link_to spot_bookmark_path(@spot, @bookmark), class: "favorite-button" do %>
+      <%= link_to spot_bookmark_path(@spot, @bookmark), data: {turbo_method: :delete}, class: "favorite-button" do %>
         <%= image_tag('icons/heart.svg') %>
       <% end %>
     <% else %>

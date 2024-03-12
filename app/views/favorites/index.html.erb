@@ -1,4 +1,6 @@
-<div style="mb-3"><h1>Mes <%= @spots.count %> Spots Favoris</h1></div>
+<div style="mb-3 mt-3"><h1>Mes <%= @spots.count %> Spots Favoris</h1></div>
+
+<%= render partial: "shared/map" %>
 
 <% if @spots.any? %>
       <% @spots.each do |spot| %>
