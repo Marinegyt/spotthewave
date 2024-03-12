@@ -11,7 +11,7 @@
         <%= image_tag('icons/heart.svg') %>
       <% end %>
     <% else %>
-    
+
     <%# data controller action à inserer sur le form, data action sur le button : prevent default
     recuperer url (set timeout), execute l'action que dans 5 sec + fecth %>
 
@@ -80,9 +80,14 @@
   </div>
 
   <div id="photos" class="tab-content d-none" data-tabs-target="content" data-content="photos">
-    <h2>Ici il y aura des photos</h2>
     <!-- Contenu de l'onglet "Photos" -->
     <!-- Mettez le contenu de l'onglet "Photos" ici -->
+    <div class="gallery-wrapper">
+      <% @spot.photos.map(&:images).flatten.each_with_index do |photo, index| %>
+        <%= cl_image_tag photo.key, class: "photo#{index + 1}" %>
+      <% end %>
+    </div>
+
   </div>
 
   <div id="communaute" class="tab-content d-none" data-tabs-target="content" data-content="communaute">
@@ -90,4 +95,4 @@
     <!-- Contenu de l'onglet "Communauté" -->
     <!-- Mettez le contenu de l'onglet "Communauté" ici -->
   </div>
-</div>
+  </div>
