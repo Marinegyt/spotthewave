@@ -1,18 +1,19 @@
-<div class= "map-index" data-controller="toggle-index">
-  <div class="nav-controls" >
-    <div class="nav-buttons" >
-      <div class="nav-button-active" data-toggle-index-target="tab"></div>
-      <div class="nav-button" data-action="click->toggle-index#changetabs">
-        <p>Carte</p>
-      </div>
-      <div class="nav-button" data-action="click->toggle-index#changetabs">
-        <p>Liste</p>
+
+  <div class= "map-index" data-controller="toggle-index">
+    <div class="nav-controls" >
+      <div class="nav-buttons" >
+        <div class="nav-button-active" data-toggle-index-target="tab"></div>
+        <div class="nav-button" data-action="click->toggle-index#changetabs">
+          <p>Carte</p>
+        </div>
+        <div class="nav-button" data-action="click->toggle-index#changetabs">
+          <p>Liste</p>
+        </div>
       </div>
     </div>
-  </div>
+
 
   <div class="map" data-toggle-index-target="map"><%= render partial: "shared/map" %></div>
-
   <% render "shared/navbar" %>
 
   <div data-toggle-index-target="list" class="d-none spot-list-wrapper bg-sand">

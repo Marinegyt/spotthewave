@@ -1,10 +1,17 @@
 .mapboxgl-popup {
-  position: fixed;
-  bottom: 30px;
+  position: absolute;
+  top: 30px;
   text-decoration: none;
   border-radius: 4px;
   transform:none !important;
+  padding: 0px !important;
   .h3 {
     font-size: 12px;
   }
+}
+
+.mapboxgl-popup-content{
+  position: relative !important;
+  margin-top: 740px;
+  min-width: 100vw;
 }
