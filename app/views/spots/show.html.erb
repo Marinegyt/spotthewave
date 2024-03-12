@@ -6,13 +6,16 @@
   <%= cl_image_tag @spot.photo.key, class:'spot-photo' %>
   <div class="spot-body d-flex flex-column">
 
+
     <% if @bookmark %>
       <%= link_to spot_bookmark_path(@spot, @bookmark), data: {turbo_method: :delete}, class: "favorite-button" do %>
         <%= image_tag('icons/heart.svg') %>
       <% end %>
     <% else %>
+    
     <%# data controller action à inserer sur le form, data action sur le button : prevent default
     recuperer url (set timeout), execute l'action que dans 5 sec + fecth %>
+
       <%= form_with(url: spot_bookmarks_path(@spot), method: :post) do |f| %>
         <button type= "submit" class="favorite-button">
           <%= image_tag('icons/heart.svg') %>
