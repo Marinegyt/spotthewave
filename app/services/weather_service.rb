@@ -37,6 +37,6 @@ class WeatherService
     parsed_response["forecast"]["forecastday"].each do |day|
       my_days << day["hour"]
     end
-    p my_days
+    my_days
   end
 end
