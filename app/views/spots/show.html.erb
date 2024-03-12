@@ -5,13 +5,15 @@
   <% end %>
   <%= cl_image_tag @spot.photo.key, class:'spot-photo' %>
   <div class="spot-body d-flex flex-column">
-
-    <% if current_user.bookmarks.find_by(spot: @spot) %>
-      <%= form_with(model: @bookmark, data: {turbo_method: :delete}) do |f| %>
-      <button type= "submit" class="favorite-button">
-        </button>
+    <% if @bookmark %>
+      <%= link_to spot_bookmark_path(@spot, @bookmark), data: {turbo_method: :delete}, class: "favorite-button" do %>
+        <%= image_tag('icons/heart.svg') %>
       <% end %>
     <% else %>
+    
+    <%# data controller action à inserer sur le form, data action sur le button : prevent default
+    recuperer url (set timeout), execute l'action que dans 5 sec + fecth %>
+
       <%= form_with(url: spot_bookmarks_path(@spot), method: :post) do |f| %>
         <button type= "submit" class="favorite-button">
           <%= image_tag('icons/heart.svg') %>
@@ -47,21 +49,7 @@
     <h3>Conditions</h3>
     <p data-action="click->show-spot-weather#showWeather">Tout voir</p>
   </div>
-  <div class="spot-details-weather-cards">
-    <div class="card-category">
-      <%= image_tag('icons/sun.svg') %>
-      <h4>18°</h4>
-    </div>
-    <div class="card-category">
-      <%= image_tag('icons/direction.svg') %>
-      <h4>25km/h</h4>
-      <p>N-NW</p>
-    </div>
-    <div class="card-category">
-      <%= image_tag('icons/wave.svg') %>
-      <h4>1,5m</h4>
-    </div>
-  </div>
+  <%= render "weather_summary" %>
   <%= render "weather_data" %>
 </div>
 

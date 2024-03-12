@@ -1,0 +1,29 @@
+<div class="spot-details-weather-cards">
+  <div class="card-category">
+    <% @days.first.each do |key, value| %>
+      <% if DateTime.parse(key["time"]).hour == Time.zone.now.hour %>
+        <%= image_tag key["condition"]["icon"] %>
+        <h4><div class="bold"><%= "#{key["temp_c"]}" %> C°</div></h4>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="card-category">
+    <% @marine_weather.first.each do |key, value| %>
+      <% if DateTime.parse(key["time"]).hour == Time.zone.now.hour %>
+        <%= image_tag('icons/wave.svg') %>
+        <h4><div class="bold"><%= "#{key["waveHeight"]["noaa"]}" %> m</div></h4>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="card-category">
+    <% @marine_weather.first.each do |key, value| %>
+      <% if DateTime.parse(key["time"]).hour == Time.zone.now.hour %>
+        <div style="transform:rotate(<%= key["windDirection"]["noaa"]%>deg)" class="weather-wind-icon"><%= image_tag "icons/direction.svg"%></div>
+        <h4><div class="bold"><%= "#{key["windSpeed"]["noaa"]}" %> Km/h</div></h4>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
