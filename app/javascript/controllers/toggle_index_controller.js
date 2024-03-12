@@ -18,7 +18,7 @@ export default class extends Controller {
 
     } else {
       this.mapTarget.classList.remove("hide-element");
-      this.listTarget.classList.add("hide-element");
+      this.listTarget.classList.add("d-none");
       this.tabTarget.classList.remove("liste-active");
     }
 

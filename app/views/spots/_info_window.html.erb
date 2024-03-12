@@ -1,8 +1,11 @@
-<div class="card-spot-popup">
-  <%= link_to spot_path(spot) do %>
-    <%= spot.name %><br>
-    <%= spot.city %><br>
-    <%= cl_image_tag spot.photo.key, class:"card-spot-photo-small" %>
-  <% end %>
-</div>
+<div class="row">
+  <div class="card-spot-popup">
+    <div class="card-spot-popup-left">
+      <%= link_to spot_path(spot) do %>
+        <h3><%= spot.name %></h3>
+          <p class="text-blue-600"><%= spot.city %></p><br></div>
+      <div class="card-spot-popup-right"><%= cl_image_tag spot.photo.key, class:"card-spot-popup img" %>
+      </div>
+      <% end %>
+  </div>
 </div>

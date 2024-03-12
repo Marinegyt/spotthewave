@@ -1,5 +1,5 @@
 
-  <div class= "map-index" data-controller="toggle-index">
+  <div class= "map-index bg-sand" data-controller="toggle-index">
     <div class="nav-controls" >
       <div class="nav-buttons" >
         <div class="nav-button-active" data-toggle-index-target="tab"></div>
@@ -11,37 +11,12 @@
         </div>
       </div>
     </div>
-
-
+  <%# position fixed NE PAS TOUCHER %>
+  <%= render partial: "shared/searchbar" %>
   <div class="map" data-toggle-index-target="map"><%= render partial: "shared/map" %></div>
-  <% render "shared/navbar" %>
+
 
   <div data-toggle-index-target="list" class="d-none spot-list-wrapper bg-sand">
-    <div class="container fluid py-5">
-      <h2 class="mt-4">Tous les Spots</h2>
-      <div class="cards-wrapper mt-4">
-        <% if @spots.any? %>
-        <% @spots.each do |spot| %>
-          <%= link_to spot_path(spot) do %>
-            <div class="card card-product card-shadow">
-              <%= cl_image_tag spot.photo.key, class:"card-spot-photo-small" %>
-              <div class="card-product-infos">
-
-                <h3><%= spot.name %></h3>
-
-                <p class="mb-2 text-blue-600"><%= spot.city %></p>
-
-                <div class="weather-over">
-                  <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-        <% else %>
-            <em>Pas de spots trouvés !</em>
-          <% end %>
-      </div>
 
 
       <h2 class="mt-4">Les mieux notés par la communauté</h2>
@@ -80,6 +55,31 @@
           </div>
           <% end %>
         <% end %>
+      </div>
+    <div class="container fluid py-5">
+      <h2 class="mt-4">Tous les Spots</h2>
+      <div class="cards-wrapper mt-4">
+        <% if @spots.any? %>
+        <% @spots.each do |spot| %>
+          <%= link_to spot_path(spot) do %>
+            <div class="card card-product card-shadow">
+              <%= cl_image_tag spot.photo.key, class:"card-spot-photo-small" %>
+              <div class="card-product-infos">
+
+                <h3><%= spot.name %></h3>
+
+                <p class="mb-2 text-blue-600"><%= spot.city %></p>
+
+                <div class="weather-over">
+                  <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        <% else %>
+            <em>Pas de spots trouvés !</em>
+          <% end %>
       </div>
     </div>
   </div>

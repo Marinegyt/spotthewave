@@ -1,17 +1,51 @@
 .mapboxgl-popup {
   position: absolute;
-  top: 30px;
+  top: 15%;
+  left: 10px;
   text-decoration: none;
   border-radius: 4px;
   transform:none !important;
   padding: 0px !important;
-  .h3 {
+  .h5 {
     font-size: 12px;
+    margin-bottom: 0.5rem;
   }
 }
 
 .mapboxgl-popup-content{
+  background-color: transparent !important;
   position: relative !important;
-  margin-top: 740px;
+  margin-top: 540px;
   min-width: 100vw;
+  height: 150px;
+  border-radius: 4px;
+}
+
+.card-spot-popup {
+  overflow: hidden;
+  background: white;
+  border-radius: 4px;
+  text-align: center;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-spot-popup img {
+  height: auto;
+  width: 40%;
+  object-fit:cover;
+}
+
+.card-spot-popup h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: $blue-800
+}
+
+.card-spot-popup p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  color: $blue-600;
 }
