@@ -1,23 +1,33 @@
-<div style="mb-3 mt-3"><h1>Mes <%= @spots.count %> Spots Favoris</h1></div>
+<div class="favorites-spots">
+  <h1>Mes <%= @spots.count %> Spots Favoris</h1>
+</div>
 
-<%= render partial: "shared/map" %>
 
-<% if @spots.any? %>
-      <% @spots.each do |spot| %>
-        <%= link_to spot_path(spot) do %>
-          <div class="card card-product card-shadow mb-3">
-            <%= cl_image_tag spot.photo.key, class:"card-spot-photo-small" %>
-            <div class="card-product-infos">
+<div class="map-spots">
+  <div class="popup-favorites">
+    <%= render partial: "shared/map" %>
+  </div>
+</div>
 
-              <h3><%= spot.name %></h3>
+<div class="container">
+  <div class="favorites-list-container">
+    <% if @spots.any? %>
+          <% @spots.each do |spot| %>
+            <%= link_to spot_path(spot) do %>
+              <div class="card card-product card-shadow mb-3">
+                <%= cl_image_tag spot.photo.key, class:"card-spot-photo-small" %>
+                <div class="card-product-infos">
 
-              <p class="mb-2 text-blue-600"><%= spot.city %></p>
+                <h3><%= spot.name %></h3>
+                <p class="mb-2 text-blue-600"><%= spot.city %></p>
 
-              <div class="weather-over">
-                <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
+                <div class="weather-over">
+                  <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
+  </div>
+</div>
