@@ -1,5 +1,5 @@
-<h1>Spot the Wave</h1>
-  <div id="carouselExampleControls" class="carousel slide mb-3" data-bs-ride="carousel">
+<%# <h1>Spot the Wave</h1> %>
+  <%# <div id="carouselExampleControls" class="carousel slide mb-3" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="https://lushpalm.com/wp-content/uploads/2018/09/surfing-california-49.jpg" class="d-block w-100" alt="">
@@ -26,9 +26,9 @@
   <div class="cards">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://c.stocksy.com/a/cRo100/z9/432240.jpg)">
         <%= link_to "Découvrez des spots", spots_path %>
-    </div>
+    <%# </div> %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/ocean/ocean-waves.jpg)">
+    <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/ocean/ocean-waves.jpg)">
         Accédez à la météo et taille des vagues
     </div>
 
@@ -40,4 +40,25 @@
 
   <div class="reviews" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMrLOj92CBFc49MjWXx2uT9Zz8RjYI56i-oQ&usqp=CAU)">
     <h3>Ce que nos utilisateurs en pensent</h3>
+  </div> %>
+
+<div class="home-bg">
+  <%= video_tag "video/Home-video.mp4", autoplay: :autoplay, loop: true, class: "home-bg-video" %>
+  <div class="home-container">
+
+    <div class="logo">ghjk</div>
+    <div class="home-content">
+      <h1>Les spots de surf dans votre poche !</h1>
+      <h3>Découvrez et partagez vos meilleurs spots avec vos potes</h3>
+      <%= render 'shared/searchbar' %>
+    </div>
+    <div class="home-buttons">
+      <% if user_signed_in? %>
+        <%= link_to 'Voir mon feed',"/feed", class:"btn"%>
+      <% else %>
+        <%= link_to 'Se connecter', new_user_session_path, class:"btn"%>
+        <%= link_to 'Créer mon compte', new_user_registration_path, class:"btn btn-secondary"%>
+      <% end %>
+    </div>
   </div>
+</div>
