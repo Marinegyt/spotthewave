@@ -1,8 +1,14 @@
 .favorites-map-container{
   z-index: -1;
-  height: 600px;
   width: 100%;
+  height: 400px;
+
+  #map {
+    position: relative !important;
+    height: 100%;
+  }
 }
+
 
 .mapboxgl-marker {
   position: absolute;
@@ -22,6 +28,8 @@ display: none !important;
   overflow: hidden;
 }
 
-.favorites-list-container {
-  margin-top: 100px;
+
+.favorites-spots {
+  margin:24px 0;
+  text-align: center;
 }
