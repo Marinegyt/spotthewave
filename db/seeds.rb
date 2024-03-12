@@ -575,3 +575,20 @@ followed_users[follower] << followed
 end
 
 puts "Amis créés!"
+
+puts "création des photos"
+
+# sillon_photos = ["https://th.bing.com/th/id/OIP.0YQbmBK_28P0Ee38978KgwHaE8?w=266&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.JkFeh7FVFzwxQe2whgHDOgHaE7?w=236&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.vaqsRmIhnuFcHI_8mF7P4wHaE7?w=243&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.dNf3KYBDg9hE0cFopI_tMQHaE8?w=278&h=185&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.63-nmI3n9CSEig7B01G-OgHaHa?w=195&h=195&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.HQnhLCZZXrZNRRdxUgOj3gHaEK?w=309&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.ufUwgO4yx1Zk8DpQQbMZ5AHaE8?w=272&h=181&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.A1Qef5a1Pndqi0X0R4s_mwHaEK?w=278&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"]
+# sillon_photos.each do |photo|
+#   Photo.create(user: @user_marine , spot: @spot2)
+# end
+
+# la_torche_photos = ["https://th.bing.com/th?id=OIP.TrP9fD29j5OWztIqqYazxwHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.wfhVm3aQcKwByw2RPwYwIAHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.jThtuIeIBh1YXNKTNp21LwHaEF&w=336&h=185&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.92GZV0H7riEilZLpFyUn8wHaE7&w=306&h=203&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.iVNe1ccQ2FR-_WIfE5wsZwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th/id/OIP.MS-DhfMwQ0Ql_FAaEfIIXgHaFj?w=225&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.b4eX6QW4kcKAdMFiXkNlKgHaDf?rs=1&pid=ImgDetMain", "https://th.bing.com/th/id/OIP.YRx2gYKDfsrvrKmrTXNSJAHaFD?w=264&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"]
+# la_torche_photos.each do |photo|
+#   Photo.create(user: @user_marine , spot: @spot5)
+# end
+
+# les_longchamps_photos = ["https://media-cdn.tripadvisor.com/media/photo-o/08/f2/97/17/longchamps-beach.jpg", "https://media-cdn.tripadvisor.com/media/photo-s/08/f2/97/13/longchamps-beach.jpg", "https://media-cdn.tripadvisor.com/media/photo-s/08/f2/97/2b/longchamps-beach.jpg", "https://media-cdn.tripadvisor.com/media/photo-o/08/f2/96/f6/longchamps-beach.jpg", "https://cdt35.media.tourinsoft.eu/upload/LONGCHAMP-2.JPG", "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/77/22/90/longchamps-beach.jpg?w=1200&h=-1&s=1", "https://th.bing.com/th/id/OIP.-j1AspPWMLRMfm_JPch1PwHaDx?w=319&h=177&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.GXmp47zeKLCnVNW6ENY1DgHaE8?w=257&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"]
+# les_longchamps_photos.each do |photo|
+#   Photo.create(user: @user_marine , spot: @spot1)
+# end
