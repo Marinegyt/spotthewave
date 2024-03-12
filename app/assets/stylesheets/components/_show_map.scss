@@ -1,0 +1,49 @@
+#map-show{
+  height: 300px;
+  position: relative;
+  z-index: 0;
+
+    .mapboxgl-canvas {
+      height: 300px;
+    }
+
+ #map {
+   position: absolute;
+   top:0;
+   bottom:0;
+   width:100%;
+ }
+
+ .mapboxgl-canvas-container {
+   height:90vw;
+ }
+
+
+
+ .mapboxgl-marker {
+   position: absolute;
+   top:0;
+   left:0;
+ }
+
+ .mapboxgl-popup {
+   bottom:0;
+ }
+ .mapboxgl-popup-tip {
+ display: none !important;
+ }
+
+ .mapboxgl-ctrl-logo, .mapboxgl-compact {
+   display: none !important;
+ }
+
+ .hide-element {
+   height: 0px !important;
+   overflow: hidden;
+ }
+
+ .mapboxgl-marker img {
+   opacity: 0;
+
+ }
+}

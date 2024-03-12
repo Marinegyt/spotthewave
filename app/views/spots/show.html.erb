@@ -10,7 +10,7 @@
         <%= image_tag('icons/heart.svg') %>
       <% end %>
     <% else %>
-    
+
     <%# data controller action à inserer sur le form, data action sur le button : prevent default
     recuperer url (set timeout), execute l'action que dans 5 sec + fecth %>
 
@@ -84,7 +84,7 @@
     <!-- Mettez le contenu de l'onglet "Photos" ici -->
   </div>
 
-  <div id="map" class="tab-content d-none" data-tabs-target="content" data-content="map">
+  <div id="map-show" class="tab-content d-none" data-tabs-target="content" data-content="map">
     <%= render 'shared/map' %>
     <!-- Contenu de l'onglet "Communauté" -->
     <!-- Mettez le contenu de l'onglet "Communauté" ici -->
