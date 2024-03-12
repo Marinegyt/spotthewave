@@ -142,7 +142,6 @@ GEM
     font-awesome-sass (6.5.1)
       sassc (~> 2.0)
     geocoder (1.8.2)
-    geokit (1.14.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     http-accept (1.7.0)
@@ -344,7 +343,6 @@ DEPENDENCIES
   faraday
   font-awesome-sass (~> 6.1)
   geocoder
-  geokit
   importmap-rails
   jbuilder
   pg (~> 1.1)
