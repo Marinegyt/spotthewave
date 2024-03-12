@@ -60,26 +60,26 @@
       <h2 class="mt-4">Tous les Spots</h2>
       <div class="cards-wrapper mt-4">
         <% if @spots.any? %>
-        <% @spots.each do |spot| %>
-          <%= link_to spot_path(spot) do %>
-            <div class="card card-product card-shadow">
-              <%= cl_image_tag spot.photo.key, class:"card-spot-photo-small" %>
-              <div class="card-product-infos">
+          <% @spots.each do |spot| %>
+            <%= link_to spot_path(spot) do %>
+              <div class="card card-product card-shadow">
+                <%= cl_image_tag spot.photo.key, class:"card-spot-photo-small" %>
+                <div class="card-product-infos">
 
-                <h3><%= spot.name %></h3>
+                  <h3><%= spot.name %></h3>
 
-                <p class="mb-2 text-blue-600"><%= spot.city %></p>
+                  <p class="mb-2 text-blue-600"><%= spot.city %></p>
 
-                <div class="weather-over">
-                  <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
+                  <div class="weather-over">
+                    <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
-        <% end %>
         <% else %>
-            <em>Pas de spots trouvés !</em>
-          <% end %>
+          <em>Pas de spots trouvés !</em>
+        <% end %>
       </div>
     </div>
   </div>
