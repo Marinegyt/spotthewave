@@ -25,6 +25,7 @@ class SpotsController < ApplicationController
   end
 
   def show
+    @spots = Spot.geocoded
     @spot = Spot.find(params[:id])
     @distance_from_spot = Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [@spot.latitude, @spot.longitude]).round
     @user_review = current_user.reviews.find_by(spot: @spot)
@@ -38,6 +39,14 @@ class SpotsController < ApplicationController
     # @water_infos = WeatherService.call_water_weather(@spot.latitude, @spot.longitude)
     @days = call_weather(@spot.latitude, @spot.longitude)
     @marine_weather = call_water_weather(@spot.latitude, @spot.longitude)
+    @markers = @spots.select {|spot| spot.id == @spot.id}.map do |spot|
+      {
+        lat: spot.latitude,
+        lng: spot.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {spot: spot}),
+        marker_html: render_to_string(partial: "marker", locals: {spot: spot}),
+      }
+    end
   end
 
   private
