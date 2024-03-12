@@ -1,20 +1,63 @@
-
 .map {
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   width: 100%;
+   height: 100vh !important;
+   width:100%;
+   position: relative;
+   z-index: 0;
 }
 
-.mapboxgl-popup {
-  max-width: 200px;
+#map {
+  position: absolute;
+  top:0;
+  bottom:0;
+  width:100%;
+ }
+
+ .mapboxgl-canvas-container {
+  height:90vw;
+ }
+
+
+.mapboxgl-canvas {
+  height:100vh !important;
 }
 
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
+.mapboxgl-marker {
+  position: absolute;
+  top:0;
+  left:0;
+}
+.mapboxgl-popup-tip {
+display: none !important;
 }
 
 .mapboxgl-ctrl-logo, .mapboxgl-compact {
   display: none !important;
+}
+
+.hide-element {
+  height: 0px !important;
+  overflow: hidden;
+}
+
+.mapboxgl-marker img {
+  opacity: 0;
+
+}
+
+/* Animation */
+@for $i from 1 through 50 {
+  .mapboxgl-marker:nth-child(#{$i}) img {
+    animation: fadeIn 1s;
+    animation-delay: $i * 0.03s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1 ;
+  }
 }
