@@ -1,0 +1,5 @@
+<% @days.first.each do |key, value| %>
+  <% if DateTime.parse(key["time"]).hour == Time.zone.now.hour %>
+    <%= image_tag key["condition"]["icon"] %>
+  <% end %>
+<% end %>

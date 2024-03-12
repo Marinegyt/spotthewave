@@ -16,4 +16,10 @@ class Spot < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  def weather
+    WeatherService.call(self.latitude, self.longitude).first.select do |key, _value|
+      DateTime.parse(key["time"]).hour == Time.zone.now.hour
+    end
+  end
 end
