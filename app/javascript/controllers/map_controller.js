@@ -16,6 +16,7 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    map.addControl(new mapboxgl.ScaleControl());
   }
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {

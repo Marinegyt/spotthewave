@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get :top
     end
     resources :reviews, only: %i[new create update destroy]
-    resources :bookmarks, only: %i[create destroy], shallow: true
+    resources :bookmarks, only: %i[create destroy]
     resources :photos, only: %i[new create destroy]
   end
   resources :favorites, only: %i[index]
