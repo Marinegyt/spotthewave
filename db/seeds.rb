@@ -427,7 +427,7 @@ puts "Spots créés!"
 puts "Création de nouvelles évaluations..."
 # Users
 users = [
-  @user_marine, @user_perrine, @user_cedric, @user_mathieu, @user_kelly,
+  @user_perrine, @user_cedric, @user_mathieu, @user_kelly,
   @user_melanie, @user_john, @user_emily, @user_david, @user_sophia,
   @user_alexander, @user_isabella, @user_michael, @user_sophie, @user_jacob,
   @user_olivia
@@ -435,7 +435,7 @@ users = [
 
 # Spots
 spots = [
-  @spot1, @spot2, @spot3, @spot4, @spot5, @spot6, @spot7, @spot8, @spot9, @spot10,
+  @spot1, @spot2, @spot3, @spot4, @spot5, @spot6, @spot7, @spot8, @spot10,
   @spot11, @spot12, @spot13, @spot14, @spot15, @spot16, @spot17, @spot18, @spot19, @spot20,
   @spot21, @spot22, @spot23, @spot24, @spot25, @spot26, @spot27, @spot28, @spot29, @spot30
 ]
@@ -474,12 +474,25 @@ reviews = [
   "Les vagues peuvent être un peu difficiles parfois, mais quand elles sont bonnes, c'est magique!"
 ]
 followed_users = {}
+20.times do
+  user = users.sample
+  spot = @spot9
+  if Review.exists?(user_id: user.id, spot_id: spot.id)
+    puts "#{user.nickname} a déjà une évaluation pour #{spot.name}. Skipping..."
+    next
+  end
+  content = reviews.sample
+  rate = rand(4..5)
+  difficulty = rand(1..2)
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
+end
 
 100.times do
     user = users.sample
     spot = spots.sample
     if Review.exists?(user_id: user.id, spot_id: spot.id)
-      puts "#{user.nickname} a déjà une évaluation pour #{spot.name}. Ignorer..."
+      puts "#{user.nickname} a déjà une évaluation pour #{spot.name}. Skipping..."
       next
     end
     content = reviews.sample
@@ -492,15 +505,62 @@ end
 puts "Évaluations créées!"
 
 puts "Création de bookmarks"
-300.times do
-  user = users.sample
+
+10.times do
+  user = @user_marine
   spot = spots.sample
   created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
   Bookmark.create!(user: user, spot: spot, created_at: created_at)
 end
+
+100.times do
+  user = users.sample
+  spot = spots.sample
+
+  existing_bookmark = Bookmark.find_by(user: user, spot: spot)
+
+  if existing_bookmark.nil?
+    created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+    Bookmark.create!(user: user, spot: spot, created_at: created_at)
+  else
+    puts "Un bookmark existe déjà pour cet utilisateur et ce spot. Skipping..."
+  end
+end
 puts "Bookmarks créés!"
 
 puts "Création d'amis"
+
+10.times do
+  follower = users.sample
+  followed = @user_marine
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  Follow.create!(follower: follower, followed: followed, created_at: created_at)
+
+  followed_users[follower] ||= []
+  followed_users[follower] << followed
+end
+
+10.times do
+  follower = @user_marine
+  followed = users.sample
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  Follow.create!(follower: follower, followed: followed, created_at: created_at)
+
+  followed_users[follower] ||= []
+  followed_users[follower] << followed
+end
+
+follower = @user_marine
+followed = @user_kelly
+  if followed_users[follower]&.include?(followed)
+    puts "Marine suit déjà Kelly Slater"
+  else
+    created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+    Follow.create!(follower: follower, followed: followed, created_at: created_at)
+  end
+
+followed_users[follower] ||= []
+followed_users[follower] << followed
 
 100.times do
   follower = users.sample
