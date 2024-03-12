@@ -1,35 +1,20 @@
-<div class="video-banner">
-<video autoplay loop class="video-banner">
-<source src="Home-video.webm" type="video/webm">
-<source src="https://www.youtube.com/watch?v=fK4IRgZUkZ0" type="video/mp4">
-</video>
-</div>
+<div class="home-bg">
+  <%= video_tag "video/Home-video.mp4", autoplay: :autoplay, loop: true, class: "home-bg-video" %>
+  <div class="home-container">
 
-<div class="video-banner">
-    <h1>Headline</h1>
-    <h2>Subheading Content</h2>
-    <a href="#" class="button">Click me!</a>
-  </div>
-</div>
-  <%= render 'shared/searchbar' %>
-<h1>Spot the Wave</h1>
-  <div id="carouselExampleControls" class="carousel slide mb-3" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-      </div>
-      <div class="carousel-item">
-      </div>
-      <div class="carousel-item">
-      </div>
+    <div class="logo">ghjk</div>
+    <div class="home-content">
+      <h1>Les spots de surf dans votre poche !</h1>
+      <h3>Découvrez et partagez vos meilleurs spots avec vos potes</h3>
+      <%= render 'shared/searchbar' %>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="home-buttons">
+      <% if user_signed_in? %>
+        <%= link_to 'Voir mon feed',"/feed", class:"btn"%>
+      <% else %>
+        <%= link_to 'Se connecter', new_user_session_path, class:"btn"%>
+        <%= link_to 'Créer mon compte', new_user_registration_path, class:"btn btn-secondary"%>
+      <% end %>
+    </div>
   </div>
-
-  <h1>Où voulez-vous surfer ?</h1>
+</div>
