@@ -5,9 +5,10 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
     static targets = ["content", "tab"];
 
+
     switchTab(event) {
       event.preventDefault();
-
+      console.log(event)
       const clickedTab = event.currentTarget;
       const tabName = clickedTab.dataset.tab;
       console.log(tabName)

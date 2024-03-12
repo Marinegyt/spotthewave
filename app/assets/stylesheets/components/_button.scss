@@ -1,6 +1,8 @@
 .btn {
   background-color: $blue-800;
-  color: $white
+  color: $white;
+  min-height:40px;
+  border-radius:80px;
 }
 
 .back-button {
@@ -13,4 +15,11 @@
   position: absolute;
   top: 12px;
   left: 12px;
+
+  }
+
+  .btn-secondary {
+    background-color: $blue-200;
+    color:$blue-800;
+    border:none;
   }

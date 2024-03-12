@@ -1,11 +1,14 @@
 <%= simple_form_for [@spot, @review], html: {data:{controller:"rating"}} do |f| %>
-  <%= f.input :content, label: "Laissez un message..." %>
   <%= f.input :rate, as: :hidden, input_html: {data:{rating_target: "rateField"}}%>
     <div class="my-3">
       <% Review::AUTHORIZED_RATINGS.each do%>
         <i data-rating-target="star" data-action="click->rating#rate" class="review-rating far fa-star"></i>
       <% end %>
     </div>
-    <%= f.input :difficulty, label: "Difficulté", collection: Review::DIFFICULTIES.keys %>
-    <%= f.submit class: "btn btn-primary", value: "Valider" %>
+  <%= f.input :content, label: "Commentaire", placeholder: "Rendez service à la communauté. Partager votre avis sur  le spot.", class:"spot-review-textarea" %>
+  <%= f.input :difficulty, label: "Difficulté", collection: Review::DIFFICULTIES.keys %>
+  <div class="d-flex flex-column gap-3 mb-3 mt-4">
+    <a href="" class="btn btn-secondary">Ajouter une photo</a>
+  </div>
+  <%= f.submit class: "btn btn-primary w-100", value: "Publier mon avis" %>
   <% end %>

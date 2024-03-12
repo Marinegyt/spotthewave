@@ -42,6 +42,19 @@
   font-weight: bold;
 }
 
+
+.spot-review-form {
+  border-radius:$border-radius-lg;
+  background: $blue-100;
+  border:1px solid $blue-200;
+  padding:24px;
+  text-align: center;
+  textarea {
+    min-height: 160px;
+    padding: 20px;
+  }
+}
+
 .spot-show-meteo-days {
   display: flex;
   gap: 8px;
@@ -101,3 +114,4 @@
   transform-origin: center center;
   margin: 0 auto;
 }
+
