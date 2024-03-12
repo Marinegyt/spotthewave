@@ -22,4 +22,10 @@ class Spot < ApplicationRecord
       DateTime.parse(key["time"]).hour == Time.zone.now.hour
     end
   end
+
+  def marine_weather
+    WeatherService.call_water_weather(self.latitude, self.longitude).first.select do |key, _value|
+      DateTime.parse(key["time"]).hour == Time.zone.now.hour
+    end
+  end
 end
