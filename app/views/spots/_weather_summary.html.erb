@@ -1,0 +1,21 @@
+<div class="spot-details-weather-cards">
+    <div class="card-category">
+      <% @days.each do |day| %>
+        <% day.each do |key, value| %>
+        <% if key["time"] == Time.zone.today %>
+        <%= image_tag key["condition"]["icon"] %>
+        <h4><div class="bold"><%= "#{key["temp_c"]}" %> C°</div></h4>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="card-category">
+      <%= image_tag('icons/direction.svg') %>
+      <h4>25km/h</h4>
+      <p>N-NW</p>
+    </div>
+    <div class="card-category">
+      <%= image_tag('icons/wave.svg') %>
+      <h4>1,5m</h4>
+    </div>
+  </div>
