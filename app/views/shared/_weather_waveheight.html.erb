@@ -1,0 +1,5 @@
+<% @marine_weather.first.each do |key, value| %>
+  <% if DateTime.parse(key["time"]).hour == Time.zone.now.hour %>
+    <h4><div class="bold"><%= "#{key["waveHeight"]["noaa"]}" %> m</div></h4>
+  <% end %>
+<% end %>

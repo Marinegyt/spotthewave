@@ -71,7 +71,7 @@
                   <p class="mb-2 text-blue-600"><%= spot.city %></p>
 
                   <div class="weather-over">
-                    <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
+                    <p class="weather-details"><%= spot.weather.first["temp_c"] %> | <%= image_tag spot.weather.first["condition"]["icon"] %> | </p>
                   </div>
                 </div>
               </div>

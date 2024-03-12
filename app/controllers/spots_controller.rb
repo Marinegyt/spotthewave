@@ -22,6 +22,9 @@ class SpotsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {spot: spot}),
       }
     end
+
+
+
   end
 
   def show
