@@ -10,7 +10,7 @@
     </div>
     <div class="home-buttons">
       <% if user_signed_in? %>
-        <%= link_to 'Voir mon feed',"/feed", class:"btn"%>
+        <%= link_to 'Explorer les spots',"/spots", class:"btn"%>
       <% else %>
         <%= link_to 'Se connecter', new_user_session_path, class:"btn"%>
         <%= link_to 'Créer mon compte', new_user_registration_path, class:"btn btn-secondary"%>

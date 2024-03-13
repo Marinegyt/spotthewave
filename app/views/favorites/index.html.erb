@@ -1,15 +1,14 @@
-<div class="favorites-spots">
-  <h1>Mes <%= @spots.count %> Spots Favoris</h1>
-</div>
+<div class="favorites-spots bg-sand">
+  <div class="card-show-head h1">Mes <%= @spots.count %> Spots Favoris</div>
 
-
-<div class="map-spots">
-  <div class="popup-favorites">
-    <%= render partial: "shared/map" %>
+  <div class="map-spots">
+    <div class="popup-favorites">
+      <%= render partial: "shared/map" %>
+    </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container-fav d-none">
   <div class="favorites-list-container">
     <% if @spots.any? %>
           <% @spots.each do |spot| %>
