@@ -5,6 +5,7 @@ class Review < ApplicationRecord
 
   belongs_to :spot
   belongs_to :user
+  has_many :likes
   validates :content, presence: true
   validates :rate, numericality: true, inclusion: { in: AUTHORIZED_RATINGS }
   validate :unique_review_per_spot

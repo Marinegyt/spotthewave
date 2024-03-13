@@ -4,6 +4,12 @@ class ReviewsController < ApplicationController
     authorize @review
   end
 
+  def like
+    @review = Review.find(params[:id])
+    Like.create(user_id: current_user.id, review_id: @review.id)
+    redirect_to feed_path
+  end
+
   def create
     @spot = Spot.find(params[:spot_id])
     @review = Review.new(review_params)

@@ -15,5 +15,8 @@
         <p><%= instance.content %></p>
     </div>
     </div>
+    <div id="<%= instance.id %>">
+      <%= render partial: "shared/like_button", locals: {instance: instance} %>
+      </div>
   </div>
 </div>
