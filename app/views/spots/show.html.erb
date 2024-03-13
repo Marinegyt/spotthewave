@@ -63,14 +63,15 @@
 
     <div data-controller="tabs">
       <ul class="list-inline tabs-underlined mt-5">
+        <div class="tabs-underline-custom" data-tabs-target="underline"></div>
         <li>
-          <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-tab="avis" class="tab-underlined active">Avis</a>
+          <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-left="2" data-tab="avis" class="tab-underlined active">Avis</a>
         </li>
         <li>
-          <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-tab="photos" class="tab-underlined">Photos</a>
+          <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-left="158" data-tab="photos" class="tab-underlined">Photos</a>
         </li>
         <li>
-          <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-tab="map" class="tab-underlined">Carte</a>
+          <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-left="320" data-tab="map" class="tab-underlined">Carte</a>
         </li>
       </ul>
       <div id="avis" class="tab-content active" data-tabs-target="content" data-content="avis">
