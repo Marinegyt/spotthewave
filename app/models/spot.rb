@@ -1,6 +1,7 @@
 class Spot < ApplicationRecord
   has_many :reviews
   has_many :bookmarks
+  has_many :users, through: :bookmarks
   has_many :photos
   has_one_attached :photo
 

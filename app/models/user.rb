@@ -28,7 +28,7 @@ class User < ApplicationRecord
   private
 
   def reviews_for_feed
-    favorites.order(created_at: :desc).first(10).flat_map(&:reviews)
+    favorites.order(created_at: :desc).uniq.first(10).flat_map(&:reviews)
   end
 
   def follows_for_feed

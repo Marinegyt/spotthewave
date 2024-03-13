@@ -2,10 +2,13 @@
   <div class="card card-product card-shadow card-spot-popup">
     <%= cl_image_tag spot.photo.key, class:"card-spot-photo-small" %>
     <div class="card-product-infos">
-
       <h3><%= spot.name %></h3>
-
       <p class="mb-2 text-blue-600"><%= spot.city %></p>
+         <div class="weather-over info-window">
+            <span class="bold"><%= spot.weather.first["temp_c"] %> C°</span>
+            <%= image_tag spot.weather.first["condition"]["icon"] %>
+            <span class="bold"> <%= spot.marine_weather.first["waveHeight"]["noaa"] %>m</span>
+          </div>
     </div>
   </div>
 <% end %>

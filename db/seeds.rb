@@ -23,7 +23,7 @@ puts "Création de nouveaux utilisateurs..."
 @user_cedric = User.create!(nickname: "CédricM", email: "cedric@mail.com", password: "123456", latitude:48.7833, longitude:-3.45)
 @user_mathieu = User.create!(nickname: "MathieuR", email: "mathieu@mail.com", password: "123456", latitude:48.870908, longitude:2.3992345)
 @user_kelly = User.create!(nickname: "SlaterKelly", email: "SlaterKelly@surfing.com", password: "123456", latitude:-34.7957228, longitude:173.1030232)
-@user_melanie = User.create!(nickname: "Melanie", email: "Melanie@test.com", password: "123456", latitude:48.870908, longitude: 2.3992345)
+@user_melanie = User.create!(nickname: "Melanie", email: "Melanie@test.com", password: "123456", latitude:47.48333, longitude:-3.11667)
 @user_john = User.create!(
   nickname: "John",
   email: "john@example.com",
@@ -108,13 +108,13 @@ puts 'Utilisateurs créés !'
 
 puts 'Création de nouveaux spots...'
 @spot1 = Spot.new(
-  name: "Plage des Longchamps",
+  name: "Plage de Longchamp",
   description: "Un spot de surf sur la plage, mais avec quelques récifs à proximité, ce qui augmente un peu le niveau de difficulté - et l’intérêt. A surfer à marée montante, mais à éviter l’été, quand la mer est pleine de baigneurs. Récifs parfois dangereux.",
   address: "bd Longchamp, 35800 Saint Lunaire, France",
   city: 'Saint-Lunaire'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Longchamps'))
-@spot1.photo.attach(io: file, filename: 'longchamps.jpg', content_type: 'image/jpg')
+@spot1.photo.attach(io: file, filename: 'longchamp.jpg', content_type: 'image/jpg')
 @spot1.save!
 
 @spot2 = Spot.new(
@@ -427,15 +427,14 @@ puts "Spots créés!"
 puts "Création de nouvelles évaluations..."
 # Users
 users = [
-  @user_perrine, @user_cedric, @user_mathieu, @user_kelly,
-  @user_melanie, @user_john, @user_emily, @user_david, @user_sophia,
+  @user_perrine, @user_cedric, @user_mathieu, @user_marine,
+  @user_john, @user_emily, @user_david, @user_sophia, @user_olivia,
   @user_alexander, @user_isabella, @user_michael, @user_sophie, @user_jacob,
-  @user_olivia
 ]
 
 # Spots
 spots = [
-  @spot1, @spot2, @spot3, @spot4, @spot5, @spot6, @spot7, @spot8, @spot10,
+  @spot2, @spot3, @spot4, @spot5, @spot6, @spot7, @spot8, @spot9, @spot10,
   @spot11, @spot12, @spot13, @spot14, @spot15, @spot16, @spot17, @spot18, @spot19, @spot20,
   @spot21, @spot22, @spot23, @spot24, @spot25, @spot26, @spot27, @spot28, @spot29, @spot30
 ]
@@ -476,7 +475,7 @@ reviews = [
 followed_users = {}
 20.times do
   user = users.sample
-  spot = @spot9
+  spot = @spot1
   if Review.exists?(user_id: user.id, spot_id: spot.id)
     puts "#{user.nickname} a déjà une évaluation pour #{spot.name}. Skipping..."
     next
@@ -506,12 +505,10 @@ puts "Évaluations créées!"
 
 puts "Création de bookmarks"
 
-10.times do
-  user = @user_marine
-  spot = spots.sample
-  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
-  Bookmark.create!(user: user, spot: spot, created_at: created_at)
-end
+user = @user_melanie
+created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+Bookmark.create!(user: user, spot: @spot2, created_at: created_at)
+
 
 100.times do
   user = users.sample
@@ -530,37 +527,8 @@ puts "Bookmarks créés!"
 
 puts "Création d'amis"
 
-10.times do
-  follower = users.sample
-  followed = @user_marine
-  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
-  Follow.create!(follower: follower, followed: followed, created_at: created_at)
-
-  followed_users[follower] ||= []
-  followed_users[follower] << followed
-end
-
-10.times do
-  follower = @user_marine
-  followed = users.sample
-  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
-  Follow.create!(follower: follower, followed: followed, created_at: created_at)
-
-  followed_users[follower] ||= []
-  followed_users[follower] << followed
-end
-
-follower = @user_marine
-followed = @user_kelly
-  if followed_users[follower]&.include?(followed)
-    puts "Marine suit déjà Kelly Slater"
-  else
-    created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
-    Follow.create!(follower: follower, followed: followed, created_at: created_at)
-  end
-
-followed_users[follower] ||= []
-followed_users[follower] << followed
+created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+Follow.create!(follower: @user_melanie, followed: @user_kelly, created_at: created_at)
 
 100.times do
   follower = users.sample
@@ -576,7 +544,7 @@ end
 
 puts "Amis créés!"
 
-puts "création des photos"
+puts "Création des photos"
 
 sillon_photos = ["https://th.bing.com/th/id/OIP.0YQbmBK_28P0Ee38978KgwHaE8?w=266&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.JkFeh7FVFzwxQe2whgHDOgHaE7?w=236&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.vaqsRmIhnuFcHI_8mF7P4wHaE7?w=243&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.dNf3KYBDg9hE0cFopI_tMQHaE8?w=278&h=185&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.63-nmI3n9CSEig7B01G-OgHaHa?w=195&h=195&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.HQnhLCZZXrZNRRdxUgOj3gHaEK?w=309&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.ufUwgO4yx1Zk8DpQQbMZ5AHaE8?w=272&h=181&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.A1Qef5a1Pndqi0X0R4s_mwHaEK?w=278&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"]
 sillon_photos.each_with_index do |photo, index|
@@ -586,7 +554,7 @@ sillon_photos.each_with_index do |photo, index|
   photo.save
 end
 
-puts "photos pour le sillon ajoutées"
+puts "Photos pour le sillon ajoutées"
 
 la_torche_photos = ["https://th.bing.com/th?id=OIP.TrP9fD29j5OWztIqqYazxwHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.wfhVm3aQcKwByw2RPwYwIAHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.jThtuIeIBh1YXNKTNp21LwHaEF&w=336&h=185&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.92GZV0H7riEilZLpFyUn8wHaE7&w=306&h=203&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.iVNe1ccQ2FR-_WIfE5wsZwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th/id/OIP.MS-DhfMwQ0Ql_FAaEfIIXgHaFj?w=225&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.b4eX6QW4kcKAdMFiXkNlKgHaDf?rs=1&pid=ImgDetMain", "https://th.bing.com/th/id/OIP.YRx2gYKDfsrvrKmrTXNSJAHaFD?w=264&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"]
 la_torche_photos.each_with_index do |photo, index|
@@ -596,7 +564,7 @@ la_torche_photos.each_with_index do |photo, index|
   photo.save
 end
 
-puts "photos pour la torche ajoutées"
+puts "Photos pour la torche ajoutées"
 
 les_longchamps_photos = ["https://th.bing.com/th?id=OIP.TrP9fD29j5OWztIqqYazxwHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.wfhVm3aQcKwByw2RPwYwIAHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.jThtuIeIBh1YXNKTNp21LwHaEF&w=336&h=185&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.92GZV0H7riEilZLpFyUn8wHaE7&w=306&h=203&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th?id=OIP.iVNe1ccQ2FR-_WIfE5wsZwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2", "https://th.bing.com/th/id/OIP.MS-DhfMwQ0Ql_FAaEfIIXgHaFj?w=225&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.b4eX6QW4kcKAdMFiXkNlKgHaDf?rs=1&pid=ImgDetMain", "https://th.bing.com/th/id/OIP.YRx2gYKDfsrvrKmrTXNSJAHaFD?w=264&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"]
 les_longchamps_photos.each_with_index do |photo, index|
@@ -606,10 +574,4 @@ les_longchamps_photos.each_with_index do |photo, index|
   photo.save
 end
 
-puts "photos pour les longchamps ajoutées"
-
-
-
-
-
-# <%#= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+puts "Photos pour les longchamps ajoutées"
