@@ -2,7 +2,8 @@
     <div class="container-fluid">
     <% if current_page?(feed_path) %>
       <%= link_to image_tag('icons/home.svg'), feed_path %>
-      <%= link_to image_tag('icons/home_orange.svg'), feed_path %>
+
+      <%= link_to image_tag('icons/home.svg'), feed_path %>
     <% end %>
     <%= link_to image_tag('icons/heart.svg', class: current_page?(favorites_path) ? "nav-active" : ""),favorites_path %>
     <%= link_to image_tag('icons/search.svg', class: current_page?(spots_path) ? "nav-active" : ""), spots_path %>

@@ -7,16 +7,35 @@
   <div class="spot-body d-flex flex-column">
     <% if @bookmark %>
       <%= link_to spot_bookmark_path(@spot, @bookmark), data: {turbo_method: :delete}, class: "favorite-button" do %>
-        <%= image_tag('icons/heart.svg') %>
+        <svg width="33" height="32" viewBox="0 0 33 32" fill="#F76631" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_369_111)">
+            <path d="M28.6667 11C28.6667 7.68667 25.868 5 22.416 5C19.836 5 17.62 6.50133 16.6667 8.644C15.7134 6.50133 13.4974 5 10.916 5C7.46669 5 4.66669 7.68667 4.66669 11C4.66669 20.6267 16.6667 27 16.6667 27C16.6667 27 28.6667 20.6267 28.6667 11Z" stroke="#F76631" fill="red" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_369_111">
+            <rect width="32" height="32" fill="white" transform="translate(0.666687)"/>
+            </clipPath>
+            </defs>
+          </svg>
       <% end %>
     <% else %>
 
     <%# data controller action à inserer sur le form, data action sur le button : prevent default
     recuperer url (set timeout), execute l'action que dans 5 sec + fecth %>
 
-      <%= form_with(url: spot_bookmarks_path(@spot), method: :post) do |f| %>
-        <button type= "submit" class="favorite-button">
-          <%= image_tag('icons/heart.svg') %>
+      <%= form_with(url: spot_bookmarks_path(@spot), method: :post, data: {controller: "bookmarks"}) do |f| %>
+        <button type= "submit" class="favorite-button" data-action="click->bookmarks#animation" >
+          <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_369_111)">
+            <path data-bookmarks-target="icon" d="M28.6667 11C28.6667 7.68667 25.868 5 22.416 5C19.836 5 17.62 6.50133 16.6667 8.644C15.7134 6.50133 13.4974 5 10.916 5C7.46669 5 4.66669 7.68667 4.66669 11C4.66669 20.6267 16.6667 27 16.6667 27C16.6667 27 28.6667 20.6267 28.6667 11Z" stroke="#7DA1B8" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_369_111">
+            <rect width="32" height="32" fill="white" transform="translate(0.666687)"/>
+            </clipPath>
+            </defs>
+          </svg>
+
         </button>
       <% end %>
     <% end %>
