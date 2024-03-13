@@ -11,7 +11,7 @@
   <div class="card-category">
     <% @marine_weather.first.each do |key, value| %>
       <% if DateTime.parse(key["time"]).hour == Time.zone.now.hour + 1 %>
-        <%= image_tag('icons/wave.svg') %>
+        <%= image_tag('icons/wave.svg', class:'card-category-tide') %>
         <h4><div class="bold"><%= "#{key["waveHeight"]["noaa"]}" %> m</div></h4>
       <% end %>
     <% end %>
@@ -20,7 +20,10 @@
   <div class="card-category">
     <% @marine_weather.first.each do |key, value| %>
       <% if DateTime.parse(key["time"]).hour == Time.zone.now.hour + 1 %>
-        <div style="transform:rotate(<%= key["windDirection"]["noaa"]%>deg)" class="weather-wind-icon"><%= image_tag "icons/direction.svg"%></div>
+        <div class="card-category-wind">
+          <div style="transform:rotate(<%= key["windDirection"]["noaa"]%>deg)" class="weather-wind-icon"><%= image_tag "icons/direction.svg"%>
+          </div>
+        </div>
         <h4><div class="bold"><%= "#{key["windSpeed"]["noaa"]}" %> Km/h</div></h4>
       <% end %>
     <% end %>
