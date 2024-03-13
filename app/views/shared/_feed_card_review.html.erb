@@ -1,22 +1,25 @@
- <div class="feed-card">
-<%#= cl_image_tag instance.user.avatar.key %>
+<div class="feed-card">
+  <%#= cl_image_tag instance.user.avatar.key %>
   <img src="https://picsum.photos/200/300" alt="Photo de l'utilisateur" class="avatar">
-<div class="feed-content">
-    <span class="text-small text-blue-500"><%= instance.created_at %></span>
-    <p><span class="bold"><%= instance.user.nickname %></span> a ajouté un commentaire sur <span class="bold"><%= link_to "#{instance.spot.name}", spot_path(instance.spot.id) %></span></p>
-    <div class= "feed-rating">
-    <div class="rating">
-      <p><span class="bold">Avis sur le spot :</span></p>
-       <% Review::AUTHORIZED_RATINGS.each do |number| %>
-        <i class="fa<%= (number > instance.rate) ? 'r' : 's' %> fa-star"></i>
-      <% end %>
-        <p>Niveau de Difficulté : <span class="bold"><%= instance.difficulty %></span></p>
-        <br>
-        <p><%= instance.content %></p>
-    </div>
-    </div>
-    <div id="<%= instance.id %>">
-      <%= render partial: "shared/like_button", locals: {instance: instance} %>
+  <div class="feed-content">
+    <div class="d-flex justify-content-between">
+      <span class="text-small text-blue-500"><%= instance.created_at %></span>
+      <div class="feed-like-button" id="review-likes-<%= instance.id %>">
+        <%= render partial: "shared/like_button", locals: {instance: instance} %>
       </div>
+    </div>
+    <p class="review-description"><span class="bold"><%= instance.user.nickname %></span> a ajouté un commentaire sur <span class="bold"><%= link_to "#{instance.spot.name}", spot_path(instance.spot.id) %></span></p>
+    <div class= "feed-rating">
+      <div class="rating">
+        <p><span class="bold">Avis sur le spot :</span></p>
+        <% Review::AUTHORIZED_RATINGS.each do |number| %>
+          <i class="fa<%= (number > instance.rate) ? 'r' : 's' %> fa-star"></i>
+        <% end %>
+          <p>Niveau de Difficulté : <span class="bold"><%= instance.difficulty %></span></p>
+          <br>
+          <p><%= instance.content %></p>
+      </div>
+    </div>
+
   </div>
 </div>

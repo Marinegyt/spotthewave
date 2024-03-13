@@ -17,7 +17,7 @@ padding-top: 40px;
   position:relative;
   z-index: 1;
 
-  a {
+  .review-description a {
     color: $blue-800 !important;
   }
 }
@@ -57,4 +57,15 @@ padding-top: 40px;
   padding: 10px;
   border-radius: 8px;
   background:$white;
+}
+
+.feed-like-button {
+  font-size:14px;
+  letter-spacing: 1px;
+  color:$blue-600;
+  font-weight: bold;
+  color:$orange;
+  a {
+    color: $orange !important;
+  }
 }
