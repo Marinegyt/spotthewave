@@ -424,6 +424,23 @@ file = URI.open("https://picsum.photos/id/215/600/400")
 
 puts "Spots créés!"
 
+puts "Création seed api"
+now = Time.now
+@spots = Spot.find_each do |spot|
+  WeatherService.call(spot)
+end
+after = Time.now
+p (after - now).to_i
+
+puts "Deuxième api"
+
+now = Time.now
+@spots = Spot.find_each do |spot|
+  WeatherService.call_water_weather(spot)
+end
+p (after - now).to_i
+puts "Seed api fin"
+
 puts "Création de nouvelles évaluations..."
 # Users
 users = [
