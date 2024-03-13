@@ -1,14 +1,6 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  border-radius: 75px;
 }
 
 .nav-active {
@@ -16,6 +8,6 @@
 }
 
 .nav-icon {
-  width: 30px;
+  width: 45pxpx;
   aspect-ratio: 1/1;
 }
