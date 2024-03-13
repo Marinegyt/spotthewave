@@ -38,23 +38,15 @@ class SpotsController < ApplicationController
     @average_rating = Review.average_rating(@spot)
 
     @bookmark = current_user.bookmarks.find_by(spot: @spot)
-    @days = WeatherService.call(@spot.latitude, @spot.longitude)
-    @marine_weather = WeatherService.call_water_weather(@spot.latitude, @spot.longitude)
-    @markers = @spots.select {|spot| spot.id == @spot.id}.map do |spot|
+    @days = JSON.parse(@spot.forecast)
+    @marine_weather = JSON.parse(@spot.forecast_marine_weather)
+    @markers = @spots.select { |spot| spot.id == @spot.id }.map do |spot|
       {
         lat: spot.latitude,
         lng: spot.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {spot: spot}),
-        marker_html: render_to_string(partial: "marker", locals: {spot: spot}),
+        info_window_html: render_to_string(partial: "info_window", locals: { spot: spot }),
+        marker_html: render_to_string(partial: "marker", locals: { spot: spot }),
       }
     end
   end
-
-#   private
-
-#   # def spot_params
-#   #   params.require(:spot).permit(
-#   #     bookmark_attributes: %i[spot_id user_id]
-#   #   )
-#   # end
 end

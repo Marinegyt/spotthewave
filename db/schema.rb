@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_13_102326) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_13_131956) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -99,6 +99,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_102326) do
     t.string "city"
     t.float "latitude"
     t.float "longitude"
+    t.jsonb "forecast", default: "[[]]"
+    t.jsonb "forecast_marine_weather", default: "{}"
   end
 
   create_table "users", force: :cascade do |t|
@@ -112,6 +114,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_102326) do
     t.string "nickname"
     t.float "latitude"
     t.float "longitude"
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
