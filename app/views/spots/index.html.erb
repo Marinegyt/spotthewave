@@ -35,7 +35,7 @@
                 <h3><%= spot.name %></h3>
                 <div class="d-flex align-items-center">
                   <p class="mx-1">
-                    <%= Review.average_rating(spot).to_i.times do %>
+                    <% Review.average_rating(spot).to_i.times do %>
                       <%= image_tag('icons/star-fill.svg') %>
                     <% end %>
                   </p>
