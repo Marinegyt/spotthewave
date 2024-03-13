@@ -8,6 +8,10 @@
   gap: 16px;
   position:relative;
   z-index: 1;
+
+  a {
+    color: $blue-800 !important;
+  }
 }
 
 .feed-cards:before {
