@@ -67,6 +67,7 @@
   align-items: center;
   flex-direction: row;
   gap:12px;
+  padding-right: 8px;
 
   .card-product-infos {
     text-align: left;
@@ -83,14 +84,24 @@
     margin: 0;
   }
   p {
-    font-size: 12px;
-    line-height: 1.4;
+    font-size: 14px;
+    line-height: 100%;
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
   }
   .weather-over {
     position:initial;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding:0px 10px;
+    grid-gap:10px;
+    width: fit-content;
+    align-items: center;
+
+    span {
+      text-align: center;
+    }
   }
 }
 
