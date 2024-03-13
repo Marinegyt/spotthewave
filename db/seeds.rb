@@ -525,6 +525,7 @@ puts "Création de bookmarks"
 user = @user_melanie
 created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
 Bookmark.create!(user: user, spot: @spot2, created_at: created_at)
+Bookmark.create!(user: user, spot: @spot5, created_at: created_at)
 
 
 100.times do
@@ -546,7 +547,9 @@ puts "Création d'amis"
 
 created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
 Follow.create!(follower: @user_melanie, followed: @user_kelly, created_at: created_at)
-
+Follow.create!(follower: @user_mathieu, followed: @user_melanie, created_at: created_at)
+Follow.create!(follower: @user_perrine, followed: @user_melanie, created_at: created_at)
+Follow.create!(follower: @user_cedric, followed: @user_melanie, created_at: created_at)
 100.times do
   follower = users.sample
   followed = users.sample
