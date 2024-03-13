@@ -1,19 +1,18 @@
-<div class="feed-card mb-3">
-<div class="avatar">
-<%= image_tag('icons/profile.svg')%>
-</div>
-<div class="d-flex w-100 flex-column">
-<div class="d-flex align-items-end bd-highlight">
-    <span class="text-small p-1 bd-highlight"><%= review.user.nickname%></span>
-    <div class="rating p-1 bd-highlight">
-      <% Review::AUTHORIZED_RATINGS.each do |number| %>
-      <i class="fa<%= (number > review.rate) ? 'r' : 's' %> fa-star"></i>
-    <% end %>
+<div class="feed-card mb-4">
+  <%= image_tag('icons/profile.svg', class:"avatar")%>
+
+  <div class="d-flex w-100 flex-column">
+    <div class="d-flex align-items-center bd-highlight">
+      <span class="bd-highlight bold"><%= review.user.nickname%></span>
+      <div class="rating feed-rating-stars ml-2">
+        <% Review::AUTHORIZED_RATINGS.each do |number| %>
+          <i class="fa<%= (number > review.rate) ? 'r' : 's' %> fa-star"></i>
+        <% end %>
+      </div>
+      <span class="text-small ms-auto bd-highlight text-blue-600">Il y a <%= time_ago_in_words(review.created_at) %></span>
     </div>
-    <span class="text-small ms-auto p-1 bd-highlight">Il y a <%= time_ago_in_words(review.created_at) %></span>
+    <p class="mt-1"><%= review.content%></p>
+    <p class="mt-1">Pour moi c'est un spot <span class="bold"><%= review.difficulty%></span></p>
   </div>
-  <p><%= review.content%></p>
-    <p>Difficulté : <%= review.difficulty%></p>
-    </div>
-    <%# <p>Visité le 12/02 dernier, personne en vue, la plage pour moi la météo au top !</p> %>
+  <%# <p>Visité le 12/02 dernier, personne en vue, la plage pour moi la météo au top !</p> %>
 </div>

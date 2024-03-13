@@ -8,6 +8,10 @@
   flex-direction: column;
   align-items: center;
 
+  h1 {
+    text-align: center;
+  }
+
   .card-show-stats {
     display: flex;
     gap: 16px;
@@ -42,6 +46,8 @@
     padding: 0 12px;
     align-items: center;
     gap:12px;
+
+
   }
 
   .card-show-rating-progression-line-stars {
@@ -54,6 +60,11 @@
     display:flex;
     gap:12px;
     align-items: center;
+
+    .overtitre {
+      width: 8px;
+      text-align: center;
+    }
   }
 
   .card-show-rating-progression-line-progress {

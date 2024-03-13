@@ -81,7 +81,6 @@
         <% if @user_review %>
           <p>Vous avez déjà laissé une évaluation pour ce spot.</p>
         <% else %>
-          <h3>Nouvelle Évaluation :</h3>
           <%= render "reviews/review_form", review: @review,  spot: @spot%>
         <% end %>
       </div>

@@ -1,3 +1,19 @@
 .form-control {
   padding-left: 24px;
 }
+
+
+.new_review{
+  padding:24px;
+  border-radius: $border-radius;
+  background-color: $white;
+  border:1px solid $blue-200;
+  text-align: center;
+
+  textarea.form-control {
+    height: 110px;
+    font-size: 14px;
+    padding: 12px;
+    color: $blue-600;
+  }
+}
