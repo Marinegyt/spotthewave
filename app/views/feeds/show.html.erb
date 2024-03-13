@@ -4,7 +4,11 @@
   <%= render 'shared/searchbar' %>
     <div class="feed" data-controller="feed-subscription" data-feed-subscription-user-id-value="<%= current_user.id %>">
       <h1>Votre communauté</h1>
-      <div class="feed-cards" data-feed-subscription-target="messages">
+      <div class="feed-cards"
+        data-feed-subscription-target="messages"
+        data-controller="like-subscription"
+        data-like-subscription-user-id-value="<%= current_user.id %>"
+      >
         <% @feed.first(10).each do |feed_element| %>
             <%= render partial: "shared/feed_card_#{feed_element.feed_content[:type]}", locals: {
               instance: feed_element.feed_content[:instance]

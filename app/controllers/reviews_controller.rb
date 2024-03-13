@@ -6,8 +6,13 @@ class ReviewsController < ApplicationController
 
   def like
     @review = Review.find(params[:id])
+    @spot = @review.spot
+
     Like.create(user_id: current_user.id, review_id: @review.id)
-    redirect_to feed_path
+
+    broadcast_like_to_subscribed_users
+
+    # redirect_to feed_path
   end
 
   def create
@@ -42,6 +47,23 @@ class ReviewsController < ApplicationController
       FeedChannel.broadcast_to(
         user,
         render_to_string(partial: "shared/feed_card_review", locals: { instance: @review })
+      )
+    end
+  end
+
+  def broadcast_like_to_subscribed_users
+    # Find all users subscribed to the spot
+    users = @spot.users
+
+    # For each of these users
+    users.each do |user|
+      # Broadcast the review to their feed
+      LikeChannel.broadcast_to(
+        user,
+        {
+          partial: render_to_string(partial: "shared/like_button", locals: { instance: @review }),
+          review_id: @review.id
+        }
       )
     end
   end
