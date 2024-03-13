@@ -3,6 +3,82 @@
   width: 100%;
 }
 
+.card-show-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+  }
+
+  .card-show-stats {
+    display: flex;
+    gap: 16px;
+  }
+
+  .card-show-stat-pipe {
+    height: 35px;
+    width: 2px;
+    background: $blue-200;
+  }
+}
+
+.card-show-infos {
+  background: $blue-100;
+  padding: 24px 0;
+
+  .progress-bar {
+    background:$blue-600;
+  }
+
+  .card-show-rating-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow:1;
+  }
+
+  .card-show-rating-progression {
+    margin: 40px 0;
+    display: flex;
+    width: 100%;
+    padding: 0 12px;
+    align-items: center;
+    gap:12px;
+
+
+  }
+
+  .card-show-rating-progression-line-stars {
+    display: flex;
+    align-items: center;
+    gap:8px;
+  }
+
+  .card-show-rating-progression-line {
+    display:flex;
+    gap:12px;
+    align-items: center;
+
+    .overtitre {
+      width: 8px;
+      text-align: center;
+    }
+  }
+
+  .card-show-rating-progression-line-progress {
+    width: 100%;
+  }
+
+  .progress {
+    height: 10px;
+  }
+  .card-show-rating-main {
+    text-align: center;
+  }
+}
+
 .spot-body {
   padding:16px;
 }
@@ -65,8 +141,7 @@
 
 .spot-details {
   background: $blue-100;
-  padding:16px;
-  height:217px;
+  height: 187px;
   overflow: hidden;
   transition:1s;
 }

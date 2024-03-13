@@ -21,77 +21,86 @@
       <% end %>
     <% end %>
 
-    <div class="d-flex justify-content-between">
-      <h3><%=@spot.name%></h3>
+    <div class="card-show-head">
+
       <div class="d-flex align-items-center">
-        <p class="mx-1"><strong><%=@average_rating%> <i class="fa-solid fa-star" style="color: #FFD43B;"></i></strong></p>
+        <p class="mb-2">
+          <strong><%=@average_rating%> <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </strong>
+        </p>
       </div>
-    </div>
+
+      <h1><%=@spot.name%></h1>
       <p class="mb-3 text-blue-600"><%=@spot.address%></p>
-      <p class="mb-4"><%=@spot.description%></p>
-    <div class="d-flex justify-content-between">
-    <div class="d-flex flex-column gap-2">
-      <p class="overtitre text-blue-600" >DISTANCE</p>
-      <p><%=@distance_from_spot%>km</p>
+
+      <div class='card-show-stats'>
+        <div class="d-flex flex-column gap-2">
+          <p class="overtitre text-blue-600" >DISTANCE</p>
+          <p class="bold text-center"><%=@distance_from_spot%>km</p>
+         </div>
+        <div class="card-show-stat-pipe"></div>
+        <div class="d-flex flex-column gap-2">
+          <p class="overtitre text-blue-600" >DIFFICULTÉ</p>
+          <p class="bold text-center"><%=@average_difficulty%></p>
+        </div>
+      </div>
 
     </div>
-    <div>
-       <div class="d-flex flex-column gap-2">
-      <p class="overtitre text-blue-600" >DIFFICULTÉ</p>
-      <p class="overtitre"><%=@average_difficulty%></p>
+  </div>
+
+<div class="card-show-infos">
+  <div class="container">
+    <p><%=@spot.description%></p>
+
+    <div class="spot-details" data-controller="show-spot-weather" data-controller="tabs">
+      <div class="d-flex justify-content-between py-3">
+        <h3>Conditions</h3>
+        <p data-action="click->show-spot-weather#showWeather">Tout voir</p>
+      </div>
+      <%= render "weather_summary" %>
+      <%= render "weather_data" %>
+    </div>
+
+    <div data-controller="tabs">
+      <ul class="list-inline tabs-underlined mt-5">
+        <li>
+          <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-tab="avis" class="tab-underlined active">Avis</a>
+        </li>
+        <li>
+          <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-tab="photos" class="tab-underlined">Photos</a>
+        </li>
+        <li>
+          <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-tab="map" class="tab-underlined">Carte</a>
+        </li>
+      </ul>
+      <div id="avis" class="tab-content active" data-tabs-target="content" data-content="avis">
+        <%= render "rating_progression" %>
+        <% @spot.reviews.each do |review| %>
+          <%= render "reviews/review_card", review: review %>
+        <% end%>
+        <% if @user_review %>
+          <p>Vous avez déjà laissé une évaluation pour ce spot.</p>
+        <% else %>
+          <%= render "reviews/review_form", review: @review,  spot: @spot%>
+        <% end %>
+      </div>
+
+      <div id="photos" class="tab-content d-none" data-tabs-target="content" data-content="photos">
+        <!-- Contenu de l'onglet "Photos" -->
+        <!-- Mettez le contenu de l'onglet "Photos" ici -->
+        <div class="gallery-wrapper">
+          <% @spot.photos.map(&:images).flatten.each_with_index do |photo, index| %>
+            <%= cl_image_tag photo.key, class: "photo#{index + 1}" %>
+          <% end %>
+        </div>
+
+      </div>
+
+      <div id="map-show" class="tab-content d-none" data-tabs-target="content" data-content="map">
+        <%= render 'shared/map' %>
+        <!-- Contenu de l'onglet "Communauté" -->
+        <!-- Mettez le contenu de l'onglet "Communauté" ici -->
       </div>
     </div>
-    </div>
   </div>
 </div>
-<div class="spot-details" data-controller="show-spot-weather" data-controller="tabs">
-  <div class="d-flex justify-content-between py-3">
-    <h3>Conditions</h3>
-    <p data-action="click->show-spot-weather#showWeather">Tout voir</p>
-  </div>
-  <%= render "weather_summary" %>
-  <%= render "weather_data" %>
-</div>
-
-<div class="container" data-controller="tabs">
-  <ul class="list-inline tabs-underlined mt-5">
-    <li>
-      <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-tab="avis" class="tab-underlined active">Avis</a>
-    </li>
-    <li>
-      <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-tab="photos" class="tab-underlined">Photos</a>
-    </li>
-    <li>
-      <a data-action="click->tabs#switchTab" data-tabs-target="tab" data-tab="map" class="tab-underlined">Carte</a>
-    </li>
-  </ul>
-  <div id="avis" class="tab-content active" data-tabs-target="content" data-content="avis">
-    <%= render "rating_progression" %>
-    <% @spot.reviews.each do |review| %>
-      <%= render "reviews/review_card", review: review %>
-    <% end%>
-    <% if @user_review %>
-      <p>Vous avez déjà laissé une évaluation pour ce spot.</p>
-    <% else %>
-      <h3>Nouvelle Évaluation :</h3>
-      <%= render "reviews/review_form", review: @review,  spot: @spot%>
-    <% end %>
-  </div>
-
-  <div id="photos" class="tab-content d-none" data-tabs-target="content" data-content="photos">
-    <!-- Contenu de l'onglet "Photos" -->
-    <!-- Mettez le contenu de l'onglet "Photos" ici -->
-    <div class="gallery-wrapper">
-      <% @spot.photos.map(&:images).flatten.each_with_index do |photo, index| %>
-        <%= cl_image_tag photo.key, class: "photo#{index + 1}" %>
-      <% end %>
-    </div>
-
-  </div>
-
-  <div id="map-show" class="tab-content d-none" data-tabs-target="content" data-content="map">
-    <%= render 'shared/map' %>
-    <!-- Contenu de l'onglet "Communauté" -->
-    <!-- Mettez le contenu de l'onglet "Communauté" ici -->
-  </div>
-  </div>
