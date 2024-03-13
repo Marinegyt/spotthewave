@@ -58,11 +58,11 @@
         </div>
 
         <h2 class="mt-4">Tous les Spots</h2>
-        <div class="cards-wrapper mt-4">
+        <div class="cards-wrapper mt-4" data-controller="animate-cards">
           <% if @spots.any? %>
             <% @spots.each do |spot| %>
               <%= link_to spot_path(spot) do %>
-                <div class="card card-product card-shadow">
+                <div class="card card-product card-shadow" data-animate-cards-target="card">
                   <%= cl_image_tag spot.photo.key, class:"card-spot-photo-small" %>
                   <div class="card-product-infos">
 
