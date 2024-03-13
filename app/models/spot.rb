@@ -19,13 +19,13 @@ class Spot < ApplicationRecord
 
   def weather
     WeatherService.call(self.latitude, self.longitude).first.select do |key, _value|
-      DateTime.parse(key["time"]).hour == Time.zone.now.hour
+      DateTime.parse(key["time"]).hour == Time.zone.now.hour + 1
     end
   end
 
   def marine_weather
     WeatherService.call_water_weather(self.latitude, self.longitude).first.select do |key, _value|
-      DateTime.parse(key["time"]).hour == Time.zone.now.hour
+      DateTime.parse(key["time"]).hour == Time.zone.now.hour + 1
     end
   end
 end

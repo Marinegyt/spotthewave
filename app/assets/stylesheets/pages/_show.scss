@@ -113,4 +113,19 @@
   width: fit-content !important;
   transform-origin: center center;
   margin: 0 auto;
+
+  img {
+    width:32px;
+  }
+}
+
+.card-category-tide, .card-category-wind {
+  width:64px;
+  height:64px;
+}
+
+.card-category-wind {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
