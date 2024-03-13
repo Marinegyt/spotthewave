@@ -11,10 +11,11 @@
   width: 40px;
 }
 
-.navbar-icon {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
+.nav-active {
+ color: $orange !important;
+}
+
+.nav-icon {
+  width: 30px;
+  aspect-ratio: 1/1;
 }

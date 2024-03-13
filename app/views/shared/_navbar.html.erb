@@ -1,8 +1,13 @@
  <nav class="navbar navbar-light bg-light fixed-bottom">
     <div class="container-fluid">
-    <div class="navbar-icon nav-active"><%= link_to (image_tag('icons/home.svg')), feed_path %></div>
-    <div class="navbar-icon disabled"><%= link_to (image_tag('icons/heart.svg')),favorites_path %></div>
-    <div class="navbar-icon disabled"><%= link_to (image_tag('icons/search.svg')), spots_path %></div>
-    <div class="navbar-icon disabled"><%= link_to (image_tag('icons/profile.svg')), profile_path %></div>
+    <% if current_page?(feed_path) %>
+      <%= link_to image_tag('icons/home.svg'), feed_path %>
+      <%= link_to image_tag('icons/home_orange.svg'), feed_path %>
+    <% end %>
+    <%= link_to image_tag('icons/heart.svg', class: current_page?(favorites_path) ? "nav-active" : ""),favorites_path %>
+    <%= link_to image_tag('icons/search.svg', class: current_page?(spots_path) ? "nav-active" : ""), spots_path %>
+    <%= link_to image_tag('icons/profile.svg', class: current_page?(profile_path) ? "nav-active" : ""), profile_path %>
     </div>
   </nav>
+<%# <div class="navbar-icon nav-active"> %>
+<%# <div class="navbar-icon "> %>
