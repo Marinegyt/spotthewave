@@ -9,7 +9,7 @@
       <%= link_to spot_bookmark_path(@spot, @bookmark), data: {turbo_method: :delete}, class: "favorite-button" do %>
         <svg width="33" height="32" viewBox="0 0 33 32" fill="#F76631" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_369_111)">
-          <path d="M28.6667 11C28.6667 7.68667 25.868 5 22.416 5C19.836 5 17.62 6.50133 16.6667 8.644C15.7134 6.50133 13.4974 5 10.916 5C7.46669 5 4.66669 7.68667 4.66669 11C4.66669 20.6267 16.6667 27 16.6667 27C16.6667 27 28.6667 20.6267 28.6667 11Z" stroke="#F76631" fill="red" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M28.6667 11C28.6667 7.68667 25.868 5 22.416 5C19.836 5 17.62 6.50133 16.6667 8.644C15.7134 6.50133 13.4974 5 10.916 5C7.46669 5 4.66669 7.68667 4.66669 11C4.66669 20.6267 16.6667 27 16.6667 27C16.6667 27 28.6667 20.6267 28.6667 11Z" stroke="#F76631" fill="#F76631" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </g>
           <defs>
           <clipPath id="clip0_369_111">
@@ -71,7 +71,7 @@
     <div class="spot-details" data-controller="show-spot-weather" data-controller="tabs">
       <div class="d-flex justify-content-between py-3">
         <h3>Conditions</h3>
-        <p data-action="click->show-spot-weather#showWeather">Tout voir</p>
+        <p data-action="click->show-spot-weather#showWeather" data-collapse="false">Tout voir</p>
       </div>
       <%= render "weather_summary" %>
       <%= render "weather_data" %>

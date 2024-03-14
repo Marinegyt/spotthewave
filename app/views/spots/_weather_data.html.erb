@@ -7,7 +7,7 @@
         <p><%= "#{I18n.l(DateTime.parse(day.first["time"]), format: '%a')} #{DateTime.parse(day.first["time"]).day}" %></p>
         <div class="spot-weather-details-grid">
           <% day.each do |key, value| %>
-            <div class="d-flex  flex-column gap-2 align-items-center mt-2 text-center">
+            <div class="d-flex  flex-column gap-2 align-items-center mt-2 text-center spot-weather-details-grid-cell">
               <div><%= key["time"].split.last %></div>
               <div><%= image_tag key["condition"]["icon"] %></div>
               <div class="bold"><%= "#{key["temp_c"]} C°" %></div>
@@ -27,8 +27,11 @@
         <p><%= "#{I18n.l(DateTime.parse(day.first["time"]), format: '%a')} #{DateTime.parse(day.first["time"]).day}" %></p>
         <div class="spot-weather-details-grid">
           <% day.each do |key, value| %>
-            <div class="d-flex  flex-column gap-2 align-items-center mt-2 text-center">
+            <div class="d-flex  flex-column gap-2 align-items-center mt-2 text-center spot-weather-details-grid-cell">
               <div><%= key["time"].match(/T(\d+:\d+):/)[1] %></div>
+              <div class="spot-weather-details-graph">
+                <div class="spot-weather-details-graph-bar" style="height: <%= "#{key["waveHeight"]["noaa"]* 50}" %>px"></div>
+              </div>
               <div class="bold"><%= "#{key["waveHeight"]["noaa"]}" %> m</div>
             </div>
           <% end %>
@@ -46,7 +49,7 @@
         <p><%= "#{I18n.l(DateTime.parse(day.first["time"]), format: '%a')} #{DateTime.parse(day.first["time"]).day}" %></p>
         <div class="spot-weather-details-grid">
           <% day.each do |key, value| %>
-            <div class="d-flex  flex-column gap-2 align-items-center mt-2 text-center">
+            <div class="d-flex  flex-column gap-2 align-items-center mt-2 text-center spot-weather-details-grid-cell">
               <div><%= key["time"].match(/T(\d+:\d+):/)[1] %></div>
               <div style="transform:rotate(<%= key["windDirection"]["noaa"]%>deg)" class="weather-wind-icon"><%= image_tag "icons/direction.svg"%></div>
               <div class="bold"><%= "#{key["windSpeed"]["noaa"]}" %> Km/h</div>
