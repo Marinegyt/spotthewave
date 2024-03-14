@@ -33,12 +33,10 @@
               </div>
               <div class="d-flex justify-content-between">
                 <h3><%= spot.name %></h3>
-                <div class="d-flex align-items-center">
-                  <p class="mx-1">
-                    <% Review.average_rating(spot).to_i.times do %>
-                      <%= image_tag('icons/star-fill.svg') %>
-                    <% end %>
-                  </p>
+                <div class="d-flex align-items-start gap-1">
+                  <% Review.average_rating(spot).to_i.times do %>
+                    <%= image_tag('icons/star-fill.svg') %>
+                  <% end %>
                 </div>
               </div>
               <p class="mb-2 text-blue-600"><%= spot.address %></p>
