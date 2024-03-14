@@ -1,6 +1,8 @@
 <div class="bg-sand feed-wrapper hide-scrollbar">
   <div class="card-show-head">
-    <h1 class="mt-5">Bon retour <%= @current_user.nickname%> !</h1>
+    <div class="card-show-head">
+    <div class="banner-feed"><h1 class="mt-5">Bon retour <%= @current_user.nickname%> !</h1>
+    </div>
   </div>
   <div class="container my-3">
     <div class="feed" data-controller="feed-subscription" data-feed-subscription-user-id-value="<%= current_user.id %>">
