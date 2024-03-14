@@ -1,4 +1,4 @@
-<div class="spot mb-3 position-relative">
+<div class="spot mb-3 position-relative hide-scrollbar">
   <%= link_to :back, class:'back-button' do %>
     <%= image_tag('icons/back.svg')%>
     <span>Retour</span>
@@ -8,20 +8,20 @@
     <% if @bookmark %>
       <%= link_to spot_bookmark_path(@spot, @bookmark), data: {turbo_method: :delete}, class: "favorite-button" do %>
         <svg width="33" height="32" viewBox="0 0 33 32" fill="#F76631" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_369_111)">
-            <path d="M28.6667 11C28.6667 7.68667 25.868 5 22.416 5C19.836 5 17.62 6.50133 16.6667 8.644C15.7134 6.50133 13.4974 5 10.916 5C7.46669 5 4.66669 7.68667 4.66669 11C4.66669 20.6267 16.6667 27 16.6667 27C16.6667 27 28.6667 20.6267 28.6667 11Z" stroke="#F76631" fill="red" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_369_111">
-            <rect width="32" height="32" fill="white" transform="translate(0.666687)"/>
-            </clipPath>
-            </defs>
-          </svg>
+          <g clip-path="url(#clip0_369_111)">
+          <path d="M28.6667 11C28.6667 7.68667 25.868 5 22.416 5C19.836 5 17.62 6.50133 16.6667 8.644C15.7134 6.50133 13.4974 5 10.916 5C7.46669 5 4.66669 7.68667 4.66669 11C4.66669 20.6267 16.6667 27 16.6667 27C16.6667 27 28.6667 20.6267 28.6667 11Z" stroke="#F76631" fill="red" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_369_111">
+          <rect width="32" height="32" fill="white" transform="translate(0.666687)"/>
+          </clipPath>
+          </defs>
+        </svg>
       <% end %>
     <% else %>
 
-    <%# data controller action à inserer sur le form, data action sur le button : prevent default
-    recuperer url (set timeout), execute l'action que dans 5 sec + fecth %>
+      <%# data controller action à inserer sur le form, data action sur le button : prevent default
+      recuperer url (set timeout), execute l'action que dans 5 sec + fecth %>
 
       <%= form_with(url: spot_bookmarks_path(@spot), method: :post, data: {controller: "bookmarks"}) do |f| %>
         <button type= "submit" class="favorite-button" data-action="click->bookmarks#animation" >
@@ -35,13 +35,11 @@
             </clipPath>
             </defs>
           </svg>
-
         </button>
       <% end %>
     <% end %>
 
     <div class="card-show-head">
-
       <div class="d-flex align-items-center">
         <p class="mb-2">
           <strong><%=@average_rating%> <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
@@ -56,7 +54,7 @@
         <div class="d-flex flex-column gap-2">
           <p class="overtitre text-blue-600" >DISTANCE</p>
           <p class="bold text-center"><%=@distance_from_spot%>km</p>
-         </div>
+        </div>
         <div class="card-show-stat-pipe"></div>
         <div class="d-flex flex-column gap-2">
           <p class="overtitre text-blue-600" >DIFFICULTÉ</p>
@@ -67,10 +65,9 @@
     </div>
   </div>
 
-<div class="card-show-infos">
-  <div class="container">
-    <p><%=@spot.description%></p>
-
+  <div class="card-show-infos">
+    <div class="container">
+      <p><%=@spot.description%></p>
     <div class="spot-details" data-controller="show-spot-weather" data-controller="tabs">
       <div class="d-flex justify-content-between py-3">
         <h3>Conditions</h3>
@@ -103,24 +100,26 @@
         <% else %>
           <%= render "reviews/review_form", review: @review,  spot: @spot%>
         <% end %>
-      </div>
-
-      <div id="photos" class="tab-content d-none" data-tabs-target="content" data-content="photos">
-        <!-- Contenu de l'onglet "Photos" -->
-        <!-- Mettez le contenu de l'onglet "Photos" ici -->
-        <div class="gallery-wrapper">
-          <% @spot.photos.map(&:images).flatten.each_with_index do |photo, index| %>
-            <%= cl_image_tag photo.key, class: "photo#{index + 1}" %>
-          <% end %>
         </div>
 
-      </div>
+        <div id="photos" class="tab-content d-none" data-tabs-target="content" data-content="photos">
+          <!-- Contenu de l'onglet "Photos" -->
+          <!-- Mettez le contenu de l'onglet "Photos" ici -->
+          <div class="gallery-wrapper">
+            <% @spot.photos.map(&:images).flatten.each_with_index do |photo, index| %>
+              <%= cl_image_tag photo.key, class: "photo#{index + 1}" %>
+            <% end %>
+          </div>
 
-      <div id="map-show" class="tab-content d-none" data-tabs-target="content" data-content="map">
-        <%= render 'shared/map' %>
-        <!-- Contenu de l'onglet "Communauté" -->
-        <!-- Mettez le contenu de l'onglet "Communauté" ici -->
+        </div>
+
+        <div id="map-show" class="tab-content d-none" data-tabs-target="content" data-content="map">
+          <%= render 'shared/map' %>
+          <!-- Contenu de l'onglet "Communauté" -->
+          <!-- Mettez le contenu de l'onglet "Communauté" ici -->
+        </div>
       </div>
     </div>
-  </div>
+</div>
+<%= render "shared/navbar" %>
 </div>

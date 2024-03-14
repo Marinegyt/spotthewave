@@ -1,7 +1,7 @@
 <div class="spot-weather-details">
   <div class="spot-weather-details-meteo">
     <h3>Météo</h3>
-    <div class="spot-show-meteo-days">
+    <div class="hide-scrollbar spot-show-meteo-days">
       <% @days.each do |day| %>
       <div>
         <p><%= "#{I18n.l(DateTime.parse(day.first["time"]), format: '%a')} #{DateTime.parse(day.first["time"]).day}" %></p>
@@ -21,7 +21,7 @@
 
   <div class="spot-weather-details-meteo">
     <h3>Vagues</h3>
-    <div class="spot-show-meteo-days">
+    <div class="hide-scrollbar spot-show-meteo-days">
       <% @marine_weather.each do |day| %>
       <div>
         <p><%= "#{I18n.l(DateTime.parse(day.first["time"]), format: '%a')} #{DateTime.parse(day.first["time"]).day}" %></p>
@@ -40,7 +40,7 @@
 
   <div class="spot-weather-details-meteo">
     <h3>Vent</h3>
-    <div class="spot-show-meteo-days">
+    <div class="hide-scrollbar spot-show-meteo-days">
       <% @marine_weather.each do |day| %>
       <div>
         <p><%= "#{I18n.l(DateTime.parse(day.first["time"]), format: '%a')} #{DateTime.parse(day.first["time"]).day}" %></p>
