@@ -31,9 +31,9 @@
               <div class="weather-over">
                 <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
               </div>
-              <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-between align-items-center">
                 <h3><%= spot.name %></h3>
-                <div class="d-flex align-items-start gap-1">
+                <div class="spot-card-large-rating d-flex align-items-center gap-1">
                   <% Review.average_rating(spot).to_i.times do %>
                     <%= image_tag('icons/star-fill.svg') %>
                   <% end %>
@@ -73,8 +73,11 @@
                       <span class="bold"><%= spot.weather.first["temp_c"] %> C°</span>
 
                       <%= image_tag spot.weather.first["condition"]["icon"] %>
-
-                      <span class="bold"> <%= spot.marine_weather.first["waveHeight"]["noaa"] %>m</span>
+                      <%# WARNING => TO UNCOMMENT
+                      WARNING => TO UNCOMMENT
+                      WARNING => TO UNCOMMENT
+                      WARNING => TO UNCOMMENT %>
+                      <span class="bold"> <%#= spot.marine_weather.first["waveHeight"]["noaa"] %>m</span>
 
                     </div>
                   </div>

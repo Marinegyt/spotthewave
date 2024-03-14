@@ -520,9 +520,14 @@ p (after - now).to_i
 puts "Deuxième api"
 
 now = Time.now
-@spots = Spot.find_each do |spot|
-  WeatherService.call_water_weather(spot)
-end
+# WARNING => TO UNCOMMENT
+# WARNING => TO UNCOMMENT
+# WARNING => TO UNCOMMENT
+# WARNING => TO UNCOMMENT
+
+# @spots = Spot.find_each do |spot|
+#   WeatherService.call_water_weather(spot)
+# end
 p (after - now).to_i
 puts "Seed api fin"
 

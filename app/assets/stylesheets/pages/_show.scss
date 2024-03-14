@@ -24,6 +24,10 @@
   }
 }
 
+.spot-card-large-rating {
+  padding-top:6px;
+}
+
 .card-show-infos {
   background: $blue-100;
   padding: 24px 0;
@@ -117,8 +121,9 @@
   margin: 40px 0;
 }
 
-#map-show {
+.map-show {
   border-radius: 12px;
+  overflow: hidden;
 }
 
 .tabs-underlined .tab-underlined {
