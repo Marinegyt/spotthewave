@@ -43,7 +43,7 @@ file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Garfield&top[]"
 @user_kelly.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
 @user_kelly.save!
 
-@user_melanie = User.new(nickname: "Melanie", email: "Melanie@test.com", password: "123456", latitude:47.48333, longitude:-3.11667)
+@user_melanie = User.new(nickname: "Melanie", email: "Melanie@test.com", password: "123456", latitude:48.10667389975883, longitude:-1.694389609654948)
 file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Salem&randomizeIds=true&accessories=round&accessoriesProbability=50&eyebrows=default&eyes=default&mouth=default")
 @user_melanie.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
 @user_melanie.save!
