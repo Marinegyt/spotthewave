@@ -1,7 +1,10 @@
 <div class="bg-sand feed-wrapper">
-<div class="card-show-head h1">Bon retour <%= @current_user.nickname%> !</div>
+  <div class="card-show-head">
+    <h1 class="mt-5">Bon retour <%= @current_user.nickname%> !</h1>
+  </div>
   <div class="container my-3">
     <div class="feed" data-controller="feed-subscription" data-feed-subscription-user-id-value="<%= current_user.id %>">
+
       <h1>Votre communauté</h1>
       <div class="feed-cards"
         data-feed-subscription-target="messages"

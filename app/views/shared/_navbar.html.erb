@@ -1,8 +1,24 @@
- <nav class="navbar navbar-light bg-light fixed-bottom">
-    <div class="container-fluid">
-    <div class="navbar-icon nav-active"><%= link_to (image_tag('icons/home.svg')), feed_path %></div>
-    <div class="navbar-icon disabled"><%= link_to (image_tag('icons/heart.svg')),favorites_path %></div>
-    <div class="navbar-icon disabled"><%= link_to (image_tag('icons/search.svg')), spots_path %></div>
-    <div class="navbar-icon disabled"><%= link_to (image_tag('icons/profile.svg')), profile_path %></div>
-    </div>
-  </nav>
+<nav class="navbar navbar-light bg-light fixed-bottom">
+  <div class="container-fluid">
+  <% if current_page?(feed_path) %>
+    <%= link_to image_tag('icons/navbar/home-orange.svg'), feed_path %>
+    <% else %>
+    <%= link_to image_tag('icons/navbar/home-disabled.svg'), feed_path %>
+  <% end %>
+  <% if current_page?(favorites_path) %>
+    <%= link_to image_tag('icons/navbar/heart-orange.svg'), favorites_path %>
+    <% else %>
+    <%= link_to image_tag('icons/navbar/heart-disabled.svg'),favorites_path %>
+  <% end %>
+  <% if current_page?(spots_path) %>
+    <%= link_to image_tag('icons/navbar/search-orange.svg'), spots_path %>
+    <% else %>
+    <%= link_to image_tag('icons/navbar/search-disabled.svg'), spots_path %>
+  <% end %>
+  <% if current_page?(profile_path) %>
+    <%= link_to image_tag('icons/navbar/user-orange.svg'), profile_path %>
+    <% else %>
+    <%= link_to image_tag('icons/navbar/user-disabled.svg'), profile_path %>
+  <% end %>
+  </div>
+</nav>

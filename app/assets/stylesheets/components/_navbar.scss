@@ -1,20 +1,13 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: white;
+  border-radius: 75px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.nav-active {
+ color: $orange !important;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-.navbar-icon {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
+.nav-icon {
+  width: 45pxpx;
+  aspect-ratio: 1/1;
 }
