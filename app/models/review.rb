@@ -2,9 +2,9 @@ class Review < ApplicationRecord
   AUTHORIZED_RATINGS = (1..5)
   DIFFICULTIES = { débutant: 1, confirmé: 2, expert: 3 }
   enum difficulty: DIFFICULTIES
-
   belongs_to :spot
   belongs_to :user
+  has_many :likes, dependent: :destroy
   validates :content, presence: true
   validates :rate, numericality: true, inclusion: { in: AUTHORIZED_RATINGS }
   validate :unique_review_per_spot
