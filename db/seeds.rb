@@ -18,98 +18,153 @@ User.destroy_all
 puts "Données effacées!"
 
 puts "Création de nouveaux utilisateurs..."
-@user_marine = User.create!(nickname: "MarineG", email: "marine@mail.com", password: "123456", latitude:47.48333, longitude:-3.11667)
-@user_perrine = User.create!(nickname: "PerrineG", email: "perrine@mail.com", password: "123456", latitude:36.1333, longitude:-5.4505)
-@user_cedric = User.create!(nickname: "CédricM", email: "cedric@mail.com", password: "123456", latitude:48.7833, longitude:-3.45)
-@user_mathieu = User.create!(nickname: "MathieuR", email: "mathieu@mail.com", password: "123456", latitude:48.870908, longitude:2.3992345)
-@user_kelly = User.create!(nickname: "SlaterKelly", email: "SlaterKelly@surfing.com", password: "123456", latitude:-34.7957228, longitude:173.1030232)
-@user_melanie = User.create!(nickname: "Melanie", email: "Melanie@test.com", password: "123456", latitude:47.48333, longitude:-3.11667)
-@user_john = User.create!(
+@user_marine = User.new(nickname: "MarineG", email: "marine@mail.com", password: "123456", latitude:47.48333, longitude:-3.11667)
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Jack")
+@user_marine.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_marine.save!
+
+@user_perrine = User.new(nickname: "PerrineG", email: "perrine@mail.com", password: "123456", latitude:36.1333, longitude:-5.4505)
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Salem&randomizeIds=true&accessories=round&accessoriesProbability=50&eyebrows=default&eyes=default&mouth=default")
+@user_perrine.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_perrine.save!
+
+@user_cedric = User.new(nickname: "CédricM", email: "cedric@mail.com", password: "123456", latitude:48.7833, longitude:-3.45)
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Precious&randomizeIds=true&accessories=round&accessoriesColor=3c4f5c&accessoriesProbability=50&clothingGraphic[]&eyebrows=defaultNatural,default&eyes=default&facialHair=beardLight&facialHairProbability=100&hatColor=262e33&mouth=default&top=dreads01")
+@user_cedric.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_cedric.save!
+
+@user_mathieu = User.new(nickname: "MathieuR", email: "mathieu@mail.com", password: "123456", latitude:48.870908, longitude:2.3992345)
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&randomizeIds=true&accessories=round&accessoriesColor=3c4f5c&accessoriesProbability=50&clothingGraphic[]&eyebrows=defaultNatural,default&eyes=default&facialHair=beardLight&facialHairColor=b58143&facialHairProbability=100&hairColor=b58143&hatColor=262e33&mouth=default&skinColor=f8d25c,ffdbb4&top=winterHat03")
+@user_mathieu.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_mathieu.save!
+
+@user_kelly = User.new(nickname: "SlaterKelly", email: "SlaterKelly@surfing.com", password: "123456", latitude:-34.7957228, longitude:173.1030232)
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Garfield&top[]")
+@user_kelly.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_kelly.save!
+
+@user_melanie = User.new(nickname: "Melanie", email: "Melanie@test.com", password: "123456", latitude:47.48333, longitude:-3.11667)
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Salem&randomizeIds=true&accessories=round&accessoriesProbability=50&eyebrows=default&eyes=default&mouth=default")
+@user_melanie.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_melanie.save!
+
+@user_john = User.new(
   nickname: "John",
   email: "john@example.com",
   password: "password123",
   latitude: 51.5074,
   longitude: -0.1278
 )
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Luna")
+@user_john.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_john.save!
 
-@user_emily = User.create!(
+@user_emily = User.new(
   nickname: "Emily",
   email: "emily@example.com",
   password: "password456",
   latitude: 40.7128,
   longitude: -74.0060
 )
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Chloe")
+@user_emily.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_emily.save!
 
-@user_david = User.create!(
+
+@user_david = User.new(
   nickname: "David",
   email: "david@example.com",
   password: "password789",
   latitude: 34.0522,
   longitude: -118.2437
 )
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Bailey")
+@user_david.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_david.save!
 
-@user_sophia = User.create!(
+@user_sophia = User.new(
   nickname: "Sophia",
   email: "sophia@example.com",
   password: "passwordabc",
   latitude: 48.8566,
   longitude: 2.3522
 )
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Annie")
+@user_sophia.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_sophia.save!
 
-@user_alexander = User.create!(
+@user_alexander = User.new(
   nickname: "Alexander",
   email: "alexander@example.com",
   password: "passworddef",
   latitude: 55.7558,
   longitude: 37.6173
 )
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Sammy")
+@user_alexander.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_alexander.save!
 
-@user_isabella = User.create!(
+@user_isabella = User.new(
   nickname: "Isabella",
   email: "isabella@example.com",
   password: "passwordghi",
   latitude: 34.0522,
   longitude: -118.2437
 )
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Cookie&eyebrows=default,defaultNatural,flatNatural&eyes=default,happy,winkWacky&mouth=default,eating,serious,smile,tongue")
+@user_isabella.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_isabella.save!
 
-@user_michael = User.create!(
+@user_michael = User.new(
   nickname: "Michael",
   email: "michael@example.com",
   password: "passwordjkl",
   latitude: 51.5074,
   longitude: -0.1278
 )
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Casper&eyebrows=default,defaultNatural,flatNatural&eyes=default,happy,winkWacky&mouth=default,eating,serious,smile,tongue")
+@user_michael.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_michael.save!
 
-@user_sophie = User.create!(
+@user_sophie = User.new(
   nickname: "Sophie",
   email: "sophie@example.com",
   password: "passwordmno",
   latitude: 40.7128,
   longitude: -74.0060
 )
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Rascal&mouth=default,smile,serious,tongue")
+@user_sophie.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_sophie.save!
 
-@user_jacob = User.create!(
+@user_jacob = User.new(
   nickname: "Jacob",
   email: "jacob@example.com",
   password: "passwordpqr",
   latitude: 55.7558,
   longitude: 37.6173
 )
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Whiskers&eyes=default,eyeRoll,happy,hearts,side,squint,surprised,wink,winkWacky,xDizzy&mouth=default,smile,serious,tongue")
+@user_jacob.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_jacob.save!
 
-@user_olivia = User.create!(
+@user_olivia = User.new(
   nickname: "Olivia",
   email: "olivia@example.com",
   password: "passwordstu",
   latitude: 48.8566,
   longitude: 2.3522
 )
+file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Misty&eyes=default,eyeRoll,happy,hearts,side,squint,surprised,wink,winkWacky,xDizzy&mouth=default,smile,serious,tongue")
+@user_olivia.photo.attach(io: file, filename: 'photo.jpg', content_type: 'image/jpg')
+@user_olivia.save!
 
 puts 'Utilisateurs créés !'
 
 puts 'Création de nouveaux spots...'
 @spot1 = Spot.new(
   name: "Plage de Longchamp",
-  description: "Un spot de surf sur la plage, mais avec quelques récifs à proximité, ce qui augmente un peu le niveau de difficulté - et l’intérêt. A surfer à marée montante, mais à éviter l’été, quand la mer est pleine de baigneurs. Récifs parfois dangereux.",
+  description: "Plage la plus étendue de la commune de Saint-Lunaire, sa situation permet de vivre les joies de la baignade et du sport. Profitez de ce spot de surf d'exception et ses deux écoles! Son accès par les dunes récemment aménagée, et la promenade de la digue offrent une déambulation agréable avec une vue dégagée de la côte vers le Cap Fréhel. Plage surveillée en saison. Chiens interdits du 15 juin au 15 septembre.",
   address: "bd Longchamp, 35800 Saint Lunaire, France",
   city: 'Saint-Lunaire'
   )
@@ -451,7 +506,7 @@ users = [
 
 # Spots
 spots = [
-  @spot2, @spot3, @spot4, @spot5, @spot6, @spot7, @spot8, @spot9, @spot10,
+  @spot3, @spot4, @spot6, @spot7, @spot8, @spot9, @spot10,
   @spot11, @spot12, @spot13, @spot14, @spot15, @spot16, @spot17, @spot18, @spot19, @spot20,
   @spot21, @spot22, @spot23, @spot24, @spot25, @spot26, @spot27, @spot28, @spot29, @spot30
 ]
@@ -472,7 +527,6 @@ reviews = [
   "Une plage fantastique pour surfer. Les vagues sont souvent parfaites et il y a toujours une bonne ambiance.",
   "Les vagues peuvent être imprévisibles, mais quand elles sont bonnes, c'est incroyable!",
   "J'ai passé une journée fantastique à surfer ici. Les vagues étaient parfaites et l'ambiance était super.",
-  "C'est un spot génial pour tous les niveaux de surfeurs. Les vagues sont souvent parfaites pour apprendre.",
   "Spot incroyable! Les vagues sont toujours bonnes et l'atmosphère est détendue.",
   "Super spot pour surfer. Les vagues sont excellentes et l'ambiance est toujours positive.",
   "J'adore cet endroit. Les vagues sont fantastiques et la plage est magnifique.",
@@ -490,19 +544,78 @@ reviews = [
   "Les vagues peuvent être un peu difficiles parfois, mais quand elles sont bonnes, c'est magique!"
 ]
 followed_users = {}
-20.times do
-  user = users.sample
+
+  user = @user_alexander
   spot = @spot1
-  if Review.exists?(user_id: user.id, spot_id: spot.id)
-    puts "#{user.nickname} a déjà une évaluation pour #{spot.name}. Skipping..."
-    next
-  end
   content = reviews.sample
-  rate = rand(4..5)
-  difficulty = rand(1..2)
+  rate = 4
+  difficulty = 1
   created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
-  Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
-end
+  @review_alexander = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
+
+  user = @user_mathieu
+  spot = @spot1
+  content = reviews.sample
+  rate = 5
+  difficulty = 1
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  @review_mathieu = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
+
+  user = @user_perrine
+  spot = @spot1
+  content = reviews.sample
+  rate = 4
+  difficulty = 1
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  @review_perrine = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
+
+  user = @user_sophie
+  spot = @spot1
+  content = reviews.sample
+  rate = 5
+  difficulty = 1
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  @review_sophie = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
+
+  user = @user_cedric
+  spot = @spot1
+  content = reviews.sample
+  rate = 5
+  difficulty = 1
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  @review_cedric = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
+
+  user = @user_marine
+  spot = @spot2
+  content = reviews.sample
+  rate = 4
+  difficulty = 2
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  @review_marine = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
+
+  user = @user_john
+  spot = @spot2
+  content = reviews.sample
+  rate = 4
+  difficulty = 2
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  @review_john = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
+
+  user = @user_melanie
+  spot = @spot5
+  content = reviews.sample
+  rate = 4
+  difficulty = 1
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  @review_melanie = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
+
+  user = @user_david
+  spot = @spot5
+  content = reviews.sample
+  rate = 4
+  difficulty = 2
+  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+  @review_david = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
 
 100.times do
     user = users.sample
@@ -512,13 +625,56 @@ end
       next
     end
     content = reviews.sample
-    rate = rand(3..5)
+    rate = rand(3..4)
     difficulty = rand(1..3)
     created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
     Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
 end
 
 puts "Évaluations créées!"
+
+puts "Création de likes"
+6.times do
+  Like.create!(user: users.sample, review: @review_alexander)
+end
+
+3.times do
+  Like.create!(user: users.sample, review: @review_mathieu)
+end
+
+12.times do
+  Like.create!(user: users.sample, review: @review_perrine)
+end
+
+7.times do
+  Like.create!(user: users.sample, review: @review_sophie)
+end
+
+4.times do
+  Like.create!(user: users.sample, review: @review_cedric)
+end
+
+5.times do
+  Like.create!(user: users.sample, review: @review_david)
+end
+
+6.times do
+  Like.create!(user: users.sample, review: @review_melanie)
+end
+
+6.times do
+  Like.create!(user: users.sample, review: @review_alexander)
+end
+
+7.times do
+  Like.create!(user: users.sample, review: @review_marine)
+end
+
+2.times do
+  Like.create!(user: users.sample, review: @review_john)
+end
+
+puts "Likes créés!"
 
 puts "Création de bookmarks"
 
