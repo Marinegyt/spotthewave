@@ -636,13 +636,6 @@ followed_users = {}
   created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
   @review_john = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
 
-  user = @user_melanie
-  spot = @spot5
-  content = reviews.sample
-  rate = 4
-  difficulty = 1
-  created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
-  @review_melanie = Review.create!(content: content, spot: spot, user: user, rate: rate, difficulty: difficulty, created_at: created_at)
 
   user = @user_david
   spot = @spot5
@@ -694,10 +687,6 @@ end
 end
 
 6.times do
-  Like.create!(user: users.sample, review: @review_melanie)
-end
-
-6.times do
   Like.create!(user: users.sample, review: @review_alexander)
 end
 
@@ -718,6 +707,9 @@ created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
 Bookmark.create!(user: user, spot: @spot2, created_at: created_at)
 Bookmark.create!(user: user, spot: @spot5, created_at: created_at)
 
+user = @user_kelly
+created_at = Faker::Time.between(from: DateTime.now - 1.month, to: DateTime.now)
+Bookmark.create!(user: user, spot: @spot1, created_at: created_at)
 
 100.times do
   user = users.sample
