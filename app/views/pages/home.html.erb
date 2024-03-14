@@ -1,5 +1,8 @@
 <div class="home-bg">
-  <%= video_tag "video/Home-video.mp4", autoplay: :autoplay, loop: true, class: "home-bg-video" %>
+  <%#= video_tag "video/Home-video.mp4", autoplay: :autoplay, loop: true, class: "home-bg-video" %>
+  <video class="home-bg-video" autoplay loop muted playsinline>
+    <source src="<%= asset_path 'video/Home-video.mp4' %>" type="video/mp4">
+  </video>
   <div class="home-container">
 
 
