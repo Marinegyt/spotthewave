@@ -12,8 +12,8 @@ class Spot < ApplicationRecord
   validates :city, presence: true
 
   include PgSearch::Model
-  pg_search_scope :search_by_name_and_city,
-    against: [:name, :city],
+  pg_search_scope :search_by_name_region_and_city,
+    against: [:name, :city, :region],
     using: {
       tsearch: { prefix: true }
     }
