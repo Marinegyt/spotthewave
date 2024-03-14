@@ -84,7 +84,7 @@ file = URI.open("https://api.dicebear.com/7.x/avataaars/svg?seed=Bailey")
 
 @user_sophia = User.new(
   nickname: "Sophia",
-  email: "sophia@example.com",gs
+  email: "sophia@example.com",
   password: "passwordabc",
   latitude: 48.8566,
   longitude: 2.3522
