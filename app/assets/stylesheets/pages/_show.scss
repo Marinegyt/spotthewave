@@ -153,7 +153,7 @@
 
 .spot-show-meteo-days {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   overflow-x: scroll;
   margin: 16px 0;
 }
@@ -167,15 +167,20 @@
 }
 
 .spot-details-open {
-  height:960px;
+  height: 1051px;
 }
 
 .spot-details-weather-cards {
   display:flex;
   gap:12px;
+
   .card-category {
     flex: 1;
   }
+}
+
+.spot-weather-details-grid-cell {
+  width: 60px;
 }
 
 .spot-weather-details {
@@ -199,9 +204,21 @@
 .spot-weather-details-grid {
   display:flex;
   gap:12px;
-  div {
-    width: 72px;
-  }
+  align-items: flex-end;
+}
+
+.spot-weather-details-graph {
+  height:100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.spot-weather-details-graph-bar {
+  height:100%;
+  width: 100% !important;
+  background: $blue-800;
 }
 
 .weather-wind-icon {
