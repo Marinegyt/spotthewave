@@ -11,7 +11,7 @@
         data-controller="like-subscription"
         data-like-subscription-user-id-value="<%= current_user.id %>"
       >
-        <% @feed.first(10).each do |feed_element| %>
+        <% @feed.first(10).sort_by { |feed| feed.created_at}.reverse.each do |feed_element| %>
             <%= render partial: "shared/feed_card_#{feed_element.feed_content[:type]}", locals: {
               instance: feed_element.feed_content[:instance]
             } %>

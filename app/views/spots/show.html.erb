@@ -95,7 +95,7 @@
       </ul>
       <div id="avis" class="tab-content active" data-tabs-target="content" data-content="avis">
         <%= render "rating_progression" %>
-        <% @spot.reviews.each do |review| %>
+        <% @spot.reviews.sort_by { |review| review.created_at}.reverse.each do |review| %>
           <%= render "reviews/review_card", review: review %>
         <% end%>
         <% if @user_review %>

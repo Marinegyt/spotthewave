@@ -1,8 +1,7 @@
 <div class="feed-card">
-  <%#= cl_image_tag instance.user.avatar.key %>
-      <img src="https://picsum.photos/200/300" alt="Photo de l'utilisateur" class="avatar">
+  <%= cl_image_tag instance.follower.photo.key, class:'avatar' %>
     <div class="feed-content">
-      <span class="text-small text-blue-500"><%= instance.created_at %></span>
+      <span class="text-small text-blue-500">Il y a <%= time_ago_in_words(instance.created_at) %></span>
       <p><span class="bold"><%= instance.follower.nickname %></span> vous suit !</p>
     </div>
 </div>
