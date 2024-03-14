@@ -4,7 +4,7 @@ class SpotsController < ApplicationController
     @users = User.all
     @reviews = Review.all
     if params[:search].present?
-      @spots = Spot.search_by_name_and_city(params[:search])
+      @spots = Spot.search_by_name_region_and_city(params[:search])
     else
       @spots = Spot.all
     end

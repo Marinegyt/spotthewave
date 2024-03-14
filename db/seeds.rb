@@ -166,7 +166,8 @@ puts 'Création de nouveaux spots...'
   name: "Plage de Longchamp",
   description: "Plage la plus étendue de la commune de Saint-Lunaire, sa situation permet de vivre les joies de la baignade et du sport. Profitez de ce spot de surf d'exception et ses deux écoles! Son accès par les dunes récemment aménagée, et la promenade de la digue offrent une déambulation agréable avec une vue dégagée de la côte vers le Cap Fréhel. Plage surveillée en saison. Chiens interdits du 15 juin au 15 septembre.",
   address: "bd Longchamp, 35800 Saint Lunaire, France",
-  city: 'Saint-Lunaire'
+  city: 'Saint-Lunaire',
+  region: 'Bretagne'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Longchamps'))
 @spot1.photo.attach(io: file, filename: 'longchamp.jpg', content_type: 'image/jpg')
@@ -176,7 +177,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Longchamps'))
   name: "Plage du Sillon",
   description: "Un bon spot de surf pour tous près du centre de Saint-Malo, facilement accessible, trop, diront certains, car la plage est vite saturée. A surfer de préférence en automne, à marée montante.",
   address: "1B Quai Duguay-Trouin, 35400 Saint-Malo",
-  city: 'Saint-Malo'
+  city: 'Saint-Malo',
+  region: 'Bretagne'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Le%20Sillon'))
 @spot2.photo.attach(io: file, filename: 'le_sillon.jpg', content_type: 'image/jpg')
@@ -186,7 +188,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Le%20Sillon'))
   name: "Plage de Penfoul",
   description: "Ce spot est bien sympathique et ouvert à tous même s’il vaut mieux avoir déjà quelques heures de surf pour s’y lancer. Pas de danger particuliers pour ce beach-break à surfer à marée montante toute l’année.",
   address: "Chemin de la Plage, 29840 Landunvez, France",
-  city: 'Landunvez'
+  city: 'Landunvez',
+  region: 'Bretagne'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Penfoul'))
 @spot3.photo.attach(io: file, filename: 'penfoul.jpg', content_type: 'image/jpg')
@@ -196,7 +199,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Penfoul'))
   name: "Plage de Lostmarc’h",
   description: "Parmi les magnifiques spots de surf de la presqu’île de Crozon, celui de Lostmarc’h est à conseiller tout particulièrement. Son niveau est intermédiaire plus, avec des vagues qui saturent à partir de 3,50 mètres, une forte houle et un vent parfois très puissant. Dans l’idéal, surfer quand la houle entre par l’ouest. A surfer toute l’année ; seul inconvénient : le spot est surchargé l’été.",
   address: "Lostmarc'h Beach, 29160 Crozon, France",
-  city: 'Crozon'
+  city: 'Crozon',
+  region: 'Bretagne'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Lostmarc%E2%80%99h'))
 @spot4.photo.attach(io: file, filename: 'lostmarch.jpg', content_type: 'image/jpg')
@@ -206,7 +210,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Lostmarc%E2%80%99h
   name: "Plage de la Torche",
   description: "LE spot de référence en Bretagne, une longue plage de sable et une mer sans grosse difficulté, si ce n’est un léger courant et quelques baïnes. Houles de nord-ouest à sud-ouest pour des vagues interminables à surfer sans modération tout au long de l’année. Attention toutefois, elles peuvent atteindre les 3 mètres fréquemment.",
   address: "Plage de la Torche, 29120 Plomeur, France",
-  city: 'Plomeur'
+  city: 'Plomeur',
+  region: 'Bretagne'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/La%20Torche'))
 @spot5.photo.attach(io: file, filename: 'la_torche.jpg', content_type: 'image/jpg')
@@ -216,7 +221,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/La%20Torche'))
   name: "Plage de la Baie des Trépassés",
   description: "Ce beach-break de repli est situé dans un coin sauvage de Bretagne et constitue l’un des sites préférés des surfeurs de la région. De grande vagues qui déroulent sans s’arrêter grâce à un vent Nord-Nord-Ouest puissant, des conditions idéales à marée basse de l’automne au printemps, à marée basse comme à marée haute. Les courants peuvent vous déporter vers les falaises.",
   address: "Rte de la Baie, 29770 Plogoff",
-  city: 'Plogoff'
+  city: 'Plogoff',
+  region: 'Bretagne'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Baie%20des%20Tr%C3%A9pass%C3%A9s'))
 @spot6.photo.attach(io: file, filename: 'baie_des_trepasses.jpg', content_type: 'image/jpg')
@@ -226,7 +232,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Baie%20des%20Tr%C3
   name: "Plage de Sainte-Barbe",
   description: "Un beach-break que l’on dirait spécialement créé pour les débutants avec ses longues vagues rassurantes et faciles à prendre. A surfer avec un vent Nord-Est et à marée montante, de l’automne au printemps. En s’éloignant de Plouharnel et en se rapprochant de la Côte Sauvage, les vagues s’intensifient et le niveau exigé devient... plus exigeant.",
   address: "Rue de la Plage Sainte-Barbe, Plouharnel, France",
-  city: 'Plouharnel'
+  city: 'Plouharnel',
+  region: 'Bretagne'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Sainte-Barbe'))
 @spot7.photo.attach(io: file, filename: 'sainte_barbe.jpg', content_type: 'image/jpg')
@@ -236,7 +243,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Sainte-Barbe'))
   name: "Plage de Port Rhu",
   description: "Le spot le plus délicat à maîtriser de toute la presqu’île de Quiberon. Une mise à l’eau difficile et des vagues puissantes qui peuvent porter vers la falaise. A ne pas mettre entre toutes les planches !",
   address: "Point de vue Surf, Sentier Côtier, 56510 Saint-Pierre-Quiberon, France",
-  city: 'Saint-Pierre-Quiberon'
+  city: 'Saint-Pierre-Quiberon',
+  region: 'Bretagne'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Port%20Rhu'))
 @spot8.photo.attach(io: file, filename: 'port_rhu.jpg', content_type: 'image/jpg')
@@ -246,7 +254,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Port%20Rhu'))
   name: "Plage du Donnant",
   description: "Un spot qui vaut l’aller-retour en bateau depuis Quiberon ! Un beach-break exposé à la houle avec des vagues de belle taille. Côté positif : des ascenseurs qui vous portent entre deux vagues. Côté négatif : un courant dangereux et la proximité des rochers. Privilégier la marée haute si l’on est débutant. Sinon, se contenter d’admirer depuis la plage : c’est déjà très bien.",
   address: "Plage de Donnant 56360 Sauzon ",
-  city: 'Belle-île-en-Mer'
+  city: 'Belle-île-en-Mer',
+  region: 'Bretagne'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Donnant'))
 @spot9.photo.attach(io: file, filename: 'donnant.jpg', content_type: 'image/jpg')
@@ -256,7 +265,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Donnant'))
   name: "Trestraou",
   description: "Un bon shore-break assez accessible avec, parfois, de grosses conditions qui satisfont les confirmés et surprennent les débutants. Attention à bien jauger son niveau. Un spot à surfer à marée montante pendant de l’automne au printemps. Parking et douches à proximité. Attention aux galets lors de la mise à l’eau...",
   address: "BD Joseph le Bihan, 22700, Perros-Guirec, France",
-  city: 'Perros-Guirec'
+  city: 'Perros-Guirec',
+  region: 'Bretagne'
   )
 file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Trestaou'))
 @spot10.photo.attach(io: file, filename: 'trestaou.jpg', content_type: 'image/jpg')
@@ -266,7 +276,8 @@ file = URI.open(Cloudinary::Utils.cloudinary_url('assets/seed/Trestaou'))
   name: "Plage de la Grève Blanche",
   description: "Une plage sauvage et préservée, parfaite pour les surfeurs en quête de tranquillité. Les vagues sont souvent puissantes et régulières, offrant d'excellentes sessions de surf. À marée basse, des bancs de sable se forment, créant des vagues idéales pour les débutants.",
   address: "172 Penn Ar Strejou, 29880 Plouguerneau",
-  city: 'Plouguerneau'
+  city: 'Plouguerneau',
+  region: 'Bretagne'
 )
 file = URI.open("https://picsum.photos/id/12/600/400")
 @spot11.photo.attach(io: file, filename: 'greve_blanche.jpg', content_type: 'image/jpg')
@@ -276,7 +287,8 @@ file = URI.open("https://picsum.photos/id/12/600/400")
   name: "Plage de la Côte des Basques",
   description: "Un spot emblématique de Biarritz, prisé par les surfeurs du monde entier. Les vagues sont souvent longues et puissantes, offrant des conditions idéales pour le surf. À marée basse, des rochers émergent, ajoutant un défi supplémentaire aux sessions de surf.",
   address: "1 Boulevard du Prince de Galles, 64200 Biarritz, France",
-  city: 'Biarritz'
+  city: 'Biarritz',
+  region: 'Nouvelle-Aquitaine'
 )
 file = URI.open("https://picsum.photos/id/13/600/400")
 @spot12.photo.attach(io: file, filename: 'basques.jpg', content_type: 'image/jpg')
@@ -286,7 +298,8 @@ file = URI.open("https://picsum.photos/id/13/600/400")
   name: "Plage de la Baule",
   description: "Une plage animée sur la côte atlantique, offrant des vagues adaptées à tous les niveaux de surf. Les débutants apprécient les vagues douces et progressives, tandis que les surfeurs confirmés trouvent des sections plus creuses. À marée basse, des bancs de sable se forment, créant des conditions idéales pour le longboard.",
   address: "Avenue de la Baule, 44500 La Baule-Escoublac, France",
-  city: 'La Baule-Escoublac'
+  city: 'La Baule-Escoublac',
+  region: 'Pays-de-la-Loire'
 )
 file = URI.open("https://picsum.photos/id/14/600/400")
 @spot13.photo.attach(io: file, filename: 'la_baule.jpg', content_type: 'image/jpg')
@@ -296,7 +309,8 @@ file = URI.open("https://picsum.photos/id/14/600/400")
   name: "Plage de la Milady",
   description: "Une belle plage de sable fin, parfaite pour les débutants en surf. Les vagues sont généralement douces et régulières, offrant un environnement idéal pour apprendre. À marée basse, des bancs de sable se forment, créant des vagues parfaites pour le longboard.",
   address: "Avenue de la Milady, 64200 Biarritz, France",
-  city: 'Biarritz'
+  city: 'Biarritz',
+  region: 'Nouvelle-Aquitaine'
 )
 file = URI.open("https://picsum.photos/id/16/600/400")
 @spot14.photo.attach(io: file, filename: 'milady.jpg', content_type: 'image/jpg')
@@ -306,7 +320,8 @@ file = URI.open("https://picsum.photos/id/16/600/400")
   name: "Plage de la Palue",
   description: "Un spot sauvage et préservé sur la presqu'île de Crozon, idéal pour les surfeurs expérimentés. Les vagues sont souvent puissantes et rapides, offrant des sessions de surf intenses. À marée basse, des rochers émergent, créant des sections tubulaires.",
   address: "29470 Crozon, France",
-  city: 'Crozon'
+  city: 'Crozon',
+  region: 'Bretagne'
 )
 file = URI.open("https://picsum.photos/id/37/600/400")
 @spot15.photo.attach(io: file, filename: 'palue.jpg', content_type: 'image/jpg')
@@ -316,7 +331,8 @@ file = URI.open("https://picsum.photos/id/37/600/400")
   name: "Plage de la Grande Plage",
   description: "La plage principale de Quiberon, offrant des vagues adaptées à tous les niveaux de surf. Les débutants apprécient les vagues douces et progressives, tandis que les surfeurs confirmés trouvent des sections plus creuses. À marée basse, les bancs de sable offrent des conditions idéales pour le longboard.",
   address: "Boulevard Chanard, 56170 Quiberon, France",
-  city: 'Quiberon'
+  city: 'Quiberon',
+  region: 'Bretagne'
 )
 
 file = URI.open("https://picsum.photos/id/51/600/400")
@@ -327,7 +343,8 @@ file = URI.open("https://picsum.photos/id/51/600/400")
   name: "Plage du Santocha",
   description: "Un spot animé à Anglet, apprécié par les surfeurs de tous niveaux. Les vagues sont généralement puissantes et rapides, offrant des sessions dynamiques. À marée basse, des bancs de sable se forment, créant des sections propices aux airs et aux manoeuvres radicales.",
   address: "Promenade de la Barre, 64600 Anglet, France",
-  city: 'Anglet'
+  city: 'Anglet',
+  region: 'Nouvelle-Aquitaine'
 )
 
 file = URI.open("https://picsum.photos/id/74/600/400")
@@ -338,7 +355,8 @@ file = URI.open("https://picsum.photos/id/74/600/400")
   name: "Plage de la Barre",
   description: "Une plage familiale à Anglet, offrant des vagues adaptées à tous les niveaux de surf. Les débutants apprécient les vagues douces et progressives, tandis que les surfeurs confirmés trouvent des sections plus creuses. À marée basse, des bancs de sable se forment, créant des conditions propices au longboard.",
   address: "299 Av. de l'Adour, 64600 Anglet",
-  city: 'Anglet'
+  city: 'Anglet',
+  region: 'Nouvelle-Aquitaine'
 )
 
 file = URI.open("https://picsum.photos/id/77/600/400")
@@ -349,7 +367,8 @@ file = URI.open("https://picsum.photos/id/77/600/400")
   name: "Plage du Gros Jonc",
   description: "Une plage préservée sur l'île de Ré, offrant des vagues parfaites pour le longboard. Les vagues sont généralement douces et régulières, créant un environnement idéal pour les surfeurs débutants et intermédiaires. À marée basse, des bancs de sable se forment, offrant des conditions optimales pour le surf.",
   address: "Avenue du Pas des Boeufs, 17580 Le Bois-Plage-en-Ré, France",
-  city: 'Le Bois-Plage-en-Ré'
+  city: 'Le Bois-Plage-en-Ré',
+  region: 'Nouvelle-Aquitaine'
 )
 
 file = URI.open("https://picsum.photos/id/92/600/400")
@@ -360,7 +379,8 @@ file = URI.open("https://picsum.photos/id/92/600/400")
   name: "Plage de la Pointe du Cap Ferret",
   description: "Une plage sauvage et préservée sur la presqu'île du Cap Ferret, offrant des vagues idéales pour les surfeurs expérimentés. Les vagues sont souvent puissantes et rapides, offrant des sessions de surf intenses. À marée basse, des bancs de sable se forment, créant des sections propices aux airs et aux manoeuvres radicales.",
   address: "Avenue de Bordeaux, 33950 Lège-Cap-Ferret, France",
-  city: 'Lège-Cap-Ferret'
+  city: 'Lège-Cap-Ferret',
+  region: 'Nouvelle-Aquitaine'
 )
 
 file = URI.open("https://picsum.photos/id/124/600/400")
@@ -371,7 +391,8 @@ file = URI.open("https://picsum.photos/id/124/600/400")
   name: "Plage de la Madrague",
   description: "Cette vaste plage surveillée située à la périphérie de Saint-Cyr-sur-Mer est idéale pour la baignade, le bronzage et le surf.",
   address: "561 Rte de la Madrague, 83270 Saint-Cyr-sur-Mer",
-  city: 'Saint-Cyr-sur-Mer'
+  city: 'Saint-Cyr-sur-Mer',
+  region: 'Provence-Alpes-Côte d’Azur'
 )
 
 file = URI.open("https://picsum.photos/id/131/600/400")
@@ -382,7 +403,8 @@ file = URI.open("https://picsum.photos/id/131/600/400")
   name: "Plage du Porge",
   description: "Une plage sauvage et préservée sur la côte atlantique, offrant des vagues puissantes et rapides. Les surfeurs expérimentés apprécient les conditions stimulantes offertes par cette plage. À marée basse, des bancs de sable se forment, créant des sections tubulaires.",
   address: "33980 Le Porge, France",
-  city: 'Le Porge'
+  city: 'Le Porge',
+  region: 'Nouvelle-Aquitaine'
 )
 
 file = URI.open("https://picsum.photos/id/135/600/400")
@@ -393,7 +415,8 @@ file = URI.open("https://picsum.photos/id/135/600/400")
   name: "Plage de la Govelle",
   description: "Longue étendue de sable fin avec des affleurements rocheux, prisée pour le surf ainsi que la pêche et la baignade à marée basse.",
   address: "20 Rte de la Govelle, 44740 Batz-sur-Mer",
-  city: 'Batz-sur-Mer'
+  city: 'Batz-sur-Mer',
+  region: 'Pays-de-la-Loire'
 )
 
 file = URI.open("https://picsum.photos/id/144/600/400")
@@ -404,7 +427,8 @@ file = URI.open("https://picsum.photos/id/144/600/400")
   name: "Plage de la Garoupe",
   description: "Une plage élégante à Antibes, offrant des vagues parfaites pour le longboard. Les vagues sont généralement douces et régulières, créant un environnement idéal pour les surfeurs débutants et intermédiaires. À marée basse, des bancs de sable se forment, offrant des conditions optimales pour le surf.",
   address: "Boulevard Kennedy, 06600 Antibes, France",
-  city: 'Antibes'
+  city: 'Antibes',
+  region: 'Provence-Alpes-Côte d’Azur'
 )
 
 file = URI.open("https://picsum.photos/id/147/600/400")
@@ -415,7 +439,8 @@ file = URI.open("https://picsum.photos/id/147/600/400")
   name: "Plage du Môle",
   description: "Une plage tranquille à Noirmoutier-en-l'Île, offrant des vagues douces et progressives. Les débutants en surf apprécient les conditions favorables offertes par cette plage. À marée basse, des bancs de sable se forment, créant des conditions idéales pour le longboard.",
   address: "85330 Noirmoutier-en-l'Île, France",
-  city: "Noirmoutier-en-l'Île"
+  city: "Noirmoutier-en-l'Île",
+  region: 'Pays-de-la-Loire'
 )
 
 file = URI.open("https://picsum.photos/id/154/600/400")
@@ -426,7 +451,8 @@ file = URI.open("https://picsum.photos/id/154/600/400")
   name: "Plage de la Paracou",
   description: "Une plage préservée à Talmont-Saint-Hilaire, offrant des vagues douces et régulières, idéales pour les surfeurs de tous niveaux. Les vagues sont généralement propices à l'apprentissage du surf. À marée basse, des bancs de sable se forment, créant des conditions idéales pour le longboard.",
   address: "85440 Talmont-Saint-Hilaire, France",
-  city: "Talmont-Saint-Hilaire"
+  city: "Talmont-Saint-Hilaire",
+  region: 'Pays-de-la-Loire'
 )
 
 file = URI.open("https://picsum.photos/id/176/600/400")
@@ -437,7 +463,8 @@ file = URI.open("https://picsum.photos/id/176/600/400")
   name: "Plage de Tresmeur",
   description: "Une plage pittoresque à Trébeurden, offrant des vagues idéales pour les surfeurs de tous niveaux. Les vagues sont généralement douces et progressives, créant un environnement propice à l'apprentissage du surf. À marée basse, des bancs de sable se forment, offrant des conditions optimales pour le longboard.",
   address: "C8 Rue de Traou Meur, 22343 Trébeurden",
-  city: "Trébeurden"
+  city: "Trébeurden",
+  region: 'Bretagne'
 )
 
 file = URI.open("https://picsum.photos/id/179/600/400")
@@ -448,7 +475,8 @@ file = URI.open("https://picsum.photos/id/179/600/400")
   name: "Plage du Ris",
   description: "Une plage familiale à Douarnenez, offrant des vagues adaptées à tous les niveaux de surf. Les débutants apprécient les vagues douces et progressives, tandis que les surfeurs confirmés trouvent des sections plus creuses. À marée basse, des bancs de sable se forment, créant des conditions idéales pour le longboard.",
   address: "Plage du Ris, 29100 Douarnenez, France",
-  city: "Douarnenez"
+  city: "Douarnenez",
+  region: 'Bretagne'
 )
 
 file = URI.open("https://picsum.photos/id/199/600/400")
@@ -459,7 +487,8 @@ file = URI.open("https://picsum.photos/id/199/600/400")
   name: "Plage de la Corniche",
   description: "Une plage pittoresque à Marseille, offrant des vagues idéales pour les surfeurs débutants et intermédiaires. Les vagues sont généralement douces et régulières, créant un environnement propice à l'apprentissage du surf. À marée basse, des bancs de sable se forment, offrant des conditions optimales pour le longboard.",
   address: "Avenue Pierre Mendès France, 13007 Marseille, France",
-  city: 'Marseille'
+  city: 'Marseille',
+  region: 'Provence-Alpes-Côte d’Azur'
 )
 
 file = URI.open("https://picsum.photos/id/203/600/400")
@@ -470,7 +499,8 @@ file = URI.open("https://picsum.photos/id/203/600/400")
   name: "Plage de la Côte des Basques",
   description: "Un spot emblématique de Biarritz, prisé par les surfeurs du monde entier. Les vagues sont souvent longues et puissantes, offrant des conditions idéales pour le surf. À marée basse, des rochers émergent, ajoutant un défi supplémentaire aux sessions de surf.",
   address: "1 Boulevard du Prince de Galles, 64200 Biarritz, France",
-  city: 'Biarritz'
+  city: 'Biarritz',
+  region: 'Nouvelle-Aquitaine'
 )
 
 file = URI.open("https://picsum.photos/id/215/600/400")
