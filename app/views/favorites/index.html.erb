@@ -9,26 +9,3 @@
     </div>
   </div>
 </div>
-
-<div class="container-fav d-none">
-  <div class="favorites-list-container">
-    <% if @spots.any? %>
-          <% @spots.each do |spot| %>
-            <%= link_to spot_path(spot) do %>
-              <div class="card card-product card-shadow mb-3">
-                <%= cl_image_tag spot.photo.key, class:"card-spot-photo-small" %>
-                <div class="card-product-infos">
-
-                <h3><%= spot.name %></h3>
-                <p class="mb-2 text-blue-600"><%= spot.city %></p>
-
-                <div class="weather-over">
-                  <p class="weather-details">16°C | <%= image_tag('icons/sun.svg') %> | 2 km/h</p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-  </div>
-</div>

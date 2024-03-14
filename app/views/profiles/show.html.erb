@@ -1,10 +1,10 @@
-<div class="container">
-  <br>
-  <div class="card-show-head h1">Bienvenue <%= @user.nickname %> !</div>
-  <br>
+<div class="container"><br>
+  <div class="card-show-head h1">Bienvenue <%= @user.nickname %> !
+  </div><br>
   <h3>Mes infos personnelles :</h3>
-  <p><%= @user.email %></p>
-  <br>
+  <p><%= @user.email %></p><br>
+  <%= link_to "Se déconnecter", destroy_user_session_path, class: 'btn' %>
+  <br><br>
 
   <h3>Mes followers :</h3>
   <ul>
@@ -12,7 +12,6 @@
     <li><%= follower.nickname %></li>
     <% end %>
   </ul>
-
 
   <h3>Suvis</h3>
   <ul>
