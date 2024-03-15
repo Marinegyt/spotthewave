@@ -41,12 +41,9 @@
   .avatar {
     border:4px solid $light-beige;
   }
-  .feed-rating-stars {
-    margin-left: 8px;
-  }
+
   .feed-rating-stars i{
     font-size:10px;
-
   }
 }
 
@@ -60,6 +57,7 @@
   border-radius: 8px;
   background:$white;
 }
+
 
 .feed-like-button {
   font-size:14px;
