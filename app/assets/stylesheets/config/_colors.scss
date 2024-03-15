@@ -6,7 +6,11 @@ $blue-800: #1B4B69;
 $blue-600: #52768D;
 $blue-500: #7DA1B8;
 $blue-200: #D8E3EA;
-$blue-100: #F9F9F9;
+
+// OLD
+//$blue-100: #F9F9F9;
+$blue-100: darken(#F9F9F9, 5%);
+
 $light-beige: #F7F2E9;
 $sable: #F3D6AC;
 $orange: #F76631;
